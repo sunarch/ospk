@@ -1,0 +1,111 @@
+/*Oberstufenpunktkalkulator Stylesheet*/
+
+.main_title {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+.name_title {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+.section_title {
+    color: black;
+    line-height: 1.2em;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Opciók választása */
+
+.categories {
+    color: black;
+    line-height: 1.2em;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+}
+.questions {
+    color: black;
+    line-height: 1.0em;
+    font-weight: bold;
+    font-size: 16px;
+    text-indent: 40px;
+}
+.send{
+
+}
+
+/* Fakultációk választása */
+
+input.q_answers {
+
+}
+
+/*11.-12.-es jegyek*/
+
+table.grades1112 {
+    width: 500px;
+}
+tr.grades1112 {
+    height: 25px;
+}
+td.grades1112_headers {
+    font-size: 16px;
+    font-weight: bold;
+}
+td.grades1112_subjects {
+
+}
+input.grades1112 {
+    width: 40px;
+}
+div.grades1112_averages {
+
+}
+div.grades1112_grand_average {
+
+}
+
+/* Érettségi vizsgatárgyak és -eredmények */
+
+table.exams {
+    width: 400px;
+}
+tr.exams {
+    height: 25px;
+}
+td.exam_no {
+
+}
+td.exam_type {
+
+}
+td.exam_subject {
+
+}
+select.exam_subject {
+
+}
+option.exam_subject {
+
+}
+td.exam_points {
+
+}
+input.exam_points {
+    width: 40px;
+}
+
+/* Összesített eredmények */
+
+table.ergebnisse {
+    width: 99%;
+}
+td.ergebnisse {
+    width: 33%;
+}

@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" style="height:100%; font-family:Helvetica Neue,Helvetica,Arial,sans-serif; margin:0;padding:0;background:#eee;background-image:-moz-linear-gradient(top, #fafafa, #cccccc);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fafafa),color-stop(1,#cccccc));">
+    <head>
+        <title>DSB Oberstufenpunktekalkulator</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="styles/ospk.css" title="style" />
+        <!--<link rel="shortcut icon" href="images/favicon.ico" />-->
+        <script rel="script" type="text/javascript" language="JavaScript" src="scripts/ospk.js" ></script>
+    </head>
+    <body style="margin:auto 0px; padding:0; background:#eee; background-image:-moz-linear-gradient(top, #fafafa, #cccccc);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fafafa),color-stop(1,#cccccc)); min-height:100%; width:auto">
+        <div style="font-size:108%; line-height:1.4;">
+            <div style="height:35px; border-bottom:0px solid #666; background: #213C84;">
+                <div style="margin-left:15px; font-weight:600; font-size:13px; float:left; min-width:100px; max-width:45%; overflow:hidden; height:35px">
+                    <ul style="line-height:30px; padding-left:0; margin:0;">
+                        <li style="display:inline; font-weight:300; text-decoration:none; color:#eee; font-size:11px;">Startseite</li>
+                        <li style="display:inline; font-weight:300; text-decoration:none; color:#eee; font-size:11px;"><span style="font-size:80%;">&#x25BA;</span>&#160;Anwendungen</li>
+                        <li style="display:inline; font-weight:300; text-decoration:none; color:#eee; font-size:11px;"><span style="font-size:80%;">&#x25BA;</span>&#160;Oberstufenpunktekalkulator</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height:80px; clear:both; background:#213C84; border-bottom:1px solid #fff;">
+                <div style="height:80px; width:90%; margin-left:auto; margin-right:auto;">
+                    <img src="images/logo.png" style="float:left; margin-top:8px; margin-left:-1px;" />
+                </div>
+            </div>
+            <div style="width:90%; margin-left:auto; margin-right:auto; margin-bottom:15px; padding-top:10px; clear:both">
+            <!-- start OF moodle CONTENT -->
+                <div style="clear:both; float:left; overflow:hidden; position:relative; width:100%; min-width:900px;">
+                    <div style="float:left; left:200px; position:relative; width:200%;">
+                        <div style="padding-top:5px; float:left; left:50%; position:relative; width:100%; margin-left:-200px;">
+                            <div style="float:right; position:relative; right:100%; width:50%;">
+                                <div style="margin-left:200px; padding:0 15px;">
+                                    <div style="padding:10px 0 0; border:1px solid #ccc;background:#fff;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-box-shadow:0px 1px 3px #ccc;-moz-box-shadow:-1px 1px 3px #ccc;box-shadow:-1px 1px 3px #ccc;">
+                                        <div style="padding:15px;">
+                                        <!-- start OF private CONTENT -->
+
+    <!-- ----------------------------------------------------------------------------------- -->
+
+    <script rel="script" type="text/javascript" language="JavaScript">
+        cc = new oberstufenpunktekalkulator();
+    </script>
+    <div class="main_title">Oberstufenpunktekalkulator</div>
+    <div id="name_title" class="name_title"></div>
+    <table>
+        <tbody>
+            <tr>
+                <td class="questions" id="text_zweig_titel_hu">Magyar ág</td>
+                <td id="text_zweig_fahne_hu">
+                    <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('hu'); cc.display('section_options');">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30">
+                            <rect fill="#CE1126" width="50" height="10" y="0"/>
+                            <rect fill="#FFFFFF" width="50" height="10" y="10"/>
+                            <rect fill="#008751" width="50" height="10" y="20"/>
+                        </svg>
+                    </div>
+                </td>
+                <td class="questions" id="text_zweig_titel_de">Deutscher Zweig</td>
+                <td id="text_zweig_fahne_de">
+                    <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('de'); cc.display('section_options');">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30">
+                            <rect fill="#000000" width="50" height="10" y="0"/>
+                            <rect fill="#DD0000" width="50" height="10" y="10"/>
+                            <rect fill="#FFCE00" width="50" height="10" y="20"/>
+                        </svg>
+                    </div>
+                </td>
+                <td class="questions" id="td_button_importData">
+                    <input type="button" value="Import" onClick="cc.importData(window.prompt('Data String:'));" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="section_options" style="display:none;">
+        <script type="text/javascript" language="JavaScript" >
+            function construct_options() {
+                var dom_div = document.createElement('div');
+                    dom_div.setAttribute("class","section_title");
+                        dom_div.appendChild(document.createTextNode(cc.text.options_title[cc.student.lang_no]));
+                document.getElementById('section_options').appendChild(dom_div);
+                var dom_table = document.createElement('table');
+                    dom_table.setAttribute("id","section_options_content");
+                    var dom_tbody = document.createElement('tbody');
+                        // wahlArt (1)
+                            var dom_tr = document.createElement('tr');
+                                var dom_td = document.createElement('td');
+                                    dom_td.setAttribute("class","questions");
+                                    dom_td.appendChild(document.createTextNode(cc.text.question_wahlArt[cc.student.lang_no]));
+                                dom_tr.appendChild(dom_td);
+                                var dom_td = document.createElement('td');
+                                    var dom_select = document.createElement('select');
+                                        dom_select.setAttribute("id","wahlArt");
+                                        dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","-1");
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","12"); // Bildende Kunst
+                                            dom_option.appendChild(document.createTextNode(cc.fach[12].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","13"); // Musik
+                                            dom_option.appendChild(document.createTextNode(cc.fach[13].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                    dom_td.appendChild(dom_select);
+                                dom_tr.appendChild(dom_td);
+                            dom_tbody.appendChild(dom_tr);
+                        // 2 Pflichtwahlen nur für den deutschen Zweig
+                        if (cc.student.zweig == "de") {
+                            // deWahlLang (2)
+                                var dom_tr = document.createElement('tr');
+                                    var dom_td = document.createElement('td');
+                                        dom_td.setAttribute("class","questions");
+                                        dom_td.appendChild(document.createTextNode(cc.text.question_deWahlLang[cc.student.lang_no]));
+                                    dom_tr.appendChild(dom_td);
+                                    var dom_td = document.createElement('td');
+                                        var dom_select = document.createElement('select');
+                                            dom_select.setAttribute("id","deWahlLang");
+                                            dom_select.setAttribute("disabled","true");
+                                            dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","-1");
+                                                dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","2"); // UZ
+                                                dom_option.appendChild(document.createTextNode(cc.fach[2].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","4"); // Französisch
+                                                dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                        dom_td.appendChild(dom_select);
+                                    dom_tr.appendChild(dom_td);
+                                dom_tbody.appendChild(dom_tr);
+                            // deWahlNatWis (3)
+                                var dom_tr = document.createElement('tr');
+                                    var dom_td = document.createElement('td');
+                                        dom_td.setAttribute("class","questions");
+                                        dom_td.appendChild(document.createTextNode(cc.text.question_deWahlNatWis[cc.student.lang_no]));
+                                    dom_tr.appendChild(dom_td);
+                                    var dom_td = document.createElement('td');
+                                        var dom_select = document.createElement('select');
+                                            dom_select.setAttribute("id","deWahlNatWis");
+                                            dom_select.setAttribute("disabled","true");
+                                            dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","-1");
+                                                dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","78"); // Physik und Biologie
+                                                dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]+" und "+cc.fach[8].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","79"); // Physik und Chemie
+                                                dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]+" und "+cc.fach[9].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","89"); // Biologie und Chemie
+                                                dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]+" und "+cc.fach[9].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                        dom_td.appendChild(dom_select);
+                                    dom_tr.appendChild(dom_td);
+                                dom_tbody.appendChild(dom_tr);
+                        }
+                        // optionLang (4)
+                            var dom_tr = document.createElement('tr');
+                                var dom_td = document.createElement('td');
+                                    dom_td.setAttribute("class","questions");
+                                    dom_td.appendChild(document.createTextNode(cc.text.question_optionLang[cc.student.lang_no]));
+                                dom_tr.appendChild(dom_td);
+                                var dom_td = document.createElement('td');
+                                    var dom_select = document.createElement('select');
+                                        dom_select.setAttribute("id","optionLang");
+                                        dom_select.setAttribute("disabled","true");
+                                        dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","-1");
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","0"); // nicht gewählt
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_notChosen[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        if (cc.student.zweig == "hu") {
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","4"); // Französisch
+                                                dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                        }
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","5"); // Spanisch
+                                            dom_option.appendChild(document.createTextNode(cc.fach[5].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                    dom_td.appendChild(dom_select);
+                                dom_tr.appendChild(dom_td);
+                            dom_tbody.appendChild(dom_tr);
+                        // optionNatWis (5)
+                            var dom_tr = document.createElement('tr');
+                                var dom_td = document.createElement('td');
+                                    dom_td.setAttribute("class","questions");
+                                    dom_td.appendChild(document.createTextNode(cc.text.question_optionNatWis[cc.student.lang_no]));
+                                dom_tr.appendChild(dom_td);
+                                var dom_td = document.createElement('td');
+                                    var dom_select = document.createElement('select');
+                                        dom_select.setAttribute("id","optionNatWis");
+                                        dom_select.setAttribute("disabled","true");
+                                        dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","-1");
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","0");
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_notChosen[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("id","fluidOptionPhy");
+                                            dom_option.setAttribute("value","7"); // Physik Grundkurs
+                                            dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","7+"); // Physik Leistungskurs
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_physikLk[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        if (cc.student.zweig == "de") {
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("id","fluidOptionBio");
+                                                dom_option.setAttribute("value","8"); // Biologie
+                                                dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("id","fluidOptionCh");
+                                                dom_option.setAttribute("value","9"); // Chemie
+                                                dom_option.appendChild(document.createTextNode(cc.fach[9].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                        }
+                                    dom_td.appendChild(dom_select);
+                                dom_tr.appendChild(dom_td);
+                            dom_tbody.appendChild(dom_tr);
+                        // optionGesWis (6)
+                            var dom_tr = document.createElement('tr');
+                                var dom_td = document.createElement('td');
+                                    dom_td.setAttribute("class","questions");
+                                    dom_td.appendChild(document.createTextNode(cc.text.question_optionGesWis[cc.student.lang_no]));
+                                dom_tr.appendChild(dom_td);
+                                var dom_td = document.createElement('td');
+                                    var dom_select = document.createElement('select');
+                                        dom_select.setAttribute("id","optionGesWis");
+                                        dom_select.setAttribute("disabled","true");
+                                        dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","-1");
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","0");
+                                            dom_option.appendChild(document.createTextNode(cc.text.answer_notChosen[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","16"); // Erdkunde
+                                            dom_option.appendChild(document.createTextNode(cc.fach[16].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","17"); // Ethik (oder Religion)
+                                            dom_option.appendChild(document.createTextNode(cc.fach[17].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                    dom_td.appendChild(dom_select);
+                                dom_tr.appendChild(dom_td);
+                            dom_tbody.appendChild(dom_tr);
+                        //End of options
+                    dom_table.appendChild(dom_tbody);
+                document.getElementById('section_options').appendChild(dom_table);
+            }
+        </script>
+    </div>
+    <div id="section_inputs" style="display:none;">
+        <script type="text/javascript" language="JavaScript" >
+            function construct_inputs() {
+                var dom_div = document.createElement('div');
+                    dom_div.setAttribute("class","section_title");
+                        dom_div.appendChild(document.createTextNode(cc.text.grades1112_title[cc.student.lang_no]));
+                    document.getElementById('section_inputs').appendChild(dom_div);
+                var dom_table = document.createElement('table');
+                    dom_table.setAttribute("class","grades1112");
+                    var dom_tbody = document.createElement('tbody');
+                        var dom_tr = document.createElement('tr');
+                            dom_tr.setAttribute("class","grades1112");
+                            for(n1=0;n1<=4;n1=n1+1) {
+                                var dom_td = document.createElement('td');
+                                    dom_td.setAttribute("class","grades1112_headers");
+                                    dom_td.appendChild(document.createTextNode(cc.text.grades1112_headers[cc.student.lang_no][n1]));
+                                dom_tr.appendChild(dom_td);
+                            }
+                        dom_tbody.appendChild(dom_tr);
+                        for(n1=1;n1<cc.fach.length;n1=n1+1) {
+                            if(cc.fach[n1].active) {
+                                var dom_tr = document.createElement('tr');
+                                    dom_tr.setAttribute("class","grades1112");
+                                    var dom_td = document.createElement('td');
+                                        dom_td.setAttribute("class","grades1112_subjects");
+                                        dom_td.appendChild(document.createTextNode(cc.fach[n1].fullName[cc.student.lang_no]));
+                                    dom_tr.appendChild(dom_td);
+                                        for(n2=1;n2<=4;n2=n2+1) {
+                                            var dom_td = document.createElement('td');
+                                                var dom_input = document.createElement('input');
+                                                    dom_input.setAttribute("id","input_"+cc.fach[n1].name+"_note_"+n2);
+                                                    dom_input.setAttribute("class","grades1112");
+                                                    dom_input.setAttribute("onChange","if(validate(this,'grade')){tempNum = new Number(this.value); cc.fach["+n1+"].note["+n2+"] = tempNum.valueOf();}");
+                                            dom_td.appendChild(dom_input);
+                                    dom_tr.appendChild(dom_td);
+                                        }
+                                dom_tbody.appendChild(dom_tr);
+                            }
+                        }
+                    dom_table.appendChild(dom_tbody);
+                document.getElementById('section_inputs').appendChild(dom_table);
+
+                // ABITURERGEBNISSE
+
+                var dom_div = document.createElement('div');
+                    dom_div.setAttribute("class","section_title");
+                        dom_div.appendChild(document.createTextNode(cc.text.examresults_title[cc.student.lang_no]));
+                    document.getElementById('section_inputs').appendChild(dom_div);
+                var dom_table = document.createElement('table');
+                    dom_table.setAttribute("class","exams");
+                    var dom_tbody = document.createElement('tbody');
+                        var dom_tr = document.createElement('tr'); // 1. SCHRIFTLICHE PRÜFUNGSFACH
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode("1."));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(cc.text.written[cc.student.lang_no]));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(cc.fach[1].fullName[cc.student.lang_no]));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","3");
+                                    dom_input.setAttribute("onChange","");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  %"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("id","input_abiNote_1");
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","2");
+                                    dom_input.setAttribute("onChange","if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  NP"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(cc.text.obligatory[cc.student.lang_no]));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        var dom_tr = document.createElement('tr'); // 2. SCHRIFTLICHE PRÜFUNGSFACH
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode("2."));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(cc.text.written[cc.student.lang_no]));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                switch(cc.student.zweig) {
+                                    case "de":
+                                        var dom_select = document.createElement('select');
+                                            dom_select.setAttribute("id","input_abiFach_2");
+                                            dom_select.setAttribute("onChange","tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();");
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","0");
+                                                dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","3"); //Englisch
+                                                dom_option.appendChild(document.createTextNode(cc.fach[3].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","4"); //Französisch
+                                                dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                            var dom_option = document.createElement('option');
+                                                dom_option.setAttribute("value","6"); //Mathematik
+                                                dom_option.appendChild(document.createTextNode(cc.fach[6].fullName[cc.student.lang_no]));
+                                            dom_select.appendChild(dom_option);
+                                        dom_td.appendChild(dom_select);
+                                        break;
+                                    default: case "hu":
+                                        dom_td.appendChild(document.createTextNode(cc.fach[2].fullName[cc.student.lang_no]));
+                                        break;
+                                }
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","3");
+                                    dom_input.setAttribute("onChange","");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  %"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("id","input_abiNote_2");
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","2");
+                                    dom_input.setAttribute("onChange","if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  NP"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                if(cc.student.zweig=="hu") {dom_td.appendChild(document.createTextNode(cc.text.obligatory[cc.student.lang_no]));}
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        var dom_tr = document.createElement('tr'); // 3. SCHRIFTLICHE PRÜFUNGSFACH
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode("3."));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(cc.text.written[cc.student.lang_no]));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_select = document.createElement('select');
+                                    dom_select.setAttribute("id","input_abiFach_3");
+                                    dom_select.setAttribute("onChange","tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();");
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","0");
+                                        dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","6"); //Mathematik
+                                        dom_option.appendChild(document.createTextNode(cc.fach[6].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","7"); //Physik
+                                        dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","8"); //Biologie
+                                        dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    if(cc.student.zweig == "hu") {
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","9"); //Chemie
+                                            dom_option.appendChild(document.createTextNode(cc.fach[9].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                    }
+                                dom_td.appendChild(dom_select);
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","3");
+                                    dom_input.setAttribute("onChange","");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  %"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("id","input_abiNote_3");
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","2");
+                                    dom_input.setAttribute("onChange","if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  NP"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(" "));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        var dom_tr = document.createElement('tr'); // MÜNDLICHES PRÜFUNGSFACH
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode("4."));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(cc.text.oral[cc.student.lang_no]));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_select = document.createElement('select');
+                                    dom_select.setAttribute("id","input_abiFach_4");
+                                    dom_select.setAttribute("onChange","tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();");
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","0");
+                                        dom_option.appendChild(document.createTextNode(cc.text.answer_toChoose[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","3"); //Englisch
+                                        dom_option.appendChild(document.createTextNode(cc.fach[3].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","6"); //Mathematik
+                                        dom_option.appendChild(document.createTextNode(cc.fach[6].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","7"); //Physik
+                                        dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                    var dom_option = document.createElement('option');
+                                        dom_option.setAttribute("value","10"); //Geschichte
+                                        dom_option.appendChild(document.createTextNode(cc.fach[10].fullName[cc.student.lang_no]));
+                                    dom_select.appendChild(dom_option);
+                                switch(cc.student.zweig) {
+                                    case "de":
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","4"); //Französisch
+                                            dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","8"); //Biologie
+                                            dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","9"); //Chemie
+                                            dom_option.appendChild(document.createTextNode(cc.fach[9].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","14"); //Sozialkunde
+                                            dom_option.appendChild(document.createTextNode(cc.fach[14].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        break;
+                                    default: case "hu":
+                                        var dom_option = document.createElement('option');
+                                            dom_option.setAttribute("value","11"); //Ungarische Geschichte
+                                            dom_option.appendChild(document.createTextNode(cc.fach[11].fullName[cc.student.lang_no]));
+                                        dom_select.appendChild(dom_option);
+                                        break;
+                                }
+                                dom_td.appendChild(dom_select);
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","3");
+                                    dom_input.setAttribute("onChange","");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  %"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                var dom_input = document.createElement('input');
+                                    dom_input.setAttribute("id","input_abiNote_4");
+                                    dom_input.setAttribute("type","text");
+                                    dom_input.setAttribute("class","exam_points");
+                                    dom_input.setAttribute("maxlength","3");
+                                    dom_input.setAttribute("onChange","if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}");
+                                dom_td.appendChild(dom_input);
+                                dom_td.appendChild(document.createTextNode("  NP"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.appendChild(document.createTextNode(" "));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                    dom_table.appendChild(dom_tbody);
+                document.getElementById('section_inputs').appendChild(dom_table);
+                dom_input = document.createElement('input');
+                    dom_input.setAttribute("id","button_calculate");
+                    dom_input.setAttribute("type","button");
+                    dom_input.setAttribute("value",cc.text.calculate[cc.student.lang_no]);
+                    dom_input.setAttribute("class","send");
+                    dom_input.setAttribute("onClick","cc.calculate(); cc.display('section_results',true);");
+                document.getElementById('section_inputs').appendChild(dom_input);
+                dom_a = document.createElement('a');
+                    dom_a.setAttribute("id","exportLink");
+                    dom_input = document.createElement('input');
+                        dom_input.setAttribute("type","button");
+                        dom_input.setAttribute("onClick","cc.exportData();");
+                        dom_input.setAttribute("value",cc.text.exportData[cc.student.lang_no]);
+                    dom_a.appendChild(dom_input);
+                document.getElementById('section_inputs').appendChild(dom_a);
+            }
+        </script>
+    </div>
+    <div id="section_ergebnis" style="display:none;">
+        <script type="text/javascript" language="JavaScript" >
+            function construct_results() {
+                var dom_div = document.createElement('div');
+                    dom_div.setAttribute("class","section_title");
+                    dom_div.appendChild(document.createTextNode("Ergebnisse:"));
+                document.getElementById('section_ergebnis').appendChild(dom_div);
+                var dom_table = document.createElement('table');
+                    dom_table.setAttribute("id","section_ergebnis_content");
+                    dom_table.setAttribute("class","ergebnisse");
+                    var dom_tbody = document.createElement('tbody');
+                        var dom_tr = document.createElement('tr');
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("colspan","3");
+                                dom_td.appendChild(document.createTextNode('Insgesamt:  ' + cc.ergebnis_gesamt + '  von 900 Punkten erreicht.'));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        var dom_tr = document.createElement('tr');
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("colspan","3");
+                                dom_td.appendChild(document.createTextNode('Abiturdurchschnitt:  ' + cc.ergebnis_durchschnitt));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        // Reihe Bereich-Titeln
+                        var dom_tr = document.createElement('tr');
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createTextNode('Bereich A'));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createTextNode('Bereich B'));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createTextNode('Bereich C'));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        // Reihe Bereichsergebnisse
+                        var dom_tr = document.createElement('tr');
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createTextNode(cc.bereichA.ergebnis + '  von 270 Punkten erreicht.'));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createTextNode(cc.bereichB.ergebnis + '  von 330 Punkten erreicht.'));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createTextNode(cc.bereichC.ergebnis + '  von 300 Punkten erreicht.'));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        // Reihe Details-Titel
+                        var dom_tr = document.createElement('tr');
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createElement("br"));
+                                dom_td.appendChild(document.createTextNode('Details:'));
+                                dom_td.appendChild(document.createElement("br"));
+                                dom_td.appendChild(document.createElement("br"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createElement("br"));
+                                dom_td.appendChild(document.createTextNode('Details:'));
+                                dom_td.appendChild(document.createElement("br"));
+                                dom_td.appendChild(document.createElement("br"));
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                dom_td.appendChild(document.createElement("br"));
+                                dom_td.appendChild(document.createTextNode('Details:'));
+                                dom_td.appendChild(document.createElement("br"));
+                                dom_td.appendChild(document.createElement("br"));
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                        // Reihe Details
+                        var dom_tr = document.createElement('tr');
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                var dom_table_A = document.createElement('table');
+                                    var dom_tbody_A = document.createElement('tbody');
+                                        var dom_tr_A = document.createElement('tr');
+                                            var dom_td_A = document.createElement('td');
+                                                dom_td_A.appendChild(document.createTextNode(""));
+                                            dom_tr_A.appendChild(dom_td_A);
+                                            var dom_td_A = document.createElement('td');
+                                                dom_td_A.appendChild(document.createTextNode(""));
+                                            dom_tr_A.appendChild(dom_td_A);
+                                        dom_tbody_A.appendChild(dom_tr_A);
+                                    dom_table_A.appendChild(dom_tbody_A);
+                                dom_td.appendChild(dom_table_A);
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                var dom_table_B = document.createElement('table');
+                                    var dom_tbody_B = document.createElement('tbody');
+                                        for(n1=1;n1<cc.bereichB.all.length;n1=n1+1) {
+                                            var dom_tr_B = document.createElement('tr');
+                                                var dom_td_B = document.createElement('td');
+                                                    dom_td_B.appendChild(document.createTextNode(cc.bereichB.all[n1].fachname));
+                                                dom_tr_B.appendChild(dom_td_B);
+                                                var dom_td_B = document.createElement('td');
+                                                    switch (cc.bereichB.all[n1].halbjahrno) {
+                                                        case 1: dom_td_B.appendChild(document.createTextNode("  11.1  ")); break;
+                                                        case 2: dom_td_B.appendChild(document.createTextNode("  11.2  ")); break;
+                                                        case 3: dom_td_B.appendChild(document.createTextNode("  12.1  ")); break;
+                                                        case 4: dom_td_B.appendChild(document.createTextNode("  12.2  ")); break;
+                                                        default: dom_td_B.appendChild(document.createTextNode("error")); break;
+                                                    }
+                                                dom_tr_B.appendChild(dom_td_B);
+                                                var dom_td_B = document.createElement('td');
+                                                    dom_td_B.appendChild(document.createTextNode(cc.bereichB.all[n1].note + ' Punkte'));
+                                                dom_tr_B.appendChild(dom_td_B);
+                                            dom_tbody_B.appendChild(dom_tr_B);
+                                        }
+                                    dom_table_B.appendChild(dom_tbody_B);
+                                dom_td.appendChild(dom_table_B);
+                            dom_tr.appendChild(dom_td);
+                            var dom_td = document.createElement('td');
+                                dom_td.setAttribute("class","ergebnisse");
+                                var dom_table_C = document.createElement('table');
+                                    var dom_tbody_C = document.createElement('tbody');
+                                        var dom_tr_C = document.createElement('tr');
+                                            var dom_td_C = document.createElement('td');
+                                                dom_td_C.appendChild(document.createTextNode(""));
+                                            dom_tr_C.appendChild(dom_td_C);
+                                            var dom_td_C = document.createElement('td');
+                                                dom_td_C.appendChild(document.createTextNode(""));
+                                            dom_tr_C.appendChild(dom_td_C);
+                                        dom_tbody_C.appendChild(dom_tr_C);
+                                    dom_table_C.appendChild(dom_tbody_C);
+                                dom_td.appendChild(dom_table_C);
+                            dom_tr.appendChild(dom_td);
+                        dom_tbody.appendChild(dom_tr);
+                    dom_table.appendChild(dom_tbody);
+                document.getElementById('section_ergebnis').appendChild(dom_table);
+            }
+        </script>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------- -->
+
+                                            <!-- end OF private CONTENT -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float:left; left:0px; overflow:hidden; position:relative; width:200px; margin-left:-50%;">
+                                <div style="padding:10px 0 0;">
+                                    <div style="margin:0 0 15px 0 !important; padding:5px; border:1px solid #ccc;background:#fff;">
+                                        <div style="margin:0 0 0 !important; padding-top:0 !important; min-height:33px; height:auto !important; height:33px; background:#213C84;">
+                                            <div class="title">
+                                                <div class="block_action"></div>
+                                                <h2 style="padding:0px 0px 0px 10px; font-size:12px; text-transform:uppercase; margin:0 !important; font-weight:400; color:#fff; padding-top:8px; text-shadow:1px -1px 1px #333;">Navigation</h2>
+                                            </div>
+                                        </div>
+                                        <div style="font-size:12px; font-weight:200; padding:10px 15px 15px;">
+                                            <ul style="padding-left:0; margin:0;">
+                                                <li style="overflow:hidden;">
+                                                    <p style="margin:3px 0px; text-align:left; padding-left:0;">
+                                                        Startseite
+                                                    </p>
+                                                    <ul style="padding-left:0; margin:0;">
+                                                        <li style="overflow:hidden; margin:0;">
+                                                            <p style="padding-left:18px;margin:3px 0px;text-align:left">Anwendungen</p>
+                                                            <ul style="padding-left:16px; margin:0;">
+                                                                <li style="overflow:hidden;">
+                                                                    <p style="font-weight:bold; padding-left:18px; margin:3px 0px; text-align:left;">OSPK</p>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span id="sb-1" class="skip-block-to"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF CONTENT -->
+            </div>
+            <br style="clear: both;">
+            <div style="height:40px; background:#213C84; margin-top:15px;"></div>
+        </div>
+    </body>
+</html>

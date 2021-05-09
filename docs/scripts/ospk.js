@@ -521,7 +521,9 @@ function BereichC() {
     }
 
 function BereichB() {
-    /* properties */
+    
+    /* init and reset method */
+    this.reset = function() {
         this.ergebnis = 0;
         this.fach4_3hj = 0;
         this.all = new Array();
@@ -537,8 +539,16 @@ function BereichB() {
         this.natwis = new Array();
         this.fr_nw = new Array();
         this.rest = new Array();
-        this.restCount = 22;
+        this.restCount = 19;
         this.ready_natwis = 0;
+    }
+    
+    // initialization
+    this.reset()
+    
+    // holdover from regular property definitions
+    // TODO: why 22 and not 19 ?
+    this.restCount = 22;
 
     /* methods */
         this.calculate = function() {
@@ -555,26 +565,6 @@ function BereichB() {
                 for (n3 = 0; n3 < this.all.length; n3 = n3 + 1) {
                     this.ergebnis = this.ergebnis + this.all[n3].note;
                 }
-        }
-
-        this.reset = function() {
-            this.ergebnis = 0;
-            this.fach4_3hj = 0;
-            this.all = new Array();
-            this.mat = new Array();
-            this.ung = new Array();
-            this.bk_mus = new Array();
-            this.ge = [0,0,0,0];
-            this.dge = new Array();
-            this.uge = new Array();
-            this.spo = new Array();
-            this.geswis = new Array();
-            this.frsp = new Array();
-            this.natwis = new Array();
-            this.fr_nw = new Array();
-            this.rest = new Array();
-            this.restCount = 19;
-            this.ready_natwis = 0;
         }
 
         this.readValues = function() {

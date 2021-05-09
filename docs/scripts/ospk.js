@@ -17,7 +17,7 @@ function oberstufenPunkteKalkulator() {
 
     /* methods */
         this.calculate = function() {
-            document.getElementById("button_calculate").value = this.text.recalculate[this.student.lang_no];
+            document.getElementById("button_calculate").value = i18n.recalculate[this.student.lang_no];
 
             // Konvertierung der Notenwerte zu Nummern erfolgt bei der Dateneingabe
 
@@ -304,7 +304,7 @@ function oberstufenPunkteKalkulator() {
 
         this.exportData = function() {
             var exportArray = new Array();
-            this.student.name = window.prompt(this.text.inputName[this.student.lang_no]);
+            this.student.name = window.prompt(i18n.inputName[this.student.lang_no]);
             exportArray.push(this.student.name);
             exportArray.push(this.student.zweig);
             exportArray.push(this.student.wahlArt);
@@ -386,7 +386,6 @@ function oberstufenPunkteKalkulator() {
 
     /* subobjects */
         this.student = new student;
-        this.text = new language_text;
         this.bereichA = new bereichA;
         this.bereichB = new bereichB;
         this.bereichC = new bereichC;

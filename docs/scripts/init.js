@@ -5,3 +5,5 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 cc = new oberstufenPunkteKalkulator();
+
+i18n = new language_text();

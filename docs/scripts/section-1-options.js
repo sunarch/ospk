@@ -5,13 +5,16 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function construct_options() {
+
     var dom_div = document.createElement('div');
         dom_div.setAttribute("class","section_title");
             dom_div.appendChild(document.createTextNode(cc.text.options_title[cc.student.lang_no]));
     document.getElementById('section_options').appendChild(dom_div);
+
     var dom_table = document.createElement('table');
         dom_table.setAttribute("id","section_options_content");
         var dom_tbody = document.createElement('tbody');
+
             // wahlArt (1)
                 var dom_tr = document.createElement('tr');
                     var dom_td = document.createElement('td');
@@ -37,8 +40,10 @@ function construct_options() {
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);
                 dom_tbody.appendChild(dom_tr);
+
             // 2 Pflichtwahlen nur für den deutschen Zweig
             if (cc.student.zweig == "de") {
+
                 // deWahlLang (2)
                     var dom_tr = document.createElement('tr');
                         var dom_td = document.createElement('td');
@@ -65,6 +70,7 @@ function construct_options() {
                             dom_td.appendChild(dom_select);
                         dom_tr.appendChild(dom_td);
                     dom_tbody.appendChild(dom_tr);
+
                 // deWahlNatWis (3)
                     var dom_tr = document.createElement('tr');
                         var dom_td = document.createElement('td');
@@ -96,6 +102,7 @@ function construct_options() {
                         dom_tr.appendChild(dom_td);
                     dom_tbody.appendChild(dom_tr);
             }
+
             // optionLang (4)
                 var dom_tr = document.createElement('tr');
                     var dom_td = document.createElement('td');
@@ -128,6 +135,7 @@ function construct_options() {
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);
                 dom_tbody.appendChild(dom_tr);
+
             // optionNatWis (5)
                 var dom_tr = document.createElement('tr');
                     var dom_td = document.createElement('td');
@@ -171,6 +179,7 @@ function construct_options() {
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);
                 dom_tbody.appendChild(dom_tr);
+
             // optionGesWis (6)
                 var dom_tr = document.createElement('tr');
                     var dom_td = document.createElement('td');
@@ -201,7 +210,9 @@ function construct_options() {
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);
                 dom_tbody.appendChild(dom_tr);
+
             //End of options
         dom_table.appendChild(dom_tbody);
+
     document.getElementById('section_options').appendChild(dom_table);
 }

@@ -63,6 +63,7 @@ function oberstufenPunkteKalkulator() {
             else if (301 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.9";}
             else {this.ergebnis_durchschnitt = "4.0";}
         }
+
         this.display = function(what) {
             switch(what) {
                 case "section_options":
@@ -99,9 +100,11 @@ function oberstufenPunkteKalkulator() {
                 default: break;
             }
         }
+
         this.useOption = function(optionId,optionValue) {
             document.getElementById(optionId).disabled = true;
             switch(optionId) {
+
                 case "wahlArt": // 1
                     this.student.wahlArt = optionValue;
                     this.optsready[1] = true;
@@ -117,6 +120,7 @@ function oberstufenPunkteKalkulator() {
                     if (this.student.zweig == "de") {document.getElementById("deWahlLang").disabled = false;}
                     else if (this.student.zweig == "hu") {document.getElementById("optionLang").disabled = false;}
                     break;
+
                 case "deWahlLang": // 2
                     this.student.deWahlLang = optionValue;
                     this.optsready[2] = true;
@@ -131,6 +135,7 @@ function oberstufenPunkteKalkulator() {
                     }
                     document.getElementById("deWahlNatWis").disabled = false;
                     break;
+
                 case "deWahlNatWis": // 3
                     this.student.deWahlNatWis = optionValue;
                     this.optsready[3] = true;
@@ -148,6 +153,7 @@ function oberstufenPunkteKalkulator() {
                     }
                     document.getElementById("optionLang").disabled = false;
                     break;
+
                 case "optionLang": // 4
                     this.student.optionLang = optionValue;
                     this.optsready[4] = true;
@@ -190,6 +196,7 @@ function oberstufenPunkteKalkulator() {
                     }
                     */
                     break;
+
                 case "optionNatWis": // 5
                     this.student.optionNatWis = optionValue;
                     this.optsready[5] = true;
@@ -221,6 +228,7 @@ function oberstufenPunkteKalkulator() {
                     }
                     document.getElementById("optionGesWis").disabled = false;
                     break;
+
                 case "optionGesWis": // 6
                     this.student.optionGesWis = optionValue;
                     this.optsready[6] = true;
@@ -238,11 +246,13 @@ function oberstufenPunkteKalkulator() {
                             break;
                     }
                     break;
+
                 default:
                     break;
             }
             this.display('section_inputs');
         }
+
         this.importData = function(importText) {
             var importArray = importText.split(",");
 
@@ -291,6 +301,7 @@ function oberstufenPunkteKalkulator() {
                 this.calculate();
                 this.display('section_results',true);
         }
+
         this.exportData = function() {
             var exportArray = new Array();
             this.student.name = window.prompt(this.text.inputName[this.student.lang_no]);
@@ -324,6 +335,7 @@ function oberstufenPunkteKalkulator() {
             document.getElementById("exportLink").download = "dsb_ospk_" + this.student.name + ".txt";
             document.getElementById("exportLink").href = "data:text/plain;base64," + btoa(exportText);
         }
+
         this.applyValuesToInputFields = function() {
             if (this.student.zweig == "hu") {
                 var abiFachWahlMin = 3;
@@ -352,6 +364,7 @@ function oberstufenPunkteKalkulator() {
                 }
             }
         }
+
         this.mark_results = function() {
             // reset Bereich B markings
             var field_id = "";
@@ -473,6 +486,7 @@ function bereichB() {
                     this.ergebnis = this.ergebnis + this.all[n3].note;
                 }
         }
+
         this.reset = function() {
             this.ergebnis = 0;
             this.fach4_3hj = 0;
@@ -492,74 +506,88 @@ function bereichB() {
             this.restCount = 19;
             this.ready_natwis = 0;
         }
+
         this.readValues = function() {
             for (n1=1;n1<cc.fach.length;n1=n1+1) {
+
                 if (cc.abiFach.indexOf(n1) == -1 && cc.fach[n1].active == true) {
                     switch (cc.fach[n1].type) {
+
                         case "mathematik":
                             this.mat.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.mat.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.mat.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.mat.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "ungarisch":
                             this.ung.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.ung.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.ung.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.ung.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "kunst_und_musik":
                             this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "geschichte":
                             this.dge.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.dge.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.dge.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.dge.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "ung_geschichte":
                             this.uge.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.uge.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.uge.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.uge.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "sport":
                             this.spo.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.spo.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.spo.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.spo.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "fremdsprache":
                             this.frsp.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.frsp.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.frsp.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.frsp.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "naturwissentschaft":
                             this.natwis.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.natwis.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.natwis.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.natwis.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         case "gesellschaftswissentschaft":
                             this.geswis.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
                             this.geswis.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
                             this.geswis.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
                             this.geswis.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
+
                         default:
                             break;
                     }
                 }
             }
         }
+
         this.geschichte = function() {
             // Auch im ungarischen Zweig wird ungarische Geschichte für den deutschen Abiturzeugnis nicht beachtet
             this.ge = this.dge;
         }
+
         this.selectGrades = function() {
             this.bk_mus.sort(function(a,b){return b.note-a.note});
             this.ge.sort(function(a,b){return b.note-a.note});
@@ -671,12 +699,15 @@ function student() {
             if(cc.student.zweig == "") {
                 cc.abiFach[1] = 1;
                 switch(zweig) {
+
                     case "de":
                         cc.student.zweig = "de";
                         cc.student.lang_no = 0;
                         cc.fach[11].active = false;
                         break;
-                    default: case "hu":
+
+                    default:
+                    case "hu":
                         cc.student.zweig = "hu";
                         cc.student.lang_no = 1;
                         cc.fach[14].active = false;

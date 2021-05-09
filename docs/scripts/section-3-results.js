@@ -5,10 +5,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function construct_results() {
+
     var dom_div = document.createElement('div');
         dom_div.setAttribute("class","section_title");
         dom_div.appendChild(document.createTextNode("Ergebnisse:"));
     document.getElementById('section_ergebnis').appendChild(dom_div);
+
     var dom_table = document.createElement('table');
         dom_table.setAttribute("id","section_ergebnis_content");
         dom_table.setAttribute("class","ergebnisse");
@@ -25,6 +27,7 @@ function construct_results() {
                     dom_td.appendChild(document.createTextNode('Abiturdurchschnitt:  ' + cc.ergebnis_durchschnitt));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             // Reihe Bereich-Titeln
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
@@ -40,6 +43,7 @@ function construct_results() {
                     dom_td.appendChild(document.createTextNode('Bereich C'));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             // Reihe Bereichsergebnisse
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
@@ -55,6 +59,7 @@ function construct_results() {
                     dom_td.appendChild(document.createTextNode(cc.bereichC.ergebnis + '  von 300 Punkten erreicht.'));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             // Reihe Details-Titel
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
@@ -79,6 +84,7 @@ function construct_results() {
                     dom_td.appendChild(document.createElement("br"));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             // Reihe Details
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');

@@ -5,10 +5,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function construct_inputs() {
+
     var dom_div = document.createElement('div');
         dom_div.setAttribute("class","section_title");
             dom_div.appendChild(document.createTextNode(cc.text.grades1112_title[cc.student.lang_no]));
         document.getElementById('section_inputs').appendChild(dom_div);
+
     var dom_table = document.createElement('table');
         dom_table.setAttribute("class","grades1112");
         var dom_tbody = document.createElement('tbody');
@@ -50,9 +52,11 @@ function construct_inputs() {
         dom_div.setAttribute("class","section_title");
             dom_div.appendChild(document.createTextNode(cc.text.examresults_title[cc.student.lang_no]));
         document.getElementById('section_inputs').appendChild(dom_div);
+
     var dom_table = document.createElement('table');
         dom_table.setAttribute("class","exams");
         var dom_tbody = document.createElement('tbody');
+
             var dom_tr = document.createElement('tr'); // 1. SCHRIFTLICHE PRÜFUNGSFACH
                 var dom_td = document.createElement('td');
                     dom_td.appendChild(document.createTextNode("1."));
@@ -86,6 +90,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode(cc.text.obligatory[cc.student.lang_no]));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             var dom_tr = document.createElement('tr'); // 2. SCHRIFTLICHE PRÜFUNGSFACH
                 var dom_td = document.createElement('td');
                     dom_td.appendChild(document.createTextNode("2."));
@@ -145,6 +150,7 @@ function construct_inputs() {
                     if(cc.student.zweig=="hu") {dom_td.appendChild(document.createTextNode(cc.text.obligatory[cc.student.lang_no]));}
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             var dom_tr = document.createElement('tr'); // 3. SCHRIFTLICHE PRÜFUNGSFACH
                 var dom_td = document.createElement('td');
                     dom_td.appendChild(document.createTextNode("3."));
@@ -203,6 +209,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode(" "));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
+
             var dom_tr = document.createElement('tr'); // MÜNDLICHES PRÜFUNGSFACH
                 var dom_td = document.createElement('td');
                     dom_td.appendChild(document.createTextNode("4."));
@@ -287,6 +294,7 @@ function construct_inputs() {
             dom_tbody.appendChild(dom_tr);
         dom_table.appendChild(dom_tbody);
     document.getElementById('section_inputs').appendChild(dom_table);
+
     dom_input = document.createElement('input');
         dom_input.setAttribute("id","button_calculate");
         dom_input.setAttribute("type","button");
@@ -294,6 +302,7 @@ function construct_inputs() {
         dom_input.setAttribute("class","send");
         dom_input.setAttribute("onClick","cc.calculate(); cc.display('section_results',true);");
     document.getElementById('section_inputs').appendChild(dom_input);
+
     dom_a = document.createElement('a');
         dom_a.setAttribute("id","exportLink");
         dom_input = document.createElement('input');

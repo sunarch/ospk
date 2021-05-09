@@ -100,10 +100,10 @@ function OberstufenPunkteKalkulator() {
 
                 // What we show
                 options_setup();
-                
+
                 // enable first question
                 document.getElementById("wahlArt").disabled = false
-                
+
                 document.getElementById('section_options').style.display = "block";
 
                 break;
@@ -203,19 +203,19 @@ function OberstufenPunkteKalkulator() {
 
                     default: break;
                 }
-                
+
                 // disable already chosen options in optionNatWis
-                
+
                 // Physik (Grundkurs)
                 if(this.fach[7].active) {
                     document.getElementById("fluidOptionPhy").disabled = true;
                 }
-                
+
                 // Biologie
                 if(this.fach[8].active) {
                     document.getElementById("fluidOptionBio").disabled = true;
                 }
-                
+
                 // Chemie
                 if(this.fach[9].active) {
                     document.getElementById("fluidOptionCh").disabled = true;
@@ -248,9 +248,9 @@ function OberstufenPunkteKalkulator() {
                         this.fach[5].active = false;
                         break;
                 }
-                
+
                 document.getElementById("optionNatWis").disabled = false;
-                
+
                 break;
 
             case "optionNatWis": // 5

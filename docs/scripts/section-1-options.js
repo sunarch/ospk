@@ -19,10 +19,10 @@ function options_setup() {
 
     // Musik
     document.getElementById("wahl_art_music").innerHTML = cc.fach[13].getFullName();
-    
+
     // select top (label) entry
     document.getElementById("wahlArt").options.selectedIndex = 0
-    
+
     // ensure disabled
     document.getElementById("wahlArt").disabled = true
 
@@ -43,10 +43,10 @@ function options_setup() {
 
         // Französisch
         document.getElementById("de_wahl_lang_fra").innerHTML = cc.fach[4].getFullName();
-        
+
         // select top (label) entry
         document.getElementById("deWahlLang").options.selectedIndex = 0
-        
+
         // ensure disabled
         document.getElementById("deWahlLang").disabled = true
 
@@ -66,10 +66,10 @@ function options_setup() {
 
         // Biologie und Chemie
         document.getElementById("de_wahl_nat_wis_bio_ch").innerHTML = cc.fach[8].getFullName() + " und " + cc.fach[9].getFullName();
-        
+
         // select top (label) entry
         document.getElementById("deWahlNatWis").options.selectedIndex = 0
-        
+
         // ensure disabled
         document.getElementById("deWahlNatWis").disabled = true
 
@@ -86,7 +86,7 @@ function options_setup() {
 
     // Französisch (hidden by default)
     document.getElementById("option_lang_fra").innerHTML = cc.fach[4].getFullName();
-    
+
     if (cc.student.zweig == "hu") {
         document.getElementById('option_lang_fra').style.display = "initial";
     }
@@ -96,7 +96,7 @@ function options_setup() {
 
     // select top (label) entry
     document.getElementById("optionLang").options.selectedIndex = 0
-    
+
     // ensure disabled
     document.getElementById("optionLang").disabled = true
 
@@ -115,34 +115,27 @@ function options_setup() {
     // Physik Leistungskurs
     document.getElementById("option_nat_wis_phy_lk").innerHTML = i18n.get("answer_physikLk");
 
-    // Biologie, Chemie
+    // Biologie
+    // standard id would be: option_nat_wis_bio
+
+    document.getElementById("fluidOptionBio").innerHTML = cc.fach[8].getFullName();
+
     if (cc.student.zweig == "de") {
-        dom_select = document.getElementById("optionNatWis");
-
-        // Biologie
-
-        var dom_option = document.createElement('option');
-            dom_option.setAttribute("id", "fluidOptionBio");
-            // standard id would be: option_nat_wis_bio
-            dom_option.setAttribute("value", "8"); // Biologie
-        dom_select.appendChild(dom_option);
-
-        document.getElementById("fluidOptionBio").innerHTML = cc.fach[8].getFullName();
-
-        // Chemie
-
-        var dom_option = document.createElement('option');
-            dom_option.setAttribute("id", "fluidOptionCh");
-            // standard id would be: option_nat_wis_ch
-            dom_option.setAttribute("value", "9"); // Chemie
-        dom_select.appendChild(dom_option);
-
-        document.getElementById("fluidOptionCh").innerHTML = cc.fach[9].getFullName();
+        document.getElementById('fluidOptionBio').style.display = "initial";
     }
-    
+
+    // Chemie
+    // standard id would be: option_nat_wis_ch
+
+    document.getElementById("fluidOptionCh").innerHTML = cc.fach[9].getFullName();
+
+    if (cc.student.zweig == "de") {
+        document.getElementById('fluidOptionCh').style.display = "initial";
+    }
+
     // select top (label) entry
     document.getElementById("optionNatWis").options.selectedIndex = 0
-    
+
     // ensure disabled
     document.getElementById("optionNatWis").disabled = true
 
@@ -160,10 +153,10 @@ function options_setup() {
 
     // Ethik (oder Religion)
     document.getElementById("option_ges_wis_eth").innerHTML = cc.fach[17].getFullName();
-    
+
     // select top (label) entry
     document.getElementById("optionGesWis").options.selectedIndex = 0
-    
+
     // ensure disabled
     document.getElementById("optionGesWis").disabled = true
 

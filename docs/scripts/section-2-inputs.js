@@ -8,7 +8,7 @@ function construct_inputs() {
 
     var dom_div = document.createElement('div');
         dom_div.setAttribute("class","section_title");
-            dom_div.appendChild(document.createTextNode(i18n.grades1112_title[cc.student.lang_no]));
+            dom_div.appendChild(document.createTextNode(i18n.get("grades1112_title")));
         document.getElementById('section_inputs').appendChild(dom_div);
 
     var dom_table = document.createElement('table');
@@ -19,7 +19,7 @@ function construct_inputs() {
                 for(n1=0;n1<=4;n1=n1+1) {
                     var dom_td = document.createElement('td');
                         dom_td.setAttribute("class","grades1112_headers");
-                        dom_td.appendChild(document.createTextNode(i18n.grades1112_headers[cc.student.lang_no][n1]));
+                        dom_td.appendChild(document.createTextNode(i18n.get("grades1112_headers")[n1]));
                     dom_tr.appendChild(dom_td);
                 }
             dom_tbody.appendChild(dom_tr);
@@ -50,7 +50,7 @@ function construct_inputs() {
 
     var dom_div = document.createElement('div');
         dom_div.setAttribute("class","section_title");
-            dom_div.appendChild(document.createTextNode(i18n.examresults_title[cc.student.lang_no]));
+            dom_div.appendChild(document.createTextNode(i18n.get("examresults_title")));
         document.getElementById('section_inputs').appendChild(dom_div);
 
     var dom_table = document.createElement('table');
@@ -62,7 +62,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode("1."));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.appendChild(document.createTextNode(i18n.written[cc.student.lang_no]));
+                    dom_td.appendChild(document.createTextNode(i18n.get("written")));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
                     dom_td.appendChild(document.createTextNode(cc.fach[1].fullName[cc.student.lang_no]));
@@ -87,7 +87,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode("  NP"));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.appendChild(document.createTextNode(i18n.obligatory[cc.student.lang_no]));
+                    dom_td.appendChild(document.createTextNode(i18n.get("obligatory")));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
 
@@ -96,7 +96,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode("2."));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.appendChild(document.createTextNode(i18n.written[cc.student.lang_no]));
+                    dom_td.appendChild(document.createTextNode(i18n.get("written")));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
                     switch(cc.student.zweig) {
@@ -106,7 +106,7 @@ function construct_inputs() {
                                 dom_select.setAttribute("onChange","tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();");
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","0");
-                                    dom_option.appendChild(document.createTextNode(i18n.answer_toChoose[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","3"); //Englisch
@@ -147,7 +147,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode("  NP"));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    if(cc.student.zweig=="hu") {dom_td.appendChild(document.createTextNode(i18n.obligatory[cc.student.lang_no]));}
+                    if(cc.student.zweig=="hu") {dom_td.appendChild(document.createTextNode(i18n.get("obligatory")));}
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
 
@@ -156,7 +156,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode("3."));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.appendChild(document.createTextNode(i18n.written[cc.student.lang_no]));
+                    dom_td.appendChild(document.createTextNode(i18n.get("written")));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
                     var dom_select = document.createElement('select');
@@ -164,7 +164,7 @@ function construct_inputs() {
                         dom_select.setAttribute("onChange","tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();");
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","0");
-                            dom_option.appendChild(document.createTextNode(i18n.answer_toChoose[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","6"); //Mathematik
@@ -215,7 +215,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode("4."));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.appendChild(document.createTextNode(i18n.oral[cc.student.lang_no]));
+                    dom_td.appendChild(document.createTextNode(i18n.get("oral")));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
                     var dom_select = document.createElement('select');
@@ -223,7 +223,7 @@ function construct_inputs() {
                         dom_select.setAttribute("onChange","tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();");
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","0");
-                            dom_option.appendChild(document.createTextNode(i18n.answer_toChoose[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","3"); //Englisch
@@ -298,7 +298,7 @@ function construct_inputs() {
     dom_input = document.createElement('input');
         dom_input.setAttribute("id","button_calculate");
         dom_input.setAttribute("type","button");
-        dom_input.setAttribute("value",i18n.calculate[cc.student.lang_no]);
+        dom_input.setAttribute("value",i18n.get("calculate"));
         dom_input.setAttribute("class","send");
         dom_input.setAttribute("onClick","cc.calculate(); cc.display('section_results',true);");
     document.getElementById('section_inputs').appendChild(dom_input);
@@ -308,7 +308,7 @@ function construct_inputs() {
         dom_input = document.createElement('input');
             dom_input.setAttribute("type","button");
             dom_input.setAttribute("onClick","cc.exportData();");
-            dom_input.setAttribute("value",i18n.exportData[cc.student.lang_no]);
+            dom_input.setAttribute("value",i18n.get("exportData"));
         dom_a.appendChild(dom_input);
     document.getElementById('section_inputs').appendChild(dom_a);
 }

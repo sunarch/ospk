@@ -7,7 +7,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 /* MAIN OBJECT constructor function ----------------------------------*/
 
 function OberstufenPunkteKalkulator() {
-    
+
     /* properties -*/
 
     // indicates whether the options have been selected
@@ -17,9 +17,9 @@ function OberstufenPunkteKalkulator() {
     this.ergebnis_durchschnitt = "0";
 
     /* methods */
-    
+
     this.calculate = function() {
-        
+
         document.getElementById("button_calculate").value = i18n.get("recalculate");
 
         // Konvertierung der Notenwerte zu Nummern erfolgt bei der Dateneingabe
@@ -33,13 +33,13 @@ function OberstufenPunkteKalkulator() {
         // Gesamtergebnis
 
         this.ergebnis_gesamt = this.bereichA.ergebnis + this.bereichB.ergebnis + this.bereichC.ergebnis;
-        
+
         this.ergebnis_durchschnitt = this.calculateAverage(this.ergebnis_gesamt)
 
     }
 
     this.calculateAverage = function(n_ergebnis_gesamt) {
-        
+
         if (n_ergebnis_gesamt >= 823) {return "1.0";}
         if (n_ergebnis_gesamt >= 805) {return "1.1";}
         if (n_ergebnis_gesamt >= 787) {return "1.2";}
@@ -50,7 +50,7 @@ function OberstufenPunkteKalkulator() {
         if (n_ergebnis_gesamt >= 697) {return "1.7";}
         if (n_ergebnis_gesamt >= 679) {return "1.8";}
         if (n_ergebnis_gesamt >= 661) {return "1.9";}
-        
+
         if (n_ergebnis_gesamt >= 643) {return "2.0";}
         if (n_ergebnis_gesamt >= 625) {return "2.1";}
         if (n_ergebnis_gesamt >= 607) {return "2.2";}
@@ -61,7 +61,7 @@ function OberstufenPunkteKalkulator() {
         if (n_ergebnis_gesamt >= 517) {return "2.7";}
         if (n_ergebnis_gesamt >= 499) {return "2.8";}
         if (n_ergebnis_gesamt >= 481) {return "2.9";}
-        
+
         if (n_ergebnis_gesamt >= 463) {return "3.0";}
         if (n_ergebnis_gesamt >= 445) {return "3.1";}
         if (n_ergebnis_gesamt >= 427) {return "3.2";}
@@ -72,7 +72,7 @@ function OberstufenPunkteKalkulator() {
         if (n_ergebnis_gesamt >= 337) {return "3.7";}
         if (n_ergebnis_gesamt >= 319) {return "3.8";}
         if (n_ergebnis_gesamt >= 301) {return "3.9";}
-        
+
         return "4.0";
     }
 
@@ -99,10 +99,13 @@ function OberstufenPunkteKalkulator() {
                 }
 
                 // What we show
-                if(!document.getElementById("section_options_content")) {
-                    construct_options();
-                    document.getElementById('section_options').style.display = "block";
-                }
+                options_setup();
+                
+                // enable first question
+                document.getElementById("wahlArt").disabled = false
+                
+                document.getElementById('section_options').style.display = "block";
+
                 break;
 
             case "section_inputs":
@@ -127,7 +130,7 @@ function OberstufenPunkteKalkulator() {
     }
 
     this.useOption = function(optionId,optionValue) {
-        
+
         document.getElementById(optionId).disabled = true;
 
         switch(optionId) {
@@ -326,7 +329,7 @@ function OberstufenPunkteKalkulator() {
     }
 
     this.importData = function(importText) {
-        
+
         var importArray = importText.split(",");
 
         for (n1 = 8; n1 < importArray.length; n1 = n1 + 1) {
@@ -353,17 +356,17 @@ function OberstufenPunkteKalkulator() {
         this.useOption("optionGesWis", importArray[7]);
 
         // Inputs
-        
+
         // Abiturfächer
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
             this.abiFach[n1] = importArray[7 + n1];
         }
-        
+
         // Abiturnoten
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
             this.abiNote[n1] = importArray[11 + n1];
         }
-        
+
         // Noten aller Fächer
         for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {
             this.fach[n1].note[1] = importArray[15 + ((n1 - 1) * 4) + 1];
@@ -379,10 +382,10 @@ function OberstufenPunkteKalkulator() {
     }
 
     this.exportData = function() {
-        
+
         var exportArray = new Array();
         this.student.name = window.prompt(i18n.get("inputName"));
-        
+
         exportArray.push(this.student.name);
         exportArray.push(this.student.zweig);
         exportArray.push(this.student.wahlArt);
@@ -472,7 +475,7 @@ function OberstufenPunkteKalkulator() {
     }
 
     /* subobjects */
-    
+
     this.student = new Student;
     this.bereichA = new BereichA;
     this.bereichB = new BereichB;
@@ -505,16 +508,16 @@ function OberstufenPunkteKalkulator() {
 /* SUBOBJECTS - constructors -----------------------------------------*/
 
 function BereichA() {
-    
+
     /* properties */
-    
+
     this.ergebnis = 0;
     this.fach1Noten = 0;
     this.fach2Noten = 0;
     this.fach3Noten = 0;
 
     /* methods */
-    
+
     this.calculate = function() {
         // 3 Noten in den schriftlichen Prüfungsfächern aus 11.1, 11.2 und 12.1
             this.fach1Noten = cc.fach[cc.abiFach[1]].note[1] + cc.fach[cc.abiFach[1]].note[2] + cc.fach[cc.abiFach[1]].note[3];
@@ -526,15 +529,15 @@ function BereichA() {
 }
 
 function BereichC() {
-    
+
     /* properties */
-    
+
     this.ergebnis = 0;
     this.kursNoten = 0;
     this.pruefungsNoten = 0;
 
     /* methods */
-    
+
     this.calculate = function() {
         // 4 Noten aus 12.2 in den Prüfungsfächern; Gewichtungsfaktor 1
             this.kursNoten = cc.fach[cc.abiFach[1]].note[4] + cc.fach[cc.abiFach[2]].note[4] + cc.fach[cc.abiFach[3]].note[4] + cc.fach[cc.abiFach[4]].note[4];
@@ -547,10 +550,10 @@ function BereichC() {
 }
 
 function BereichB() {
-    
+
     // init and reset method
     this.reset = function() {
-        
+
         this.ergebnis = 0;
         this.fach4_3hj = 0;
         this.all = new Array();
@@ -569,28 +572,28 @@ function BereichB() {
         this.restCount = 19;
         this.ready_natwis = 0;
     }
-    
+
     // initialization
     this.reset()
-    
+
     // holdover from regular property definitions
     // TODO: why 22 and not 19 ?
     this.restCount = 22;
 
     /* methods */
-    
+
     this.calculate = function() {
-        
+
         this.reset();
         this.readValues();
         this.geschichte();
         this.selectGrades();
-        
+
         // 3 Noten des mündlichen Prüfungsfachs aus 11.1, 11.2, 11.3
         for (n1 = 1; n1 <= 3; n1 = n1 + 1) {
             this.fach4_3hj = this.fach4_3hj + cc.fach[cc.abiFach[4]].note[n1];
         }
-            
+
         // Summieren der Ergebnisse
         this.ergebnis = this.fach4_3hj;
         for (n3 = 0; n3 < this.all.length; n3 = n3 + 1) {
@@ -599,7 +602,7 @@ function BereichB() {
     }
 
     this.readValues = function() {
-        
+
         for (n1 = 1; n1 < cc.fach.length; n1 = n1 + 1) {
 
             if (cc.abiFach.indexOf(n1) == -1 && cc.fach[n1].active == true) {
@@ -676,18 +679,18 @@ function BereichB() {
     }
 
     this.geschichte = function() {
-        
+
         // Auch im ungarischen Zweig wird ungarische Geschichte für den deutschen Abiturzeugnis nicht beachtet
         this.ge = this.dge;
     }
-    
+
     this.compareByNote = function(a, b) {
-        
+
         return b.note - a.note
     }
 
     this.selectGrades = function() {
-        
+
         this.bk_mus.sort(this.compareByNote);
         this.ge.sort(this.compareByNote);
         this.spo.sort(this.compareByNote);
@@ -717,7 +720,7 @@ function BereichB() {
         // mindestens | 3 | Musik oder Kunst
         this.all = this.all.concat(this.bk_mus.slice(0, 3));
         this.rest.push(this.bk_mus[3]);
-            
+
         // mindestens | 2 | Geschichte
         this.all = this.all.concat(this.ge.slice(0, 2));
         this.geswis = this.geswis.concat(this.ge.slice(2));
@@ -744,25 +747,25 @@ function BereichB() {
                 // mindestens | 4 | aus Naturwissentschaften
                 // schon eingerechnet
                 this.fr_nw = this.fr_nw.concat(this.natwis);
-                    
+
                 // mindestens | 6 | zusätzlich aus Fremdsprachen oder Naturwissentschaften
                 // 4 aus Naturwissentschaften schon eingerechnet
                 this.fr_nw.sort(this.compareByNote);
                 this.all = this.all.concat(this.fr_nw.slice(0, 2));
                 this.rest = this.rest.concat(this.fr_nw.slice(2));
-                
+
                 break;
 
             case 1:
                 // mindestens | 4 | aus Naturwissentschaften
                 // schon eingerechnet
                 this.fr_nw = this.fr_nw.concat(this.natwis);
-                    
+
                 // mindestens | 6 | zusätzlich aus Fremdsprachen oder Naturwissentschaften
                 this.fr_nw.sort(this.compareByNote);
                 this.all = this.all.concat(this.fr_nw.slice(0, 6));
                 this.rest = this.rest.concat(this.fr_nw.slice(6));
-                
+
                 break;
 
             default:
@@ -770,20 +773,20 @@ function BereichB() {
                 // mindestens | 4 | aus Naturwissentschaften
                 this.all = this.all.concat(this.natwis.slice(0, 4));
                 this.fr_nw = this.fr_nw.concat(this.natwis.slice(4));
-                    
+
                 // mindestens | 6 | zusätzlich aus Fremdsprachen oder Naturwissentschaften
                 this.fr_nw.sort(this.compareByNote);
                 this.all = this.all.concat(this.fr_nw.slice(0, 6));
                 this.rest = this.rest.concat(this.fr_nw.slice(6));
-                
+
                 break;
         }
-        
+
         // Restliche Fächer
-        
+
         // Sport
         this.rest = this.rest.concat(this.spo.slice(0, 3));
-                
+
         // Auswahl der restlichen Noten
         this.rest.sort(this.compareByNote);
         if (this.all.length < this.restCount) {
@@ -796,9 +799,9 @@ function BereichB() {
 }
 
 function Student() {
-    
+
     /* properties */
-    
+
     this.name = "";
     this.zweig = "";
 
@@ -812,7 +815,7 @@ function Student() {
     this.optionGesWis = "0";
 
     /* methods */
-    
+
     this.set_zweig = function(zweig) {
         if(cc.student.zweig == "") {
             cc.abiFach[1] = 1;
@@ -842,16 +845,16 @@ function Student() {
 }
 
 function Fach(name, type) {
-    
+
     /* properties */
-    
+
     this.name = name;
     this.type = type;
     this.active = true;
     this.note = [0,0,0,0,0];
 
     /* methods */
-    
+
     this.getFullName = function() {
         return i18n.getSubject(this.name);
     }
@@ -859,9 +862,9 @@ function Fach(name, type) {
 }
 
 function BbHalbjahr(fachname, halbjahrno, note) {
-    
+
     /* properties */
-    
+
     this.fachname = fachname;
     this.halbjahrno = halbjahrno;
     this.note = note;

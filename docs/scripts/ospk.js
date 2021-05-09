@@ -657,15 +657,19 @@ function BereichB() {
             // Auch im ungarischen Zweig wird ungarische Geschichte für den deutschen Abiturzeugnis nicht beachtet
             this.ge = this.dge;
         }
+        
+        this.compareByNote = function(a, b) {
+            return b.note - a.note
+        }
 
         this.selectGrades = function() {
-            this.bk_mus.sort(function(a, b){return b.note-a.note});
-            this.ge.sort(function(a, b){return b.note-a.note});
-            this.spo.sort(function(a, b){return b.note-a.note});
-            this.geswis.sort(function(a, b){return b.note-a.note});
-            this.frsp.sort(function(a, b){return b.note-a.note});
-            this.natwis.sort(function(a, b){return b.note-a.note});
-            this.fr_nw.sort(function(a, b){return b.note-a.note});
+            this.bk_mus.sort(this.compareByNote);
+            this.ge.sort(this.compareByNote);
+            this.spo.sort(this.compareByNote);
+            this.geswis.sort(this.compareByNote);
+            this.frsp.sort(this.compareByNote);
+            this.natwis.sort(this.compareByNote);
+            this.fr_nw.sort(this.compareByNote);
 
             if (cc.fach[cc.abiFach[3]].type == "naturwissentschaft") {
                 this.ready_natwis = 1;
@@ -694,14 +698,14 @@ function BereichB() {
                     this.geswis = this.geswis.concat(this.ge.slice(2));
 
                 // mindestens | 2 | zusätzlich aus Geschichte, Sozialkunde, Ethik, Erdkunde
-                    this.geswis.sort(function(a, b){return b.note-a.note});
+                    this.geswis.sort(this.compareByNote);
                     this.all = this.all.concat(this.geswis.slice(0, 2));
                     this.rest = this.rest.concat(this.geswis.slice(2));
 
                 // DT-ZWEIG: mindestens | 4 | aus Fremdsprachen  ||  UNG-ZWEIG: alle 4 aus Ungarisch: bereits eingerechnet
                     if (cc.student.zweig == "de") {
                         this.frsp = this.all.concat(this.ung);
-                        this.frsp.sort(function(a, b){return b.note-a.note});
+                        this.frsp.sort(this.compareByNote);
                         this.all = this.all.concat(this.frsp.slice(0, 4));
                         this.fr_nw = this.fr_nw.concat(this.frsp.slice(4));
                     }
@@ -717,7 +721,7 @@ function BereichB() {
                             this.fr_nw = this.fr_nw.concat(this.natwis);
                         // mindestens | 6 | zusätzlich aus Fremdsprachen oder Naturwissentschaften
                             // 4 aus Naturwissentschaften schon eingerechnet
-                            this.fr_nw.sort(function(a, b){return b.note-a.note});
+                            this.fr_nw.sort(this.compareByNote);
                             this.all = this.all.concat(this.fr_nw.slice(0, 2));
                             this.rest = this.rest.concat(this.fr_nw.slice(2));
                         break;
@@ -727,7 +731,7 @@ function BereichB() {
                             // schon eingerechnet
                             this.fr_nw = this.fr_nw.concat(this.natwis);
                         // mindestens | 6 | zusätzlich aus Fremdsprachen oder Naturwissentschaften
-                            this.fr_nw.sort(function(a, b){return b.note-a.note});
+                            this.fr_nw.sort(this.compareByNote);
                             this.all = this.all.concat(this.fr_nw.slice(0, 6));
                             this.rest = this.rest.concat(this.fr_nw.slice(6));
                         break;
@@ -738,7 +742,7 @@ function BereichB() {
                             this.all = this.all.concat(this.natwis.slice(0, 4));
                             this.fr_nw = this.fr_nw.concat(this.natwis.slice(4));
                         // mindestens | 6 | zusätzlich aus Fremdsprachen oder Naturwissentschaften
-                            this.fr_nw.sort(function(a, b){return b.note-a.note});
+                            this.fr_nw.sort(this.compareByNote);
                             this.all = this.all.concat(this.fr_nw.slice(0, 6));
                             this.rest = this.rest.concat(this.fr_nw.slice(6));
                         break;
@@ -747,7 +751,7 @@ function BereichB() {
                     // Sport
                         this.rest = this.rest.concat(this.spo.slice(0, 3));
                     // Auswahl der restlichen Noten
-                        this.rest.sort(function(a, b){return b.note-a.note});
+                        this.rest.sort(this.compareByNote);
                         if (this.all.length < this.restCount) {
                             this.restCount = this.restCount - this.all.length;
                             this.all = this.all.concat(this.rest.slice(0, this.restCount));

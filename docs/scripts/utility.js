@@ -4,29 +4,31 @@ License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-function validate(what,type) {
-    var gradesallowed = ["0",
-                         "1",   "2",  "3",
-                         "4",   "5",  "6",
-                         "7",   "8",  "9",
-                         "10", "11", "12",
-                         "13", "14", "15"
-                        ]
+valid = {
 
-    switch (type) {
+    grade: function(n_grade) {
+        var gradesAllowed = ["0",
+                             "1",   "2",  "3",
+                             "4",   "5",  "6",
+                             "7",   "8",  "9",
+                             "10", "11", "12",
+                             "13", "14", "15"
+                            ]
 
-        case 'grade':
-            var grade = what.value;
 
-            if (gradesallowed.indexOf(grade) == -1) {
-                what.value = "";
-                return false;
-            }
-            else {
-                return true;
-            }
+        if (gradesAllowed.indexOf(n_grade) == -1) {
+            return false;
+        }
 
-            break;
+        return true;
+
+    }
+    
+}
+
+function validateGradeField(o_domInput) {
+    if (!valid.grade(o_domInput.value)) {
+        o_domInput.value = "";
     }
 }
 

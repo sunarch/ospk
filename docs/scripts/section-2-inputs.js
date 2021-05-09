@@ -36,7 +36,7 @@ function construct_inputs() {
                                     var dom_input = document.createElement('input');
                                         dom_input.setAttribute("id", "input_" + cc.fach[n1].name + "_note_" + n2);
                                         dom_input.setAttribute("class", "grades1112");
-                                        dom_input.setAttribute("onChange", "if(validate(this,'grade')){tempNum = new Number(this.value); cc.fach[" + n1 + "].note[" + n2 + "] = tempNum.valueOf();}");
+                                        dom_input.setAttribute("onChange", "if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[" + n1 + "].note[" + n2 + "] = tempNum.valueOf();}");
                                 dom_td.appendChild(dom_input);
                         dom_tr.appendChild(dom_td);
                             }
@@ -83,7 +83,7 @@ function construct_inputs() {
                         dom_input.setAttribute("type", "text");
                         dom_input.setAttribute("class", "exam_points");
                         dom_input.setAttribute("maxlength", "2");
-                        dom_input.setAttribute("onChange", "if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}");
+                        dom_input.setAttribute("onChange", "if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}");
                     dom_td.appendChild(dom_input);
                     dom_td.appendChild(document.createTextNode("  NP"));
                 dom_tr.appendChild(dom_td);
@@ -144,7 +144,7 @@ function construct_inputs() {
                         dom_input.setAttribute("type", "text");
                         dom_input.setAttribute("class", "exam_points");
                         dom_input.setAttribute("maxlength", "2");
-                        dom_input.setAttribute("onChange", "if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}");
+                        dom_input.setAttribute("onChange", "if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}");
                     dom_td.appendChild(dom_input);
                     dom_td.appendChild(document.createTextNode("  NP"));
                 dom_tr.appendChild(dom_td);
@@ -204,7 +204,7 @@ function construct_inputs() {
                         dom_input.setAttribute("type", "text");
                         dom_input.setAttribute("class", "exam_points");
                         dom_input.setAttribute("maxlength", "2");
-                        dom_input.setAttribute("onChange", "if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}");
+                        dom_input.setAttribute("onChange", "if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}");
                     dom_td.appendChild(dom_input);
                     dom_td.appendChild(document.createTextNode("  NP"));
                 dom_tr.appendChild(dom_td);
@@ -288,7 +288,7 @@ function construct_inputs() {
                         dom_input.setAttribute("type", "text");
                         dom_input.setAttribute("class", "exam_points");
                         dom_input.setAttribute("maxlength", "3");
-                        dom_input.setAttribute("onChange", "if(validate(this,'grade')){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}");
+                        dom_input.setAttribute("onChange", "if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}");
                     dom_td.appendChild(dom_input);
                     dom_td.appendChild(document.createTextNode("  NP"));
                 dom_tr.appendChild(dom_td);

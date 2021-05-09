@@ -4,18 +4,18 @@ License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-/*-- Definitions of the Object "oberstufenPunkteKalkulator" for the control of the functionalities --*/
+/* Definitions of the Object "oberstufenPunkteKalkulator" for the control of the functionalities */
 
-//////////*- MAIN OBJECT constructor function -*//////////
+/* MAIN OBJECT constructor function ----------------------------------*/
 
 function oberstufenPunkteKalkulator() {
-    /////*- Properties -*/////
+    /* properties -*/
         this.optsready = ["option_completition",false,false,false,false,false,false]; // indicates whether the options have been selected
 
         this.ergebnis_gesamt = 0;
         this.ergebnis_durchschnitt = "0";
 
-    /////*- Methods -*/////
+    /* methods */
         this.calculate = function() {
             document.getElementById("button_calculate").value = this.text.recalculate[this.student.lang_no];
 
@@ -384,7 +384,7 @@ function oberstufenPunkteKalkulator() {
                 }
         }
 
-    /////*- Subobjects -*/////
+    /* subobjects */
         this.student = new student;
         this.text = new language_text;
         this.bereichA = new bereichA;
@@ -413,16 +413,16 @@ function oberstufenPunkteKalkulator() {
         this.abiNote = ["Noten",0,0,0,0];
     }
 
-//////////*- SUBOBJECTS - constructors -*//////////
+/* SUBOBJECTS - constructors -----------------------------------------*/
 
 function bereichA() {
-    /////*- Properties -*/////
+    /* properties */
         this.ergebnis = 0;
         this.fach1Noten = 0;
         this.fach2Noten = 0;
         this.fach3Noten = 0;
 
-    /////*- Methods -*/////
+    /* methods */
         this.calculate = function() {
             // 3 Noten in den schriftlichen Prüfungsfächern aus 11.1, 11.2 und 12.1
                 this.fach1Noten = cc.fach[cc.abiFach[1]].note[1] + cc.fach[cc.abiFach[1]].note[2] + cc.fach[cc.abiFach[1]].note[3];
@@ -434,12 +434,12 @@ function bereichA() {
     }
 
 function bereichC() {
-    /////*- Properties -*/////
+    /* properties */
         this.ergebnis = 0;
         this.kursNoten = 0;
         this.pruefungsNoten = 0;
 
-    /////*- Methods -*/////
+    /* methods */
         this.calculate = function() {
             // 4 Noten aus 12.2 in den Prüfungsfächern; Gewichtungsfaktor 1
                 this.kursNoten = cc.fach[cc.abiFach[1]].note[4] + cc.fach[cc.abiFach[2]].note[4] + cc.fach[cc.abiFach[3]].note[4] + cc.fach[cc.abiFach[4]].note[4];
@@ -451,7 +451,7 @@ function bereichC() {
     }
 
 function bereichB() {
-    /////*- Properties -*/////
+    /* properties */
         this.ergebnis = 0;
         this.fach4_3hj = 0;
         this.all = new Array();
@@ -470,7 +470,7 @@ function bereichB() {
         this.restCount = 22;
         this.ready_natwis = 0;
 
-    /////*- Methods -*/////
+    /* methods */
         this.calculate = function() {
             this.reset();
             this.readValues();
@@ -680,7 +680,7 @@ function bereichB() {
     }
 
 function student() {
-    /////*- Properties -*/////
+    /* properties */
         this.name = "";
         this.zweig = "";
         this.lang_no = 0;  // 0: de ; 1: hu
@@ -694,7 +694,7 @@ function student() {
         this.optionNatWis = "0";
         this.optionGesWis = "0";
 
-    /////*- Methods -*/////
+    /* methods */
         this.set_zweig = function(zweig) {
             if(cc.student.zweig == "") {
                 cc.abiFach[1] = 1;
@@ -724,7 +724,7 @@ function student() {
     }
 
 function language_text() {
-    /////*- Properties -*/////
+    /* properties */
         this.options_title = ["Optionen:","Opciók:"];
         this.question_wahlArt = ["Bildende Kunst oder Musik?","Mûvészeti tantárgy:"];
         this.question_deWahlLang = ["Pflichtwahlsprache:","Kötelezõen választható nyelv:"];
@@ -747,33 +747,30 @@ function language_text() {
         this.inputName = ["Namen eingeben:","Adja meg a nevét:"];
         this.exportData = ["Daten exportieren","Adatok exportálása"];
 
-    /////*- Methods -*/////
-
+    /* no methods */
     }
 
 function fach(name,fullNameDe,fullNameHu,type) {
-    /////*- Properties -*/////
+    /* properties */
         this.name = name;
         this.fullName = [fullNameDe,fullNameHu];
         this.type = type;
         this.active = true;
         this.note = [0,0,0,0,0];
 
-    /////*- Methods -*/////
-
+    /* no methods */
     }
 
 function bb_halbjahr(fachname,halbjahrno,note) {
-    /////*- Properties -*/////
+    /* properties */
         this.fachname = fachname;
         this.halbjahrno = halbjahrno;
         this.note = note;
 
-    /////*- Methods -*/////
-
+    /* no methods */
     }
 
-//////////*- Other functions -*//////////
+/* other functions ---------------------------------------------------*/
 
 function validate(what,type) {
     var gradesallowed = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
@@ -788,9 +785,8 @@ function validate(what,type) {
             break;
     }
 }
-/*-------------------------------------------------*/
 
-//////////*- Deprecated functions -*//////////
+/* deprecated functions ----------------------------------------------*/
 
 /*
 function changeinputbg(what,isactive)
@@ -801,7 +797,8 @@ function changeinputbg(what,isactive)
 }
 */
 
-//////////*- Adapted functions (Nspire Basic) -*//////////
+/* adapted functions (Nspire Basic) ----------------------------------*/
+
 /*
 function sum(lista) {
     var x = 0;

@@ -391,23 +391,23 @@ function oberstufenPunkteKalkulator() {
         this.bereichC = new bereichC;
 
         this.fach = ["Kursliste", // fach(Kürzel,Dt.Name,Ung.Name,Typ)
-                        new fach("dt","Deutsch","Német","deutsch"), /* ID 1 */
-                        new fach("ung","UZ","Magyar","ungarisch"), /* ID 2 */
-                        new fach("eng","Englisch","Angol","fremdsprache"), /* ID 3 */
-                        new fach("frz","Französisch","Francia","fremdsprache"), /* ID 4 */
-                        new fach("spa","Spanisch","Spanyol","fremdsprache"), /* ID 5 */
-                        new fach("mat","Mathematik","Matematika","mathematik"), /* ID 6 */
-                        new fach("phy","Physik","Fizika","naturwissentschaft"), /* ID 7 */
-                        new fach("bio","Biologie","Biológia","naturwissentschaft"), /* ID 8 */
-                        new fach("ch","Chemie","Kémia","naturwissentschaft"), /* ID 9 */
-                        new fach("ge","Geschichte","Német történelem","geschichte"), /* ID 10 */
-                        new fach("uge","Ungarische Geschichte","Történelem","ung_geschichte"), /* ID 11 */
-                        new fach("bk","Bildende Kunst","Rajz","kunst_und_musik"), /* ID 12 */
-                        new fach("mus","Musik","Ének-zene","kunst_und_musik"), /* ID 13 */
-                        new fach("soz","Sozialkunde","Társadalomismeret","gesellschaftswissentschaft"), /* ID 14 */
-                        new fach("spo","Sport","Sport","sport"), /* ID 15 */
-                        new fach("ek","Erdkunde","Földrajz","gesellschaftswissentschaft"), /* ID 16 */
-                        new fach("eth","Ethik (oder Religion)","Etika (vagy Hittan)","gesellschaftswissentschaft")] /* ID 17 */
+            /* ID  1 */ new fach("dt",  "Deutsch",               "Német",               "deutsch"),
+            /* ID  2 */ new fach("ung", "UZ",                    "Magyar",              "ungarisch"),
+            /* ID  3 */ new fach("eng", "Englisch",              "Angol",               "fremdsprache"),
+            /* ID  4 */ new fach("frz", "Französisch",           "Francia",             "fremdsprache"),
+            /* ID  5 */ new fach("spa", "Spanisch",              "Spanyol",             "fremdsprache"),
+            /* ID  6 */ new fach("mat", "Mathematik",            "Matematika",          "mathematik"),
+            /* ID  7 */ new fach("phy", "Physik",                "Fizika",              "naturwissentschaft"),
+            /* ID  8 */ new fach("bio", "Biologie",              "Biológia",            "naturwissentschaft"),
+            /* ID  9 */ new fach("ch",  "Chemie",                "Kémia",               "naturwissentschaft"),
+            /* ID 10 */ new fach("ge",  "Geschichte",            "Német történelem",    "geschichte"),
+            /* ID 11 */ new fach("uge", "Ungarische Geschichte", "Történelem",          "ung_geschichte"),
+            /* ID 12 */ new fach("bk",  "Bildende Kunst",        "Rajz",                "kunst_und_musik"),
+            /* ID 13 */ new fach("mus", "Musik",                 "Ének-zene",           "kunst_und_musik"),
+            /* ID 14 */ new fach("soz", "Sozialkunde",           "Társadalomismeret",   "gesellschaftswissentschaft"),
+            /* ID 15 */ new fach("spo", "Sport",                 "Sport",               "sport"),
+            /* ID 16 */ new fach("ek",  "Erdkunde",              "Földrajz",            "gesellschaftswissentschaft"),
+            /* ID 17 */ new fach("eth", "Ethik (oder Religion)", "Etika (vagy Hittan)", "gesellschaftswissentschaft")]
         this.abiFach = ["Kurs-IDs",0,0,0,0];
         this.abiNote = ["Noten",0,0,0,0];
     }

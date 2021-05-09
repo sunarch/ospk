@@ -30,38 +30,47 @@ function OberstufenPunkteKalkulator() {
             // Gesamtergebnis
 
             this.ergebnis_gesamt = this.bereichA.ergebnis + this.bereichB.ergebnis + this.bereichC.ergebnis;
+            
+            this.ergebnis_durchschnitt = this.calculateAverage(this.ergebnis_gesamt)
 
-            if (823 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.0";}
-            else if (805 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.1";}
-            else if (787 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.2";}
-            else if (769 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.3";}
-            else if (751 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.4";}
-            else if (733 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.5";}
-            else if (715 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.6";}
-            else if (697 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.7";}
-            else if (679 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.8";}
-            else if (661 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "1.9";}
-            else if (643 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.0";}
-            else if (625 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.1";}
-            else if (607 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.2";}
-            else if (589 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.3";}
-            else if (571 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.4";}
-            else if (553 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.5";}
-            else if (535 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.6";}
-            else if (517 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.7";}
-            else if (499 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.8";}
-            else if (481 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "2.9";}
-            else if (463 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.0";}
-            else if (445 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.1";}
-            else if (427 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.2";}
-            else if (409 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.3";}
-            else if (391 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.4";}
-            else if (373 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.5";}
-            else if (355 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.6";}
-            else if (337 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.7";}
-            else if (319 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.8";}
-            else if (301 <= this.ergebnis_gesamt) {this.ergebnis_durchschnitt = "3.9";}
-            else {this.ergebnis_durchschnitt = "4.0";}
+        }
+
+        this.calculateAverage = function(n_ergebnis_gesamt) {
+            
+            if (n_ergebnis_gesamt >= 823) {return "1.0";}
+            if (n_ergebnis_gesamt >= 805) {return "1.1";}
+            if (n_ergebnis_gesamt >= 787) {return "1.2";}
+            if (n_ergebnis_gesamt >= 769) {return "1.3";}
+            if (n_ergebnis_gesamt >= 751) {return "1.4";}
+            if (n_ergebnis_gesamt >= 733) {return "1.5";}
+            if (n_ergebnis_gesamt >= 715) {return "1.6";}
+            if (n_ergebnis_gesamt >= 697) {return "1.7";}
+            if (n_ergebnis_gesamt >= 679) {return "1.8";}
+            if (n_ergebnis_gesamt >= 661) {return "1.9";}
+            
+            if (n_ergebnis_gesamt >= 643) {return "2.0";}
+            if (n_ergebnis_gesamt >= 625) {return "2.1";}
+            if (n_ergebnis_gesamt >= 607) {return "2.2";}
+            if (n_ergebnis_gesamt >= 589) {return "2.3";}
+            if (n_ergebnis_gesamt >= 571) {return "2.4";}
+            if (n_ergebnis_gesamt >= 553) {return "2.5";}
+            if (n_ergebnis_gesamt >= 535) {return "2.6";}
+            if (n_ergebnis_gesamt >= 517) {return "2.7";}
+            if (n_ergebnis_gesamt >= 499) {return "2.8";}
+            if (n_ergebnis_gesamt >= 481) {return "2.9";}
+            
+            if (n_ergebnis_gesamt >= 463) {return "3.0";}
+            if (n_ergebnis_gesamt >= 445) {return "3.1";}
+            if (n_ergebnis_gesamt >= 427) {return "3.2";}
+            if (n_ergebnis_gesamt >= 409) {return "3.3";}
+            if (n_ergebnis_gesamt >= 391) {return "3.4";}
+            if (n_ergebnis_gesamt >= 373) {return "3.5";}
+            if (n_ergebnis_gesamt >= 355) {return "3.6";}
+            if (n_ergebnis_gesamt >= 337) {return "3.7";}
+            if (n_ergebnis_gesamt >= 319) {return "3.8";}
+            if (n_ergebnis_gesamt >= 301) {return "3.9";}
+            
+            return "4.0";
         }
 
         this.display = function(what) {

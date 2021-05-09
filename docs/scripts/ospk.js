@@ -702,6 +702,7 @@ function student() {
                     case "de":
                         cc.student.zweig = "de";
                         cc.student.lang_no = 0;
+                        i18n.set_lang(cc.student.zweig)
                         cc.fach[11].active = false;
                         break;
 
@@ -709,6 +710,7 @@ function student() {
                     case "hu":
                         cc.student.zweig = "hu";
                         cc.student.lang_no = 1;
+                        i18n.set_lang(cc.student.zweig)
                         cc.fach[14].active = false;
                         cc.abiFach[2] = 2;
                         cc.optsready[2] = true;

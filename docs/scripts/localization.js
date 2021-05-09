@@ -6,6 +6,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function language_text() {
     /* properties */
+        this._language = "hu";
+        this._lang_index = 1;
+    
         this.options_title = ["Optionen:","Opciók:"];
         this.question_wahlArt = ["Bildende Kunst oder Musik?","Mûvészeti tantárgy:"];
         this.question_deWahlLang = ["Pflichtwahlsprache:","Kötelezõen választható nyelv:"];
@@ -28,5 +31,21 @@ function language_text() {
         this.inputName = ["Namen eingeben:","Adja meg a nevét:"];
         this.exportData = ["Daten exportieren","Adatok exportálása"];
 
-    /* no methods */
+    /* methods */
+        this.set_lang = function(s_lang) {
+            switch(s_lang) {
+
+                case "de":
+                    this._language = "de";
+                    this._lang_index = 0;
+                    break;
+
+                default:
+                case "hu":
+                    this._language = "hu";
+                    this._lang_index = 1;
+                    break;
+            }
+        }
+    
     }

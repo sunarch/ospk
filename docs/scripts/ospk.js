@@ -390,24 +390,24 @@ function oberstufenPunkteKalkulator() {
         this.bereichB = new bereichB;
         this.bereichC = new bereichC;
 
-        this.fach = ["Kursliste", // fach(Kürzel,Dt.Name,Ung.Name,Typ)
-            /* ID  1 */ new fach("dt",  "Deutsch",               "Német",               "deutsch"),
-            /* ID  2 */ new fach("ung", "UZ",                    "Magyar",              "ungarisch"),
-            /* ID  3 */ new fach("eng", "Englisch",              "Angol",               "fremdsprache"),
-            /* ID  4 */ new fach("frz", "Französisch",           "Francia",             "fremdsprache"),
-            /* ID  5 */ new fach("spa", "Spanisch",              "Spanyol",             "fremdsprache"),
-            /* ID  6 */ new fach("mat", "Mathematik",            "Matematika",          "mathematik"),
-            /* ID  7 */ new fach("phy", "Physik",                "Fizika",              "naturwissentschaft"),
-            /* ID  8 */ new fach("bio", "Biologie",              "Biológia",            "naturwissentschaft"),
-            /* ID  9 */ new fach("ch",  "Chemie",                "Kémia",               "naturwissentschaft"),
-            /* ID 10 */ new fach("ge",  "Geschichte",            "Német történelem",    "geschichte"),
-            /* ID 11 */ new fach("uge", "Ungarische Geschichte", "Történelem",          "ung_geschichte"),
-            /* ID 12 */ new fach("bk",  "Bildende Kunst",        "Rajz",                "kunst_und_musik"),
-            /* ID 13 */ new fach("mus", "Musik",                 "Ének-zene",           "kunst_und_musik"),
-            /* ID 14 */ new fach("soz", "Sozialkunde",           "Társadalomismeret",   "gesellschaftswissentschaft"),
-            /* ID 15 */ new fach("spo", "Sport",                 "Sport",               "sport"),
-            /* ID 16 */ new fach("ek",  "Erdkunde",              "Földrajz",            "gesellschaftswissentschaft"),
-            /* ID 17 */ new fach("eth", "Ethik (oder Religion)", "Etika (vagy Hittan)", "gesellschaftswissentschaft")]
+        this.fach = ["Kursliste", // fach(Kürzel, Typ)
+            /* ID  1 */ new fach("dt",  "deutsch"),                    /* Deutsch */
+            /* ID  2 */ new fach("ung", "ungarisch"),                  /* Ungarisch */
+            /* ID  3 */ new fach("eng", "fremdsprache"),               /* English */
+            /* ID  4 */ new fach("frz", "fremdsprache"),               /* Französisch */
+            /* ID  5 */ new fach("spa", "fremdsprache"),               /* Spanisch */
+            /* ID  6 */ new fach("mat", "mathematik"),                 /* Mathematik */
+            /* ID  7 */ new fach("phy", "naturwissentschaft"),         /* Physik */
+            /* ID  8 */ new fach("bio", "naturwissentschaft"),         /* Biologie */
+            /* ID  9 */ new fach("ch",  "naturwissentschaft"),         /* Chemie */
+            /* ID 10 */ new fach("ge",  "geschichte"),                 /* Geschichte */
+            /* ID 11 */ new fach("uge", "ung_geschichte"),             /* Ungarische Geschichte */
+            /* ID 12 */ new fach("bk",  "kunst_und_musik"),            /* Bildende Kunst */
+            /* ID 13 */ new fach("mus", "kunst_und_musik"),            /* Musik */
+            /* ID 14 */ new fach("soz", "gesellschaftswissentschaft"), /* Sozialkunde */
+            /* ID 15 */ new fach("spo", "sport"),                      /* Sport */
+            /* ID 16 */ new fach("ek",  "gesellschaftswissentschaft"), /* Erdkunde */
+            /* ID 17 */ new fach("eth", "gesellschaftswissentschaft")] /* Ethik (oder Religion) */
         this.abiFach = ["Kurs-IDs",0,0,0,0];
         this.abiNote = ["Noten",0,0,0,0];
     }
@@ -724,15 +724,18 @@ function student() {
         }
     }
 
-function fach(name,fullNameDe,fullNameHu,type) {
+function fach(name,type) {
     /* properties */
         this.name = name;
-        this.fullName = [fullNameDe,fullNameHu];
         this.type = type;
         this.active = true;
         this.note = [0,0,0,0,0];
 
-    /* no methods */
+    /* methods */
+        this.getFullName = function() {
+            return i18n.getSubject(this.name)
+        }
+
     }
 
 function bb_halbjahr(fachname,halbjahrno,note) {

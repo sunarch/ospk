@@ -29,7 +29,7 @@ function construct_inputs() {
                         dom_tr.setAttribute("class","grades1112");
                         var dom_td = document.createElement('td');
                             dom_td.setAttribute("class","grades1112_subjects");
-                            dom_td.appendChild(document.createTextNode(cc.fach[n1].fullName[cc.student.lang_no]));
+                            dom_td.appendChild(document.createTextNode(cc.fach[n1].getFullName()));
                         dom_tr.appendChild(dom_td);
                             for(n2=1;n2<=4;n2=n2+1) {
                                 var dom_td = document.createElement('td');
@@ -65,7 +65,7 @@ function construct_inputs() {
                     dom_td.appendChild(document.createTextNode(i18n.get("written")));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.appendChild(document.createTextNode(cc.fach[1].fullName[cc.student.lang_no]));
+                    dom_td.appendChild(document.createTextNode(cc.fach[1].getFullName()));
                 dom_tr.appendChild(dom_td);
                 /*var dom_td = document.createElement('td');
                     var dom_input = document.createElement('input');
@@ -110,20 +110,20 @@ function construct_inputs() {
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","3"); //Englisch
-                                    dom_option.appendChild(document.createTextNode(cc.fach[3].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[3].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","4"); //Französisch
-                                    dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[4].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","6"); //Mathematik
-                                    dom_option.appendChild(document.createTextNode(cc.fach[6].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[6].getFullName()));
                                 dom_select.appendChild(dom_option);
                             dom_td.appendChild(dom_select);
                             break;
                         default: case "hu":
-                            dom_td.appendChild(document.createTextNode(cc.fach[2].fullName[cc.student.lang_no]));
+                            dom_td.appendChild(document.createTextNode(cc.fach[2].getFullName()));
                             break;
                     }
                 dom_tr.appendChild(dom_td);
@@ -168,20 +168,20 @@ function construct_inputs() {
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","6"); //Mathematik
-                            dom_option.appendChild(document.createTextNode(cc.fach[6].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[6].getFullName()));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","7"); //Physik
-                            dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","8"); //Biologie
-                            dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName()));
                         dom_select.appendChild(dom_option);
                         if(cc.student.zweig == "hu") {
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","9"); //Chemie
-                                dom_option.appendChild(document.createTextNode(cc.fach[9].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[9].getFullName()));
                             dom_select.appendChild(dom_option);
                         }
                     dom_td.appendChild(dom_select);
@@ -227,43 +227,43 @@ function construct_inputs() {
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","3"); //Englisch
-                            dom_option.appendChild(document.createTextNode(cc.fach[3].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[3].getFullName()));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","6"); //Mathematik
-                            dom_option.appendChild(document.createTextNode(cc.fach[6].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[6].getFullName()));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","7"); //Physik
-                            dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()));
                         dom_select.appendChild(dom_option);
                         var dom_option = document.createElement('option');
                             dom_option.setAttribute("value","10"); //Geschichte
-                            dom_option.appendChild(document.createTextNode(cc.fach[10].fullName[cc.student.lang_no]));
+                            dom_option.appendChild(document.createTextNode(cc.fach[10].getFullName()));
                         dom_select.appendChild(dom_option);
                     switch(cc.student.zweig) {
                         case "de":
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","4"); //Französisch
-                                dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[4].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","8"); //Biologie
-                                dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","9"); //Chemie
-                                dom_option.appendChild(document.createTextNode(cc.fach[9].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[9].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","14"); //Sozialkunde
-                                dom_option.appendChild(document.createTextNode(cc.fach[14].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[14].getFullName()));
                             dom_select.appendChild(dom_option);
                             break;
                         default: case "hu":
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","11"); //Ungarische Geschichte
-                                dom_option.appendChild(document.createTextNode(cc.fach[11].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[11].getFullName()));
                             dom_select.appendChild(dom_option);
                             break;
                     }

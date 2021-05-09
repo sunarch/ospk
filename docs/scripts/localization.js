@@ -10,11 +10,11 @@ function language_text() {
             "de": 0,
             "hu": 1
         };
-    
+
         this._language = "hu";
         this._langIndex = this._langToIndex[this._language];
-        
-        
+
+
         this._strings = {
             "options_title":         ["Optionen:",
                                       "Opciók:"],
@@ -56,8 +56,28 @@ function language_text() {
                                       "Adja meg a nevét:"],
             "exportData":            ["Daten exportieren",
                                       "Adatok exportálása"]
-        
+
         }
+
+        this._subjects = {
+            "dt"  : [ "Deutsch",               "Német"               ],
+            "ung" : [ "UZ",                    "Magyar"              ],
+            "eng" : [ "Englisch",              "Angol"               ],
+            "frz" : [ "Französisch",           "Francia"             ],
+            "spa" : [ "Spanisch",              "Spanyol"             ],
+            "mat" : [ "Mathematik",            "Matematika"          ],
+            "phy" : [ "Physik",                "Fizika"              ],
+            "bio" : [ "Biologie",              "Biológia"            ],
+            "ch"  : [ "Chemie",                "Kémia"               ],
+            "ge"  : [ "Geschichte",            "Német történelem"    ],
+            "uge" : [ "Ungarische Geschichte", "Történelem"          ],
+            "bk"  : [ "Bildende Kunst",        "Rajz"                ],
+            "mus" : [ "Musik",                 "Ének-zene"           ],
+            "soz" : [ "Sozialkunde",           "Társadalomismeret"   ],
+            "spo" : [ "Sport",                 "Sport"               ],
+            "ek"  : [ "Erdkunde",              "Földrajz"            ],
+            "eth" : [ "Ethik (oder Religion)", "Etika (vagy Hittan)" ]
+        };
 
     /* methods */
         this.set_lang = function(s_lang) {
@@ -75,9 +95,13 @@ function language_text() {
                     break;
             }
         }
-        
+
         this.get = function(s_key) {
             return this._strings[s_key][this._langIndex]
         }
-    
+
+        this.getSubject = function(s_name) {
+            return this._subjects[s_name][this._langIndex]
+        }
+
     }

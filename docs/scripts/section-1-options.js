@@ -31,11 +31,11 @@ function construct_options() {
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","12"); // Bildende Kunst
-                                dom_option.appendChild(document.createTextNode(cc.fach[12].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[12].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","13"); // Musik
-                                dom_option.appendChild(document.createTextNode(cc.fach[13].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[13].getFullName()));
                             dom_select.appendChild(dom_option);
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);
@@ -61,11 +61,11 @@ function construct_options() {
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","2"); // UZ
-                                    dom_option.appendChild(document.createTextNode(cc.fach[2].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[2].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","4"); // Französisch
-                                    dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[4].getFullName()));
                                 dom_select.appendChild(dom_option);
                             dom_td.appendChild(dom_select);
                         dom_tr.appendChild(dom_td);
@@ -88,15 +88,15 @@ function construct_options() {
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","78"); // Physik und Biologie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]+" und "+cc.fach[8].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()+" und "+cc.fach[8].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","79"); // Physik und Chemie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]+" und "+cc.fach[9].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()+" und "+cc.fach[9].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","89"); // Biologie und Chemie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]+" und "+cc.fach[9].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName()+" und "+cc.fach[9].getFullName()));
                                 dom_select.appendChild(dom_option);
                             dom_td.appendChild(dom_select);
                         dom_tr.appendChild(dom_td);
@@ -125,12 +125,12 @@ function construct_options() {
                             if (cc.student.zweig == "hu") {
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("value","4"); // Französisch
-                                    dom_option.appendChild(document.createTextNode(cc.fach[4].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[4].getFullName()));
                                 dom_select.appendChild(dom_option);
                             }
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","5"); // Spanisch
-                                dom_option.appendChild(document.createTextNode(cc.fach[5].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[5].getFullName()));
                             dom_select.appendChild(dom_option);
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);
@@ -158,7 +158,7 @@ function construct_options() {
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("id","fluidOptionPhy");
                                 dom_option.setAttribute("value","7"); // Physik Grundkurs
-                                dom_option.appendChild(document.createTextNode(cc.fach[7].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","7+"); // Physik Leistungskurs
@@ -168,12 +168,12 @@ function construct_options() {
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("id","fluidOptionBio");
                                     dom_option.setAttribute("value","8"); // Biologie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[8].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
                                     dom_option.setAttribute("id","fluidOptionCh");
                                     dom_option.setAttribute("value","9"); // Chemie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[9].fullName[cc.student.lang_no]));
+                                    dom_option.appendChild(document.createTextNode(cc.fach[9].getFullName()));
                                 dom_select.appendChild(dom_option);
                             }
                         dom_td.appendChild(dom_select);
@@ -201,11 +201,11 @@ function construct_options() {
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","16"); // Erdkunde
-                                dom_option.appendChild(document.createTextNode(cc.fach[16].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[16].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
                                 dom_option.setAttribute("value","17"); // Ethik (oder Religion)
-                                dom_option.appendChild(document.createTextNode(cc.fach[17].fullName[cc.student.lang_no]));
+                                dom_option.appendChild(document.createTextNode(cc.fach[17].getFullName()));
                             dom_select.appendChild(dom_option);
                         dom_td.appendChild(dom_select);
                     dom_tr.appendChild(dom_td);

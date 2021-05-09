@@ -7,12 +7,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 function construct_options() {
 
     var dom_div = document.createElement('div');
-        dom_div.setAttribute("class","section_title");
+        dom_div.setAttribute("class", "section_title");
             dom_div.appendChild(document.createTextNode(i18n.get("options_title")));
     document.getElementById('section_options').appendChild(dom_div);
 
     var dom_table = document.createElement('table');
-        dom_table.setAttribute("id","section_options_content");
+        dom_table.setAttribute("id", "section_options_content");
         var dom_tbody = document.createElement('tbody');
 
             // wahlArt (1)
@@ -23,18 +23,18 @@ function construct_options() {
                     dom_tr.appendChild(dom_td);
                     var dom_td = document.createElement('td');
                         var dom_select = document.createElement('select');
-                            dom_select.setAttribute("id","wahlArt");
-                            dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                            dom_select.setAttribute("id", "wahlArt");
+                            dom_select.setAttribute("onChange", "cc.useOption(this.id,this.value);");
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","-1");
+                                dom_option.setAttribute("value", "-1");
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","12"); // Bildende Kunst
+                                dom_option.setAttribute("value", "12"); // Bildende Kunst
                                 dom_option.appendChild(document.createTextNode(cc.fach[12].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","13"); // Musik
+                                dom_option.setAttribute("value", "13"); // Musik
                                 dom_option.appendChild(document.createTextNode(cc.fach[13].getFullName()));
                             dom_select.appendChild(dom_option);
                         dom_td.appendChild(dom_select);
@@ -47,24 +47,24 @@ function construct_options() {
                 // deWahlLang (2)
                     var dom_tr = document.createElement('tr');
                         var dom_td = document.createElement('td');
-                            dom_td.setAttribute("class","questions");
+                            dom_td.setAttribute("class", "questions");
                             dom_td.appendChild(document.createTextNode(i18n.get("question_deWahlLang")));
                         dom_tr.appendChild(dom_td);
                         var dom_td = document.createElement('td');
                             var dom_select = document.createElement('select');
-                                dom_select.setAttribute("id","deWahlLang");
-                                dom_select.setAttribute("disabled","true");
-                                dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                dom_select.setAttribute("id", "deWahlLang");
+                                dom_select.setAttribute("disabled", "true");
+                                dom_select.setAttribute("onChange", "cc.useOption(this.id,this.value);");
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","-1");
+                                    dom_option.setAttribute("value", "-1");
                                     dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","2"); // UZ
+                                    dom_option.setAttribute("value", "2"); // UZ
                                     dom_option.appendChild(document.createTextNode(cc.fach[2].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","4"); // Französisch
+                                    dom_option.setAttribute("value", "4"); // Französisch
                                     dom_option.appendChild(document.createTextNode(cc.fach[4].getFullName()));
                                 dom_select.appendChild(dom_option);
                             dom_td.appendChild(dom_select);
@@ -74,29 +74,29 @@ function construct_options() {
                 // deWahlNatWis (3)
                     var dom_tr = document.createElement('tr');
                         var dom_td = document.createElement('td');
-                            dom_td.setAttribute("class","questions");
+                            dom_td.setAttribute("class", "questions");
                             dom_td.appendChild(document.createTextNode(i18n.get("question_deWahlNatWis")));
                         dom_tr.appendChild(dom_td);
                         var dom_td = document.createElement('td');
                             var dom_select = document.createElement('select');
-                                dom_select.setAttribute("id","deWahlNatWis");
-                                dom_select.setAttribute("disabled","true");
-                                dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                                dom_select.setAttribute("id", "deWahlNatWis");
+                                dom_select.setAttribute("disabled", "true");
+                                dom_select.setAttribute("onChange", "cc.useOption(this.id,this.value);");
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","-1");
+                                    dom_option.setAttribute("value", "-1");
                                     dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","78"); // Physik und Biologie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()+" und "+cc.fach[8].getFullName()));
+                                    dom_option.setAttribute("value", "78"); // Physik und Biologie
+                                    dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName() + " und " + cc.fach[8].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","79"); // Physik und Chemie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()+" und "+cc.fach[9].getFullName()));
+                                    dom_option.setAttribute("value", "79"); // Physik und Chemie
+                                    dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName() + " und " + cc.fach[9].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","89"); // Biologie und Chemie
-                                    dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName()+" und "+cc.fach[9].getFullName()));
+                                    dom_option.setAttribute("value", "89"); // Biologie und Chemie
+                                    dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName() + " und " + cc.fach[9].getFullName()));
                                 dom_select.appendChild(dom_option);
                             dom_td.appendChild(dom_select);
                         dom_tr.appendChild(dom_td);
@@ -111,25 +111,25 @@ function construct_options() {
                     dom_tr.appendChild(dom_td);
                     var dom_td = document.createElement('td');
                         var dom_select = document.createElement('select');
-                            dom_select.setAttribute("id","optionLang");
-                            dom_select.setAttribute("disabled","true");
-                            dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                            dom_select.setAttribute("id", "optionLang");
+                            dom_select.setAttribute("disabled", "true");
+                            dom_select.setAttribute("onChange", "cc.useOption(this.id,this.value);");
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","-1");
+                                dom_option.setAttribute("value", "-1");
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","0"); // nicht gewählt
+                                dom_option.setAttribute("value", "0"); // nicht gewählt
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_notChosen")));
                             dom_select.appendChild(dom_option);
                             if (cc.student.zweig == "hu") {
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("value","4"); // Französisch
+                                    dom_option.setAttribute("value", "4"); // Französisch
                                     dom_option.appendChild(document.createTextNode(cc.fach[4].getFullName()));
                                 dom_select.appendChild(dom_option);
                             }
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","5"); // Spanisch
+                                dom_option.setAttribute("value", "5"); // Spanisch
                                 dom_option.appendChild(document.createTextNode(cc.fach[5].getFullName()));
                             dom_select.appendChild(dom_option);
                         dom_td.appendChild(dom_select);
@@ -145,34 +145,34 @@ function construct_options() {
                     var dom_td = document.createElement('td');
                         var dom_select = document.createElement('select');
                             dom_select.setAttribute("id","optionNatWis");
-                            dom_select.setAttribute("disabled","true");
-                            dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
+                            dom_select.setAttribute("disabled", "true");
+                            dom_select.setAttribute("onChange", "cc.useOption(this.id,this.value);");
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","-1");
+                                dom_option.setAttribute("value", "-1");
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","0");
+                                dom_option.setAttribute("value", "0");
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_notChosen")));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("id","fluidOptionPhy");
-                                dom_option.setAttribute("value","7"); // Physik Grundkurs
+                                dom_option.setAttribute("id", "fluidOptionPhy");
+                                dom_option.setAttribute("value", "7"); // Physik Grundkurs
                                 dom_option.appendChild(document.createTextNode(cc.fach[7].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","7+"); // Physik Leistungskurs
+                                dom_option.setAttribute("value", "7+"); // Physik Leistungskurs
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_physikLk")));
                             dom_select.appendChild(dom_option);
                             if (cc.student.zweig == "de") {
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("id","fluidOptionBio");
-                                    dom_option.setAttribute("value","8"); // Biologie
+                                    dom_option.setAttribute("id", "fluidOptionBio");
+                                    dom_option.setAttribute("value", "8"); // Biologie
                                     dom_option.appendChild(document.createTextNode(cc.fach[8].getFullName()));
                                 dom_select.appendChild(dom_option);
                                 var dom_option = document.createElement('option');
-                                    dom_option.setAttribute("id","fluidOptionCh");
-                                    dom_option.setAttribute("value","9"); // Chemie
+                                    dom_option.setAttribute("id", "fluidOptionCh");
+                                    dom_option.setAttribute("value", "9"); // Chemie
                                     dom_option.appendChild(document.createTextNode(cc.fach[9].getFullName()));
                                 dom_select.appendChild(dom_option);
                             }
@@ -192,19 +192,19 @@ function construct_options() {
                             dom_select.setAttribute("disabled","true");
                             dom_select.setAttribute("onChange","cc.useOption(this.id,this.value);");
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","-1");
+                                dom_option.setAttribute("value", "-1");
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_toChoose")));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","0");
+                                dom_option.setAttribute("value", "0");
                                 dom_option.appendChild(document.createTextNode(i18n.get("answer_notChosen")));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","16"); // Erdkunde
+                                dom_option.setAttribute("value", "16"); // Erdkunde
                                 dom_option.appendChild(document.createTextNode(cc.fach[16].getFullName()));
                             dom_select.appendChild(dom_option);
                             var dom_option = document.createElement('option');
-                                dom_option.setAttribute("value","17"); // Ethik (oder Religion)
+                                dom_option.setAttribute("value", "17"); // Ethik (oder Religion)
                                 dom_option.appendChild(document.createTextNode(cc.fach[17].getFullName()));
                             dom_select.appendChild(dom_option);
                         dom_td.appendChild(dom_select);

@@ -5,15 +5,27 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function validate(what,type) {
-    var gradesallowed = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
+    var gradesallowed = ["0",
+                         "1",   "2",  "3",
+                         "4",   "5",  "6",
+                         "7",   "8",  "9",
+                         "10", "11", "12",
+                         "13", "14", "15"
+                        ]
+
     switch (type) {
+
         case 'grade':
             var grade = what.value;
+
             if (gradesallowed.indexOf(grade) == -1) {
                 what.value = "";
                 return false;
             }
-            else {return true;}
+            else {
+                return true;
+            }
+
             break;
     }
 }

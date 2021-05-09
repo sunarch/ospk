@@ -38,8 +38,10 @@ function Localization() {
                                       "Fizika (fakultációval)"],
             "grades1112_title":      ["Noten aus den Klassen 11 und 12:",
                                       "Jegyek a 11. és a 12. osztályból:"],
-            "grades1112_headers":    [["Fächer","11.1","11.2","12.1","12.2"],
-                                      ["Tantárgyak","11.1","11.2","12.1","12.2"]],
+            "grades1112_headers":    [
+                                       ["Fächer","11.1","11.2","12.1","12.2"],
+                                       ["Tantárgyak","11.1","11.2","12.1","12.2"]
+                                     ],
             "examresults_title":     ["Abiturfächer und Abiturnoten:",
                                       "Vizsgatárgyak és a vizsgaeredmények:"],
             "written":               ["schriftlich",
@@ -56,8 +58,7 @@ function Localization() {
                                       "Adja meg a nevét:"],
             "exportData":            ["Daten exportieren",
                                       "Adatok exportálása"]
-
-        }
+        };
 
         this._subjects = {
             "dt"  : [ "Deutsch",               "Német"               ],
@@ -97,11 +98,11 @@ function Localization() {
         }
 
         this.get = function(s_key) {
-            return this._strings[s_key][this._langIndex]
+            return this._strings[s_key][this._langIndex];
         }
 
         this.getSubject = function(s_name) {
-            return this._subjects[s_name][this._langIndex]
+            return this._subjects[s_name][this._langIndex];
         }
 
     }

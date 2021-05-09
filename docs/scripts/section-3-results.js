@@ -7,23 +7,23 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 function construct_results() {
 
     var dom_div = document.createElement('div');
-        dom_div.setAttribute("class","section_title");
+        dom_div.setAttribute("class", "section_title");
         dom_div.appendChild(document.createTextNode("Ergebnisse:"));
     document.getElementById('section_ergebnis').appendChild(dom_div);
 
     var dom_table = document.createElement('table');
-        dom_table.setAttribute("id","section_ergebnis_content");
-        dom_table.setAttribute("class","ergebnisse");
+        dom_table.setAttribute("id", "section_ergebnis_content");
+        dom_table.setAttribute("class", "ergebnisse");
         var dom_tbody = document.createElement('tbody');
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("colspan","3");
+                    dom_td.setAttribute("colspan", "3");
                     dom_td.appendChild(document.createTextNode('Insgesamt:  ' + cc.ergebnis_gesamt + '  von 900 Punkten erreicht.'));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("colspan","3");
+                    dom_td.setAttribute("colspan", "3");
                     dom_td.appendChild(document.createTextNode('Abiturdurchschnitt:  ' + cc.ergebnis_durchschnitt));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
@@ -31,15 +31,15 @@ function construct_results() {
             // Reihe Bereich-Titeln
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createTextNode('Bereich A'));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createTextNode('Bereich B'));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createTextNode('Bereich C'));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
@@ -47,15 +47,15 @@ function construct_results() {
             // Reihe Bereichsergebnisse
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createTextNode(cc.bereichA.ergebnis + '  von 270 Punkten erreicht.'));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createTextNode(cc.bereichB.ergebnis + '  von 330 Punkten erreicht.'));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createTextNode(cc.bereichC.ergebnis + '  von 300 Punkten erreicht.'));
                 dom_tr.appendChild(dom_td);
             dom_tbody.appendChild(dom_tr);
@@ -63,21 +63,21 @@ function construct_results() {
             // Reihe Details-Titel
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createElement("br"));
                     dom_td.appendChild(document.createTextNode('Details:'));
                     dom_td.appendChild(document.createElement("br"));
                     dom_td.appendChild(document.createElement("br"));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createElement("br"));
                     dom_td.appendChild(document.createTextNode('Details:'));
                     dom_td.appendChild(document.createElement("br"));
                     dom_td.appendChild(document.createElement("br"));
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     dom_td.appendChild(document.createElement("br"));
                     dom_td.appendChild(document.createTextNode('Details:'));
                     dom_td.appendChild(document.createElement("br"));
@@ -88,7 +88,7 @@ function construct_results() {
             // Reihe Details
             var dom_tr = document.createElement('tr');
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     var dom_table_A = document.createElement('table');
                         var dom_tbody_A = document.createElement('tbody');
                             var dom_tr_A = document.createElement('tr');
@@ -103,7 +103,7 @@ function construct_results() {
                     dom_td.appendChild(dom_table_A);
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     var dom_table_B = document.createElement('table');
                         var dom_tbody_B = document.createElement('tbody');
                             for(n1=1;n1<cc.bereichB.all.length;n1=n1+1) {
@@ -129,7 +129,7 @@ function construct_results() {
                     dom_td.appendChild(dom_table_B);
                 dom_tr.appendChild(dom_td);
                 var dom_td = document.createElement('td');
-                    dom_td.setAttribute("class","ergebnisse");
+                    dom_td.setAttribute("class", "ergebnisse");
                     var dom_table_C = document.createElement('table');
                         var dom_tbody_C = document.createElement('tbody');
                             var dom_tr_C = document.createElement('tr');

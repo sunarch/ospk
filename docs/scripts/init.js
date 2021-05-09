@@ -4,6 +4,6 @@ License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-cc = new oberstufenPunkteKalkulator();
+cc = new OberstufenPunkteKalkulator();
 
-i18n = new language_text();
+i18n = new Localization();

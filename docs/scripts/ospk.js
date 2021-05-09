@@ -4,11 +4,9 @@ License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-/* Definitions of the Object "oberstufenPunkteKalkulator" for the control of the functionalities */
-
 /* MAIN OBJECT constructor function ----------------------------------*/
 
-function oberstufenPunkteKalkulator() {
+function OberstufenPunkteKalkulator() {
     /* properties -*/
         this.optsready = ["option_completition",false,false,false,false,false,false]; // indicates whether the options have been selected
 
@@ -385,36 +383,36 @@ function oberstufenPunkteKalkulator() {
         }
 
     /* subobjects */
-        this.student = new student;
-        this.bereichA = new bereichA;
-        this.bereichB = new bereichB;
-        this.bereichC = new bereichC;
+        this.student = new Student;
+        this.bereichA = new BereichA;
+        this.bereichB = new BereichB;
+        this.bereichC = new BereichC;
 
-        this.fach = ["Kursliste", // fach(Kürzel, Typ)
-            /* ID  1 */ new fach("dt",  "deutsch"),                    /* Deutsch */
-            /* ID  2 */ new fach("ung", "ungarisch"),                  /* Ungarisch */
-            /* ID  3 */ new fach("eng", "fremdsprache"),               /* English */
-            /* ID  4 */ new fach("frz", "fremdsprache"),               /* Französisch */
-            /* ID  5 */ new fach("spa", "fremdsprache"),               /* Spanisch */
-            /* ID  6 */ new fach("mat", "mathematik"),                 /* Mathematik */
-            /* ID  7 */ new fach("phy", "naturwissentschaft"),         /* Physik */
-            /* ID  8 */ new fach("bio", "naturwissentschaft"),         /* Biologie */
-            /* ID  9 */ new fach("ch",  "naturwissentschaft"),         /* Chemie */
-            /* ID 10 */ new fach("ge",  "geschichte"),                 /* Geschichte */
-            /* ID 11 */ new fach("uge", "ung_geschichte"),             /* Ungarische Geschichte */
-            /* ID 12 */ new fach("bk",  "kunst_und_musik"),            /* Bildende Kunst */
-            /* ID 13 */ new fach("mus", "kunst_und_musik"),            /* Musik */
-            /* ID 14 */ new fach("soz", "gesellschaftswissentschaft"), /* Sozialkunde */
-            /* ID 15 */ new fach("spo", "sport"),                      /* Sport */
-            /* ID 16 */ new fach("ek",  "gesellschaftswissentschaft"), /* Erdkunde */
-            /* ID 17 */ new fach("eth", "gesellschaftswissentschaft")] /* Ethik (oder Religion) */
+        this.fach = ["Kursliste", // Fach(Kürzel, Typ)
+            /* ID  1 */ new Fach("dt",  "deutsch"),                    /* Deutsch */
+            /* ID  2 */ new Fach("ung", "ungarisch"),                  /* Ungarisch */
+            /* ID  3 */ new Fach("eng", "fremdsprache"),               /* English */
+            /* ID  4 */ new Fach("frz", "fremdsprache"),               /* Französisch */
+            /* ID  5 */ new Fach("spa", "fremdsprache"),               /* Spanisch */
+            /* ID  6 */ new Fach("mat", "mathematik"),                 /* Mathematik */
+            /* ID  7 */ new Fach("phy", "naturwissentschaft"),         /* Physik */
+            /* ID  8 */ new Fach("bio", "naturwissentschaft"),         /* Biologie */
+            /* ID  9 */ new Fach("ch",  "naturwissentschaft"),         /* Chemie */
+            /* ID 10 */ new Fach("ge",  "geschichte"),                 /* Geschichte */
+            /* ID 11 */ new Fach("uge", "ung_geschichte"),             /* Ungarische Geschichte */
+            /* ID 12 */ new Fach("bk",  "kunst_und_musik"),            /* Bildende Kunst */
+            /* ID 13 */ new Fach("mus", "kunst_und_musik"),            /* Musik */
+            /* ID 14 */ new Fach("soz", "gesellschaftswissentschaft"), /* Sozialkunde */
+            /* ID 15 */ new Fach("spo", "sport"),                      /* Sport */
+            /* ID 16 */ new Fach("ek",  "gesellschaftswissentschaft"), /* Erdkunde */
+            /* ID 17 */ new Fach("eth", "gesellschaftswissentschaft")] /* Ethik (oder Religion) */
         this.abiFach = ["Kurs-IDs",0,0,0,0];
         this.abiNote = ["Noten",0,0,0,0];
     }
 
 /* SUBOBJECTS - constructors -----------------------------------------*/
 
-function bereichA() {
+function BereichA() {
     /* properties */
         this.ergebnis = 0;
         this.fach1Noten = 0;
@@ -432,7 +430,7 @@ function bereichA() {
 
     }
 
-function bereichC() {
+function BereichC() {
     /* properties */
         this.ergebnis = 0;
         this.kursNoten = 0;
@@ -449,7 +447,7 @@ function bereichC() {
 
     }
 
-function bereichB() {
+function BereichB() {
     /* properties */
         this.ergebnis = 0;
         this.fach4_3hj = 0;
@@ -513,66 +511,66 @@ function bereichB() {
                     switch (cc.fach[n1].type) {
 
                         case "mathematik":
-                            this.mat.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.mat.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.mat.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.mat.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.mat.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.mat.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.mat.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.mat.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "ungarisch":
-                            this.ung.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.ung.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.ung.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.ung.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.ung.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.ung.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.ung.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.ung.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "kunst_und_musik":
-                            this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.bk_mus.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "geschichte":
-                            this.dge.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.dge.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.dge.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.dge.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.dge.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.dge.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.dge.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.dge.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "ung_geschichte":
-                            this.uge.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.uge.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.uge.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.uge.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.uge.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.uge.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.uge.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.uge.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "sport":
-                            this.spo.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.spo.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.spo.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.spo.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.spo.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.spo.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.spo.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.spo.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "fremdsprache":
-                            this.frsp.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.frsp.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.frsp.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.frsp.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.frsp.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.frsp.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.frsp.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.frsp.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "naturwissentschaft":
-                            this.natwis.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.natwis.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.natwis.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.natwis.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.natwis.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.natwis.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.natwis.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.natwis.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         case "gesellschaftswissentschaft":
-                            this.geswis.push(new bb_halbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
-                            this.geswis.push(new bb_halbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
-                            this.geswis.push(new bb_halbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
-                            this.geswis.push(new bb_halbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
+                            this.geswis.push(new BbHalbjahr(cc.fach[n1].name,1,cc.fach[n1].note[1]));
+                            this.geswis.push(new BbHalbjahr(cc.fach[n1].name,2,cc.fach[n1].note[2]));
+                            this.geswis.push(new BbHalbjahr(cc.fach[n1].name,3,cc.fach[n1].note[3]));
+                            this.geswis.push(new BbHalbjahr(cc.fach[n1].name,4,cc.fach[n1].note[4]));
                             break;
 
                         default:
@@ -678,7 +676,7 @@ function bereichB() {
 
     }
 
-function student() {
+function Student() {
     /* properties */
         this.name = "";
         this.zweig = "";
@@ -721,7 +719,7 @@ function student() {
         }
     }
 
-function fach(name,type) {
+function Fach(name,type) {
     /* properties */
         this.name = name;
         this.type = type;
@@ -735,7 +733,7 @@ function fach(name,type) {
 
     }
 
-function bb_halbjahr(fachname,halbjahrno,note) {
+function BbHalbjahr(fachname,halbjahrno,note) {
     /* properties */
         this.fachname = fachname;
         this.halbjahrno = halbjahrno;

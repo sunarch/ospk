@@ -245,31 +245,36 @@ input.q_answers { }
 
 /*11.-12.-es jegyek*/
 
-table.grades1112 {
+table.grades {
     margin-left: auto;
     margin-right: auto;
     width: 600px;
 }
-thead.grades1112 {
+
+table.grades thead {
     font-size: 16px;
     font-weight: bold;
 }
-tr.grades1112 { height: 25px; }
-tr.grades1112 td {
+
+table.grades tr {
+    height: 25px;
+}
+
+table.grades td {
     width: 60px;
     padding-left: 10px;
     padding-right: 10px;
 }
-tr.grades1112 td.grades1112_subjects {
+
+table.grades td.grades_subjects {
     width: 150px;
     text-align: left;
 }
-input.grades1112 {
+
+table.grades input {
     width: 100%;
     text-align: center;
 }
-div.grades1112_averages { }
-div.grades1112_grand_average { }
 
 /* Érettségi vizsgatárgyak és -eredmények */
 

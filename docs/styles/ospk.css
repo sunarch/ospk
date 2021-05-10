@@ -316,29 +316,17 @@ input.q_answers { }
 
 /* Érettségi vizsgatárgyak és -eredmények */
 
-table.exams {
+#exams table {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
 }
 
-tr.exams {
+#exams tr {
     height: 25px;
 }
 
-td.exam_no { }
-
-td.exam_type { }
-
-td.exam_subject { }
-
-select.exam_subject { }
-
-option.exam_subject { }
-
-td.exam_points { }
-
-input.exam_points {
+#exams input {
     width: 40px;
     text-align: center;
 }

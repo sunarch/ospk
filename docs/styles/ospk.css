@@ -52,21 +52,69 @@ body {
     /* min-height: 100%; */
 }
 
+@media all {
+
+    main, aside {
+        min-height: 100%;
+    }
+
+    main {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding: 0px;
+    }
+}
+
 @media screen and (min-width: 1215px) {
 
     body, header div, footer div {
         width: 80%;
     }
+
+    main {
+        margin-right: 5px;
+        width: 75%;
+    }
+
+    aside {
+        float: right;
+        margin-left: 5px;
+        width: 21%;
+    }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1214px) {
+
     body, header div, footer div {
         width: 90%;
+    }
+
+    main {
+        margin-right: 2px;
+        width: 78%;
+    }
+
+    aside {
+        float: right;
+        margin-left: 2px;
+        width: 20%;
     }
 }
 
 @media handheld or (max-width: 1024px) {
+
     body, header div, footer div {
+        width: 100%;
+    }
+
+    main {
+        margin: 0px;
+        width: 100%;
+    }
+
+    aside {
+        margin: 0px;
         width: 100%;
     }
 }
@@ -114,61 +162,6 @@ header img {
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
-}
-
-@media all {
-
-    main, aside {
-        min-height: 100%;
-    }
-
-    main {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 0px;
-        padding: 0px;
-    }
-}
-
-@media screen and (min-width: 1215px) {
-
-    main {
-        margin-right: 5px;
-        width: 75%;
-    }
-
-    aside {
-        float: right;
-        margin-left: 5px;
-        width: 21%;
-    }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1214px) {
-
-    main {
-        margin-right: 2px;
-        width: 78%;
-    }
-
-    aside {
-        float: right;
-        margin-left: 2px;
-        width: 20%;
-    }
-}
-
-@media handheld or (max-width: 1024px) {
-
-    main {
-        margin: 0px;
-        width: 100%;
-    }
-
-    aside {
-        margin: 0px;
-        width: 100%;
-    }
 }
 
 section {

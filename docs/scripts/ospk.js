@@ -412,6 +412,7 @@ function OberstufenPunkteKalkulator() {
         var exportText = exportArray.join();
         document.getElementById("exportLink").download = "dsb_ospk_" + this.student.name + ".txt";
         document.getElementById("exportLink").href = "data:text/plain;base64," + window.btoa(exportText);
+        document.getElementById("exportLink").type = "text/plain";
     }
 
     this.applyValuesToInputFields = function() {

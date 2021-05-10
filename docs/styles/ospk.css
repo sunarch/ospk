@@ -56,6 +56,7 @@ body {
 
     main, aside {
         min-height: 100%;
+        display: block;
     }
 
     main {
@@ -119,15 +120,8 @@ body {
     }
 }
 
-header, nav, main, section, article, hgroup, aside, footer {
-    display: block;
-}
-
-header, nav, footer {
-    width: 100%;
-}
-
 header {
+    display: block;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -165,7 +159,6 @@ header img {
 }
 
 section {
-    width: auto;
     display: block;
     position: relative;
     top: 0px;
@@ -173,6 +166,7 @@ section {
     margin-bottom: 15px;
     margin-left: 0px;
     margin-right: 0px;
+    width: auto;
     background-color: #FFF;
     overflow: hidden;
 }

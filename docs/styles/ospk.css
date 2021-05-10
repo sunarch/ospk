@@ -33,23 +33,30 @@ html {
 body {
     display: block;
 
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-
-    padding-top: 100px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 50px;
+    margin: 0px;
+    padding: 0px;
 
     overflow-x: hidden;
     overflow-y: visible;
 
     /* position: relative; */
     /* width | big: 976px | small: 400px */
+    width: 100%
     height: auto;
     /* min-height: 100%; */
+}
+
+.content_body {
+    display: block;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0px;
+
+    height: auto;
 }
 
 @media all {
@@ -69,7 +76,7 @@ body {
 
 @media screen and (min-width: 1215px) {
 
-    body, header div, footer div {
+    .content_body, header div, footer div {
         width: 80%;
     }
 
@@ -87,7 +94,7 @@ body {
 
 @media screen and (min-width: 1025px) and (max-width: 1214px) {
 
-    body, header div, footer div {
+    .content_body, header div, footer div {
         width: 90%;
     }
 
@@ -105,7 +112,7 @@ body {
 
 @media handheld or (max-width: 1024px) {
 
-    body, header div, footer div {
+    .content_body, header div, footer div {
         width: 100%;
     }
 
@@ -122,10 +129,6 @@ body {
 
 header {
     display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
     margin-top: 0px;
     margin-bottom: 15px;
     margin-left: 0px;
@@ -187,18 +190,12 @@ aside section {
 
 footer {
     display: block;
-    position: absolute;
-    left: 0px;
     margin-top: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     margin-left: 0px;
     margin-right: 0px;
     background-color: #213C84;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 19px;
+    padding: 10px;
     width: 100%;
     overflow: hidden;
 }

@@ -25,546 +25,548 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                 <img alt="" src="images/header.png" />
             </div>
         </header>
-        <aside>
-            <section>
-                <h2 id="name_title"></h2>
-            </section>
-            <section>
-                <h2>OSPK v. 3.0</h2>
-                <h4>Creators:</h4>
-                <ul>
-                    <li>András Németh</li>
-                    <li>János Somogyi</li>
-                </ul>
-            </section>
-        </aside>
-        <main>
-            <section>
-                <h1>Oberstufenpunktekalkulator</h1>
-            </section>
-            <section>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td class="questions" id="text_zweig_titel_hu">Magyar ág</td>
-                            <td id="text_zweig_fahne_hu">
-                                <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('hu'); cc.display('options');">
-                                    <img src="images/flag-of-hungary.svg" width="50" height="30" />
-                                </div>
-                            </td>
-                            <td class="questions" id="text_zweig_titel_de">Deutscher Zweig</td>
-                            <td id="text_zweig_fahne_de">
-                                <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('de'); cc.display('options');">
-                                    <img src="images/flag-of-germany.svg" width="50" height="30" />
-                                </div>
-                            </td>
-                            <td class="questions" id="td_button_importData">
-                                <input type="button" value="Import" onClick="cc.importData(window.prompt('Data String:'));" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section id="options" style="display:none;">
-                <h2 id="options_title"></h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td id="label_wahl_art" class="questions"></td>
-                            <td>
-                                <select id="wahlArt" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="wahl_art_choose" value="-1"></option>
-                                    <option id="wahl_art_arts" value="12"></option>
-                                    <option id="wahl_art_music" value="13"></option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr id="de_wahl_lang" style="display:none;">
-                            <td id="label_de_wahl_lang" class="questions"></td>
-                            <td>
-                                <select id="deWahlLang" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="de_wahl_lang_choose" value="-1"></option>
-                                    <option id="de_wahl_lang_uz" value="2"></option>
-                                    <option id="de_wahl_lang_fra" value="4"></option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr id="de_wahl_nat_wis" style="display:none;">
-                            <td id="label_de_wahl_nat_wis" class="questions"></td>
-                            <td>
-                                <select id="deWahlNatWis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="de_wahl_nat_wis_choose" value="-1"></option>
-                                    <option id="de_wahl_nat_wis_phy_bio" value="78"></option>
-                                    <option id="de_wahl_nat_wis_phy_ch" value="79"></option>
-                                    <option id="de_wahl_nat_wis_bio_ch" value="89"></option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="label_option_lang" class="questions"></td>
-                            <td>
-                                <select id="optionLang" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="option_lang_choose" value="-1"></option>
-                                    <option id="option_lang_none" value="0"></option>
-                                    <option id="option_lang_fra" value="4" style="display:none;"></option>
-                                    <option id="option_lang_spa" value="5"></option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="label_option_nat_wis" class="questions"></td>
-                            <td>
-                                <select id="optionNatWis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="option_nat_wis_choose" value="-1"></option>
-                                    <option id="option_nat_wis_none" value="0"></option>
-                                    <option id="fluidOptionPhy" value="7"></option>
-                                    <option id="option_nat_wis_phy_lk" value="7+"></option>
-                                    <option id="fluidOptionBio" value="8" style="display:none;"></option>
-                                    <option id="fluidOptionCh" value="9" style="display:none;"></option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="label_option_ges_wis" class="questions"></td>
-                            <td>
-                                <select id="optionGesWis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="option_ges_wis_choose" value="-1"></option>
-                                    <option id="option_ges_wis_none" value="0"></option>
-                                    <option id="option_ges_wis_ek" value="16"></option>
-                                    <option id="option_ges_wis_eth" value="17"></option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section id="grades" style="display:none;">
-                <h2 id="grades_title"></h2>
-                <table class="grades">
-                    <thead>
-                        <tr>
-                            <th id="grades_header" class="grades_subjects"></th>
-                            <th>11.1</th>
-                            <th>11.2</th>
-                            <th>12.1</th>
-                            <th>12.2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Deutsch / Német -->
-                        <tr id="grades_dt">
-                            <td id="grades_subj_dt" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_dt_note_1" onchange="updateGrade('dt', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_dt_note_2" onchange="updateGrade('dt', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_dt_note_3" onchange="updateGrade('dt', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_dt_note_4" onchange="updateGrade('dt', 4);" />
-                            </td>
-                        </tr>
-                        <!-- UZ / Magyar -->
-                        <tr id="grades_ung">
-                            <td id="grades_subj_ung" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_ung_note_1" onchange="updateGrade('ung', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_ung_note_2" onchange="updateGrade('ung', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_ung_note_3" onchange="updateGrade('ung', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_ung_note_4" onchange="updateGrade('ung', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Englisch / Angol -->
-                        <tr id="grades_eng">
-                            <td id="grades_subj_eng" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_eng_note_1" onchange="updateGrade('eng', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_eng_note_2" onchange="updateGrade('eng', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_eng_note_3" onchange="updateGrade('eng', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_eng_note_4" onchange="updateGrade('eng', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Französisch / Francia -->
-                        <tr id="grades_frz">
-                            <td id="grades_subj_frz" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_frz_note_1" onchange="updateGrade('frz', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_frz_note_2" onchange="updateGrade('frz', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_frz_note_3" onchange="updateGrade('frz', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_frz_note_4" onchange="updateGrade('frz', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Spanisch / Spanyol -->
-                        <tr id="grades_spa">
-                            <td id="grades_subj_spa" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_spa_note_1" onchange="updateGrade('spa', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_spa_note_2" onchange="updateGrade('spa', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_spa_note_3" onchange="updateGrade('spa', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_spa_note_4" onchange="updateGrade('spa', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Mathematik / Matematika -->
-                        <tr id="grades_mat">
-                            <td id="grades_subj_mat" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_mat_note_1" onchange="updateGrade('mat', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_mat_note_2" onchange="updateGrade('mat, 2);" />
-                            </td>
-                            <td>
-                                <input id="input_mat_note_3" onchange="updateGrade('mat, 3);" />
-                            </td>
-                            <td>
-                                <input id="input_mat_note_4" onchange="updateGrade('mat, 4);" />
-                            </td>
-                        </tr>
-                        <!-- Physik / Fizika -->
-                        <tr id="grades_phy">
-                            <td id="grades_subj_phy" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_phy_note_1" onchange="updateGrade('phy', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_phy_note_2" onchange="updateGrade('phy', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_phy_note_3" onchange="updateGrade('phy', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_phy_note_4" onchange="updateGrade('phy', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Biologie / Biológia -->
-                        <tr id="grades_bio">
-                            <td id="grades_subj_bio" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_bio_note_1" onchange="updateGrade('bio', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_bio_note_2" onchange="updateGrade('bio', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_bio_note_3" onchange="updateGrade('bio', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_bio_note_4" onchange="updateGrade('bio', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Chemie / Kémia-->
-                        <tr id="grades_ch">
-                            <td id="grades_subj_ch" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_ch_note_1" onchange="updateGrade('ch', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_ch_note_2" onchange="updateGrade('ch', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_ch_note_3" onchange="updateGrade('ch', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_ch_note_4" onchange="updateGrade('ch', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Geschichte / Német történelem -->
-                        <tr id="grades_ge">
-                            <td id="grades_subj_ge" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_ge_note_1" onchange="updateGrade('ge', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_ge_note_2" onchange="updateGrade('ge', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_ge_note_3" onchange="updateGrade('ge', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_ge_note_4" onchange="updateGrade('ge', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Ungarische Geschichte / Történelem -->
-                        <tr id="grades_uge">
-                            <td id="grades_subj_uge" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_uge_note_1" onchange="updateGrade('uge', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_uge_note_2" onchange="updateGrade('uge', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_uge_note_3" onchange="updateGrade('uge', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_uge_note_4" onchange="updateGrade('uge', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Bildende Kunst / Rajz -->
-                        <tr id="grades_bk">
-                            <td id="grades_subj_bk" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_bk_note_1" onchange="updateGrade('bk', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_bk_note_2" onchange="updateGrade('bk', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_bk_note_3" onchange="updateGrade('bk', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_bk_note_4" onchange="updateGrade('bk', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Musik / Ének-zene -->
-                        <tr id="grades_mus">
-                            <td id="grades_subj_mus" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_mus_note_1" onchange="updateGrade('mus', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_mus_note_2" onchange="updateGrade('mus', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_mus_note_3" onchange="updateGrade('mus', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_mus_note_4" onchange="updateGrade('mus', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Sozialkunde / Társadalomismeret -->
-                        <tr id="grades_soz">
-                            <td id="grades_subj_soz" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_soz_note_1" onchange="updateGrade('soz', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_soz_note_2" onchange="updateGrade('soz', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_soz_note_3" onchange="updateGrade('soz', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_soz_note_4" onchange="updateGrade('soz', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Sport / Sport -->
-                        <tr id="grades_spo">
-                            <td id="grades_subj_spo" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_spo_note_1" onchange="updateGrade('spo', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_spo_note_2" onchange="updateGrade('spo', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_spo_note_3" onchange="updateGrade('spo', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_spo_note_4" onchange="updateGrade('spo', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Erdkunde / Földrajz -->
-                        <tr id="grades_ek">
-                            <td id="grades_subj_ek" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_ek_note_1" onchange="updateGrade('ek', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_ek_note_2" onchange="updateGrade('ek', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_ek_note_3" onchange="updateGrade('ek', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_ek_note_4" onchange="updateGrade('ek', 4);" />
-                            </td>
-                        </tr>
-                        <!-- Ethik (oder Religion) / Etika (vagy Hittan) -->
-                        <tr id="grades_eth">
-                            <td id="grades_subj_eth" class="grades_subjects"></td>
-                            <td>
-                                <input id="input_eth_note_1" onchange="updateGrade('eth', 1);" />
-                            </td>
-                            <td>
-                                <input id="input_eth_note_2" onchange="updateGrade('eth', 2);" />
-                            </td>
-                            <td>
-                                <input id="input_eth_note_3" onchange="updateGrade('eth', 3);" />
-                            </td>
-                            <td>
-                                <input id="input_eth_note_4" onchange="updateGrade('eth', 4);" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section id="exams" style="display:none;">
-                <h2 id="exams_title"></h2>
-                <table class="exams">
-                    <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td id="exams_1_mode"></td>
-                            <td id="exams_1_subj">dt</td>
-                            <td>
-                                <input id="input_abiNote_1" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}" />
-                                <span> NP</span>
-                            </td>
-                            <td id="exams_1_req">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td id="exams_2_mode"></td>
-                            <td id="exams_2_subj">
-                                <span id="exams_2_hu_subj">Magyar</span>
-                                <span id="exams_2_de_subj" style="display:none;">
-                                    <select id="input_abiFach_2" onchange="tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();">
-                                        <option id="opt_ex_2_choose" value="0"></option>
-                                        <option id="opt_ex_2_eng" value="3"></option>
-                                        <option id="opt_ex_2_frz" value="4"></option>
-                                        <option id="opt_ex_2_mat" value="6"></option>
+        <div class="content_body">
+            <aside>
+                <section>
+                    <h2 id="name_title"></h2>
+                </section>
+                <section>
+                    <h2>OSPK v. 3.0</h2>
+                    <h4>Creators:</h4>
+                    <ul>
+                        <li>András Németh</li>
+                        <li>János Somogyi</li>
+                    </ul>
+                </section>
+            </aside>
+            <main>
+                <section>
+                    <h1>Oberstufenpunktekalkulator</h1>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="questions" id="text_zweig_titel_hu">Magyar ág</td>
+                                <td id="text_zweig_fahne_hu">
+                                    <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('hu'); cc.display('options');">
+                                        <img src="images/flag-of-hungary.svg" width="50" height="30" />
+                                    </div>
+                                </td>
+                                <td class="questions" id="text_zweig_titel_de">Deutscher Zweig</td>
+                                <td id="text_zweig_fahne_de">
+                                    <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('de'); cc.display('options');">
+                                        <img src="images/flag-of-germany.svg" width="50" height="30" />
+                                    </div>
+                                </td>
+                                <td class="questions" id="td_button_importData">
+                                    <input type="button" value="Import" onClick="cc.importData(window.prompt('Data String:'));" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="options" style="display:none;">
+                    <h2 id="options_title"></h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td id="label_wahl_art" class="questions"></td>
+                                <td>
+                                    <select id="wahlArt" onchange="cc.useOption(this.id,this.value);" disabled>
+                                        <option id="wahl_art_choose" value="-1"></option>
+                                        <option id="wahl_art_arts" value="12"></option>
+                                        <option id="wahl_art_music" value="13"></option>
                                     </select>
-                                </span>
-                            </td>
-                            <td>
-                                <input id="input_abiNote_2" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}" />
-                                <span> NP</span>
-                            </td>
-                            <td id="exams_2_req">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td id="exams_3_mode"></td>
-                            <td>
-                                <select id="input_abiFach_3" onchange="tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();">
-                                    <option id="opt_ex_3_choose" value="0"></option>
-                                    <option id="opt_ex_3_mat" value="6"></option>
-                                    <option id="opt_ex_3_phy" value="7"></option>
-                                    <option id="opt_ex_3_bio" value="8"></option>
-                                    <option id="opt_ex_3_ch" value="9" style="display:none;"></option>
-                                </select>
-                            </td>
-                            <td>
-                                <input id="input_abiNote_3" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}" />
-                                <span> NP</span>
-                            </td>
-                            <td id="exams_3_req">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>4.</td>
-                            <td id="exams_4_mode"></td>
-                            <td>
-                                <select id="input_abiFach_4" onchange="tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();">
-                                    <option id="opt_ex_4_choose" value="0"></option>
-                                    <option id="opt_ex_4_eng" value="3"></option>
-                                    <option id="opt_ex_4_frz" value="4" style="display:none;"></option>
-                                    <option id="opt_ex_4_mat" value="6"></option>
-                                    <option id="opt_ex_4_phy" value="7"></option>
-                                    <option id="opt_ex_4_bio" value="8" style="display:none;"></option>
-                                    <option id="opt_ex_4_ch" value="9" style="display:none;"></option>
-                                    <option id="opt_ex_4_ge" value="10"></option>
-                                    <option id="opt_ex_4_uge" value="11" style="display:none;"></option>
-                                    <option id="opt_ex_4_soz" value="14" style="display:none;"></option>
-                                </select>
-                            </td>
-                            <td>
-                                <input id="input_abiNote_4" type="text" class="exam_points" maxlength="3" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}" />
-                                <span> NP</span>
-                            </td>
-                            <td id="exams_4_req">&nbsp;</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section id="buttons" style="display:none;">
-                <input id="button_calculate" type="button" value="CALCULATE" class="send" onclick="cc.calculate();" />
-                <a id="exportLink">
-                    <input id="button_export" type="button" onclick="cc.exportData();" value="EXPORT" />
-                </a>
-            </section>
-            <section id="results" style="display:none;">
-                <h2>Ergebnisse:</h2>
-                <table class="ergebnisse">
-                    <tbody>
-                        <tr>
-                            <td colspan="3">Insgesamt: <span id="result_sum">?</span> von 900 Punkten erreicht.</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Abiturdurchschnitt: <span id="result_avg">?</span></td>
-                        </tr>
-                        <tr>
-                            <td class="ergebnisse"><h3>Bereich A</h3></td>
-                            <td class="ergebnisse"><h3>Bereich B</h3></td>
-                            <td class="ergebnisse"><h3>Bereich C</h3></td>
-                        </tr>
-                        <tr>
-                            <td class="ergebnisse"><span id="result_bereichA">?</span> von 270 Punkten erreicht.</td>
-                            <td class="ergebnisse"><span id="result_bereichB">?</span> von 330 Punkten erreicht.</td>
-                            <td class="ergebnisse"><span id="result_bereichC">?</span> von 300 Punkten erreicht.</td>
-                        </tr>
-                        <tr>
-                            <td class="ergebnisse">Details:<br/><br/></td>
-                            <td class="ergebnisse">Details:<br/><br/></td>
-                            <td class="ergebnisse">Details:<br/><br/></td>
-                        </tr>
-                        <tr>
-                            <td class="ergebnisse">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td class="ergebnisse">
-                                <table>
-                                    <tbody id="result_B_tbody">
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td class="ergebnisse">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
+                                </td>
+                            </tr>
+                            <tr id="de_wahl_lang" style="display:none;">
+                                <td id="label_de_wahl_lang" class="questions"></td>
+                                <td>
+                                    <select id="deWahlLang" onchange="cc.useOption(this.id,this.value);" disabled>
+                                        <option id="de_wahl_lang_choose" value="-1"></option>
+                                        <option id="de_wahl_lang_uz" value="2"></option>
+                                        <option id="de_wahl_lang_fra" value="4"></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="de_wahl_nat_wis" style="display:none;">
+                                <td id="label_de_wahl_nat_wis" class="questions"></td>
+                                <td>
+                                    <select id="deWahlNatWis" onchange="cc.useOption(this.id,this.value);" disabled>
+                                        <option id="de_wahl_nat_wis_choose" value="-1"></option>
+                                        <option id="de_wahl_nat_wis_phy_bio" value="78"></option>
+                                        <option id="de_wahl_nat_wis_phy_ch" value="79"></option>
+                                        <option id="de_wahl_nat_wis_bio_ch" value="89"></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="label_option_lang" class="questions"></td>
+                                <td>
+                                    <select id="optionLang" onchange="cc.useOption(this.id,this.value);" disabled>
+                                        <option id="option_lang_choose" value="-1"></option>
+                                        <option id="option_lang_none" value="0"></option>
+                                        <option id="option_lang_fra" value="4" style="display:none;"></option>
+                                        <option id="option_lang_spa" value="5"></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="label_option_nat_wis" class="questions"></td>
+                                <td>
+                                    <select id="optionNatWis" onchange="cc.useOption(this.id,this.value);" disabled>
+                                        <option id="option_nat_wis_choose" value="-1"></option>
+                                        <option id="option_nat_wis_none" value="0"></option>
+                                        <option id="fluidOptionPhy" value="7"></option>
+                                        <option id="option_nat_wis_phy_lk" value="7+"></option>
+                                        <option id="fluidOptionBio" value="8" style="display:none;"></option>
+                                        <option id="fluidOptionCh" value="9" style="display:none;"></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="label_option_ges_wis" class="questions"></td>
+                                <td>
+                                    <select id="optionGesWis" onchange="cc.useOption(this.id,this.value);" disabled>
+                                        <option id="option_ges_wis_choose" value="-1"></option>
+                                        <option id="option_ges_wis_none" value="0"></option>
+                                        <option id="option_ges_wis_ek" value="16"></option>
+                                        <option id="option_ges_wis_eth" value="17"></option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="grades" style="display:none;">
+                    <h2 id="grades_title"></h2>
+                    <table class="grades">
+                        <thead>
+                            <tr>
+                                <th id="grades_header" class="grades_subjects"></th>
+                                <th>11.1</th>
+                                <th>11.2</th>
+                                <th>12.1</th>
+                                <th>12.2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Deutsch / Német -->
+                            <tr id="grades_dt">
+                                <td id="grades_subj_dt" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_dt_note_1" onchange="updateGrade('dt', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_dt_note_2" onchange="updateGrade('dt', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_dt_note_3" onchange="updateGrade('dt', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_dt_note_4" onchange="updateGrade('dt', 4);" />
+                                </td>
+                            </tr>
+                            <!-- UZ / Magyar -->
+                            <tr id="grades_ung">
+                                <td id="grades_subj_ung" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_ung_note_1" onchange="updateGrade('ung', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_ung_note_2" onchange="updateGrade('ung', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_ung_note_3" onchange="updateGrade('ung', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_ung_note_4" onchange="updateGrade('ung', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Englisch / Angol -->
+                            <tr id="grades_eng">
+                                <td id="grades_subj_eng" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_eng_note_1" onchange="updateGrade('eng', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_eng_note_2" onchange="updateGrade('eng', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_eng_note_3" onchange="updateGrade('eng', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_eng_note_4" onchange="updateGrade('eng', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Französisch / Francia -->
+                            <tr id="grades_frz">
+                                <td id="grades_subj_frz" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_frz_note_1" onchange="updateGrade('frz', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_frz_note_2" onchange="updateGrade('frz', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_frz_note_3" onchange="updateGrade('frz', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_frz_note_4" onchange="updateGrade('frz', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Spanisch / Spanyol -->
+                            <tr id="grades_spa">
+                                <td id="grades_subj_spa" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_spa_note_1" onchange="updateGrade('spa', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_spa_note_2" onchange="updateGrade('spa', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_spa_note_3" onchange="updateGrade('spa', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_spa_note_4" onchange="updateGrade('spa', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Mathematik / Matematika -->
+                            <tr id="grades_mat">
+                                <td id="grades_subj_mat" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_mat_note_1" onchange="updateGrade('mat', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_mat_note_2" onchange="updateGrade('mat, 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_mat_note_3" onchange="updateGrade('mat, 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_mat_note_4" onchange="updateGrade('mat, 4);" />
+                                </td>
+                            </tr>
+                            <!-- Physik / Fizika -->
+                            <tr id="grades_phy">
+                                <td id="grades_subj_phy" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_phy_note_1" onchange="updateGrade('phy', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_phy_note_2" onchange="updateGrade('phy', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_phy_note_3" onchange="updateGrade('phy', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_phy_note_4" onchange="updateGrade('phy', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Biologie / Biológia -->
+                            <tr id="grades_bio">
+                                <td id="grades_subj_bio" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_bio_note_1" onchange="updateGrade('bio', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_bio_note_2" onchange="updateGrade('bio', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_bio_note_3" onchange="updateGrade('bio', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_bio_note_4" onchange="updateGrade('bio', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Chemie / Kémia-->
+                            <tr id="grades_ch">
+                                <td id="grades_subj_ch" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_ch_note_1" onchange="updateGrade('ch', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_ch_note_2" onchange="updateGrade('ch', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_ch_note_3" onchange="updateGrade('ch', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_ch_note_4" onchange="updateGrade('ch', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Geschichte / Német történelem -->
+                            <tr id="grades_ge">
+                                <td id="grades_subj_ge" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_ge_note_1" onchange="updateGrade('ge', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_ge_note_2" onchange="updateGrade('ge', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_ge_note_3" onchange="updateGrade('ge', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_ge_note_4" onchange="updateGrade('ge', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Ungarische Geschichte / Történelem -->
+                            <tr id="grades_uge">
+                                <td id="grades_subj_uge" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_uge_note_1" onchange="updateGrade('uge', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_uge_note_2" onchange="updateGrade('uge', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_uge_note_3" onchange="updateGrade('uge', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_uge_note_4" onchange="updateGrade('uge', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Bildende Kunst / Rajz -->
+                            <tr id="grades_bk">
+                                <td id="grades_subj_bk" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_bk_note_1" onchange="updateGrade('bk', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_bk_note_2" onchange="updateGrade('bk', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_bk_note_3" onchange="updateGrade('bk', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_bk_note_4" onchange="updateGrade('bk', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Musik / Ének-zene -->
+                            <tr id="grades_mus">
+                                <td id="grades_subj_mus" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_mus_note_1" onchange="updateGrade('mus', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_mus_note_2" onchange="updateGrade('mus', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_mus_note_3" onchange="updateGrade('mus', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_mus_note_4" onchange="updateGrade('mus', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Sozialkunde / Társadalomismeret -->
+                            <tr id="grades_soz">
+                                <td id="grades_subj_soz" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_soz_note_1" onchange="updateGrade('soz', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_soz_note_2" onchange="updateGrade('soz', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_soz_note_3" onchange="updateGrade('soz', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_soz_note_4" onchange="updateGrade('soz', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Sport / Sport -->
+                            <tr id="grades_spo">
+                                <td id="grades_subj_spo" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_spo_note_1" onchange="updateGrade('spo', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_spo_note_2" onchange="updateGrade('spo', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_spo_note_3" onchange="updateGrade('spo', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_spo_note_4" onchange="updateGrade('spo', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Erdkunde / Földrajz -->
+                            <tr id="grades_ek">
+                                <td id="grades_subj_ek" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_ek_note_1" onchange="updateGrade('ek', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_ek_note_2" onchange="updateGrade('ek', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_ek_note_3" onchange="updateGrade('ek', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_ek_note_4" onchange="updateGrade('ek', 4);" />
+                                </td>
+                            </tr>
+                            <!-- Ethik (oder Religion) / Etika (vagy Hittan) -->
+                            <tr id="grades_eth">
+                                <td id="grades_subj_eth" class="grades_subjects"></td>
+                                <td>
+                                    <input id="input_eth_note_1" onchange="updateGrade('eth', 1);" />
+                                </td>
+                                <td>
+                                    <input id="input_eth_note_2" onchange="updateGrade('eth', 2);" />
+                                </td>
+                                <td>
+                                    <input id="input_eth_note_3" onchange="updateGrade('eth', 3);" />
+                                </td>
+                                <td>
+                                    <input id="input_eth_note_4" onchange="updateGrade('eth', 4);" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="exams" style="display:none;">
+                    <h2 id="exams_title"></h2>
+                    <table class="exams">
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td id="exams_1_mode"></td>
+                                <td id="exams_1_subj">dt</td>
+                                <td>
+                                    <input id="input_abiNote_1" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}" />
+                                    <span> NP</span>
+                                </td>
+                                <td id="exams_1_req">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td id="exams_2_mode"></td>
+                                <td id="exams_2_subj">
+                                    <span id="exams_2_hu_subj">Magyar</span>
+                                    <span id="exams_2_de_subj" style="display:none;">
+                                        <select id="input_abiFach_2" onchange="tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();">
+                                            <option id="opt_ex_2_choose" value="0"></option>
+                                            <option id="opt_ex_2_eng" value="3"></option>
+                                            <option id="opt_ex_2_frz" value="4"></option>
+                                            <option id="opt_ex_2_mat" value="6"></option>
+                                        </select>
+                                    </span>
+                                </td>
+                                <td>
+                                    <input id="input_abiNote_2" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}" />
+                                    <span> NP</span>
+                                </td>
+                                <td id="exams_2_req">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td id="exams_3_mode"></td>
+                                <td>
+                                    <select id="input_abiFach_3" onchange="tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();">
+                                        <option id="opt_ex_3_choose" value="0"></option>
+                                        <option id="opt_ex_3_mat" value="6"></option>
+                                        <option id="opt_ex_3_phy" value="7"></option>
+                                        <option id="opt_ex_3_bio" value="8"></option>
+                                        <option id="opt_ex_3_ch" value="9" style="display:none;"></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input id="input_abiNote_3" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}" />
+                                    <span> NP</span>
+                                </td>
+                                <td id="exams_3_req">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td id="exams_4_mode"></td>
+                                <td>
+                                    <select id="input_abiFach_4" onchange="tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();">
+                                        <option id="opt_ex_4_choose" value="0"></option>
+                                        <option id="opt_ex_4_eng" value="3"></option>
+                                        <option id="opt_ex_4_frz" value="4" style="display:none;"></option>
+                                        <option id="opt_ex_4_mat" value="6"></option>
+                                        <option id="opt_ex_4_phy" value="7"></option>
+                                        <option id="opt_ex_4_bio" value="8" style="display:none;"></option>
+                                        <option id="opt_ex_4_ch" value="9" style="display:none;"></option>
+                                        <option id="opt_ex_4_ge" value="10"></option>
+                                        <option id="opt_ex_4_uge" value="11" style="display:none;"></option>
+                                        <option id="opt_ex_4_soz" value="14" style="display:none;"></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input id="input_abiNote_4" type="text" class="exam_points" maxlength="3" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}" />
+                                    <span> NP</span>
+                                </td>
+                                <td id="exams_4_req">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="buttons" style="display:none;">
+                    <input id="button_calculate" type="button" value="CALCULATE" class="send" onclick="cc.calculate();" />
+                    <a id="exportLink">
+                        <input id="button_export" type="button" onclick="cc.exportData();" value="EXPORT" />
+                    </a>
+                </section>
+                <section id="results" style="display:none;">
+                    <h2>Ergebnisse:</h2>
+                    <table class="ergebnisse">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">Insgesamt: <span id="result_sum">?</span> von 900 Punkten erreicht.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Abiturdurchschnitt: <span id="result_avg">?</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ergebnisse"><h3>Bereich A</h3></td>
+                                <td class="ergebnisse"><h3>Bereich B</h3></td>
+                                <td class="ergebnisse"><h3>Bereich C</h3></td>
+                            </tr>
+                            <tr>
+                                <td class="ergebnisse"><span id="result_bereichA">?</span> von 270 Punkten erreicht.</td>
+                                <td class="ergebnisse"><span id="result_bereichB">?</span> von 330 Punkten erreicht.</td>
+                                <td class="ergebnisse"><span id="result_bereichC">?</span> von 300 Punkten erreicht.</td>
+                            </tr>
+                            <tr>
+                                <td class="ergebnisse">Details:<br/><br/></td>
+                                <td class="ergebnisse">Details:<br/><br/></td>
+                                <td class="ergebnisse">Details:<br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ergebnisse">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td class="ergebnisse">
+                                    <table>
+                                        <tbody id="result_B_tbody">
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td class="ergebnisse">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
         <footer>
             <div>&copy; 2014 Németh András</div>
         </footer>

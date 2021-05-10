@@ -6,7 +6,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function options_setup() {
 
-    document.getElementById('title_options').innerHTML = i18n.get("options_title");
+    document.getElementById('options_title').innerHTML = i18n.get("options_title");
 
     /* wahlArt (1) -------------------------------------------------- */
 

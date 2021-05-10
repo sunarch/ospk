@@ -293,3 +293,11 @@ input.exam_points {
 
 table.ergebnisse { width: 99%; }
 td.ergebnisse { width: 33%; }
+
+#result_B_tbody td {
+    width: 33%;
+}
+
+.right{
+    text-align: right;
+}

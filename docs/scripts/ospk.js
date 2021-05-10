@@ -120,11 +120,7 @@ function OberstufenPunkteKalkulator() {
                 break;
 
             case "section_results":
-                var dom_child;
-                if(dom_child = document.getElementById("section_ergebnis_content")) {
-                    dom_child.parentNode.removeChild(dom_child);
-                }
-                construct_results();
+                results_setup();
                 document.getElementById('section_ergebnis').style.display = "block";
                 break;
 
@@ -866,7 +862,14 @@ function BbHalbjahr(fachname, halbjahrno, note) {
     this.halbjahrno = halbjahrno;
     this.note = note;
 
-    /* no methods */
+    this.names = ["11.1", "11.2", "12.1", "12.2"]
+
+    /* methods */
+
+    this.getName = function() {
+        return this.names[this.halbjahrno - 1];
+    }
+
 }
 
 /* deprecated functions ----------------------------------------------*/

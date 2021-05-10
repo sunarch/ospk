@@ -86,7 +86,7 @@ function inputs_setup() {
     if(cc.student.zweig == "hu") {
         document.getElementById('opt_ex_3_ch').style.display = "initial";
     }
-    
+
     // select top ('choose') entry
     document.getElementById("input_abiFach_3").options.selectedIndex = 0
 
@@ -137,7 +137,7 @@ function inputs_setup() {
     if (cc.student.zweig == "hu") {
         document.getElementById('opt_ex_4_uge').style.display = "initial";
     }
-    
+
     // select top ('choose') entry
     document.getElementById("input_abiFach_4").options.selectedIndex = 0
 
@@ -146,5 +146,19 @@ function inputs_setup() {
     document.getElementById('button_calculate').value = i18n.get("calculate");
 
     document.getElementById('button_export').value = i18n.get("exportData");
+
+}
+
+
+function updateGrade(i_fach, i_semester, dom_input) {
+    s_value = dom_input.value
+
+    if (!valid.grade(s_value)) {
+        dom_input.value = "";
+        return;
+    }
+
+    tempNum = new Number(s_value);
+    cc.fach[i_fach].note[i_semester] = tempNum.valueOf();
 
 }

@@ -26,12 +26,6 @@ valid = {
     
 }
 
-function validateGradeField(o_domInput) {
-    if (!valid.grade(o_domInput.value)) {
-        o_domInput.value = "";
-    }
-}
-
 /* adapted functions (Nspire Basic) ----------------------------------*/
 
 /*

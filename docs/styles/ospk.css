@@ -268,6 +268,10 @@ aside h2 {
     text-indent: 40px;
 }
 
+#branches div {
+    cursor: pointer;
+}
+
 /* Fakultációk választása */
 
 input.q_answers { }

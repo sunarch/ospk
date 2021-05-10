@@ -46,6 +46,8 @@ body {
     /* min-height: 100%; */
 }
 
+/* general: header, #content_body (main, aside), footer ------------- */
+
 #content_body {
     display: block;
 
@@ -161,6 +163,33 @@ header img {
     padding-right: 0px;
 }
 
+footer {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #213C84;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+footer div {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* general: sections ------------------------------------------------ */
+
 section {
     display: block;
     position: relative;
@@ -188,30 +217,7 @@ aside section {
     padding-right: 10px;
 }
 
-footer {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    background-color: #213C84;
-    padding: 10px;
-    width: 100%;
-    overflow: hidden;
-}
-
-footer div {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    font-size: 13px;
-    font-weight: bold;
-}
+/* general: headings ------------------------------------------------ */
 
 h1,h2,h3,h4,h5,h6,p {
     color: black;
@@ -287,11 +293,7 @@ aside h2 {
     font-size: 16px;
 }
 
-/* Fakultációk választása */
-
-input.q_answers { }
-
-/*11.-12.-es jegyek*/
+/* grades ----------------------------------------------------------- */
 
 #grades table {
     margin-left: auto;
@@ -325,7 +327,7 @@ input.q_answers { }
     text-align: center;
 }
 
-/* Érettségi vizsgatárgyak és -eredmények */
+/* exams ------------------------------------------------------------ */
 
 #exams table {
     margin-left: auto;
@@ -342,7 +344,7 @@ input.q_answers { }
     text-align: center;
 }
 
-/* Összesített eredmények */
+/* results ---------------------------------------------------------- */
 
 #results table {
     width: 99%;

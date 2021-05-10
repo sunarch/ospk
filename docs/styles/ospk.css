@@ -239,7 +239,7 @@ h1 {
     padding: 0px;
 }
 
-h2 {
+main h2 {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
@@ -260,7 +260,7 @@ h3 {
     padding: 0px;
 }
 
-.name_title {
+aside h2 {
     color: black;
     font-weight: bold;
     font-size: 16px;

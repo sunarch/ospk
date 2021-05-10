@@ -40,10 +40,8 @@ function Localization() {
                                   "Fizika (fakultációval)"],
         "grades1112_title":      ["Noten aus den Klassen 11 und 12:",
                                   "Jegyek a 11. és a 12. osztályból:"],
-        "grades1112_headers":    [
-                                   ["Fächer","11.1","11.2","12.1","12.2"],
-                                   ["Tantárgyak","11.1","11.2","12.1","12.2"]
-                                 ],
+        "grades1112_header":     ["Fächer",
+                                  "Tantárgyak"],
         "examresults_title":     ["Abiturfächer und Abiturnoten:",
                                   "Vizsgatárgyak és a vizsgaeredmények:"],
         "written":               ["schriftlich",
@@ -51,7 +49,7 @@ function Localization() {
         "oral":                  ["mündlich",
                                   "szóbeli"],
         "obligatory":            ["vorgeschrieben",
-                                  "kötelezõ"],
+                                  "kötelező"],
         "calculate":             ["Berechnen!",
                                   "Számítás!"],
         "recalculate":           ["Umrechnen!",

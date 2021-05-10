@@ -73,7 +73,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <td id="label_wahl_art" class="questions"></td>
                             <td>
                                 <select id="wahlArt" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="wahl_art_choose" value="-1" selected></option>
+                                    <option id="wahl_art_choose" value="-1"></option>
                                     <option id="wahl_art_arts" value="12"></option>
                                     <option id="wahl_art_music" value="13"></option>
                                 </select>
@@ -83,7 +83,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <td id="label_de_wahl_lang" class="questions"></td>
                             <td>
                                 <select id="deWahlLang" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="de_wahl_lang_choose" value="-1" selected></option>
+                                    <option id="de_wahl_lang_choose" value="-1"></option>
                                     <option id="de_wahl_lang_uz" value="2"></option>
                                     <option id="de_wahl_lang_fra" value="4"></option>
                                 </select>
@@ -93,7 +93,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <td id="label_de_wahl_nat_wis" class="questions"></td>
                             <td>
                                 <select id="deWahlNatWis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="de_wahl_nat_wis_choose" value="-1" selected></option>
+                                    <option id="de_wahl_nat_wis_choose" value="-1"></option>
                                     <option id="de_wahl_nat_wis_phy_bio" value="78"></option>
                                     <option id="de_wahl_nat_wis_phy_ch" value="79"></option>
                                     <option id="de_wahl_nat_wis_bio_ch" value="89"></option>
@@ -115,7 +115,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <td id="label_option_nat_wis" class="questions"></td>
                             <td>
                                 <select id="optionNatWis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="option_nat_wis_choose" value="-1" selected></option>
+                                    <option id="option_nat_wis_choose" value="-1"></option>
                                     <option id="option_nat_wis_none" value="0"></option>
                                     <option id="fluidOptionPhy" value="7"></option>
                                     <option id="option_nat_wis_phy_lk" value="7+"></option>
@@ -128,7 +128,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <td id="label_option_ges_wis" class="questions"></td>
                             <td>
                                 <select id="optionGesWis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                    <option id="option_ges_wis_choose" value="-1" selected></option>
+                                    <option id="option_ges_wis_choose" value="-1"></option>
                                     <option id="option_ges_wis_none" value="0"></option>
                                     <option id="option_ges_wis_ek" value="16"></option>
                                     <option id="option_ges_wis_eth" value="17"></option>
@@ -138,7 +138,377 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </tbody>
                 </table>
             </section>
-            <section id="section_inputs" class="block" style="display:none;"></div>
+            <section id="section_grades" class="block" style="display:none;">
+                <div id="grades_title" class="section_title"></div>
+                <table class="grades1112">
+                    <thead class="grades1112">
+                        <tr class="grades1112">
+                            <th id="grades_header" class="grades1112_subjects"></th>
+                            <th class="grades1112">11.1</th>
+                            <th class="grades1112">11.2</th>
+                            <th class="grades1112">12.1</th>
+                            <th class="grades1112">12.2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Deutsch / Német -->
+                        <tr id="grades_dt" class="grades1112">
+                            <td id="grades_subj_dt" class="grades1112_subjects">Német</td>
+                            <td>
+                                <input id="input_dt_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[1].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_dt_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[1].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_dt_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[1].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_dt_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[1].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- UZ / Magyar -->
+                        <tr id="grades_ung" class="grades1112">
+                            <td id="grades_subj_ung" class="grades1112_subjects">Magyar</td>
+                            <td>
+                                <input id="input_ung_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[2].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ung_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[2].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ung_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[2].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ung_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[2].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Englisch / Angol -->
+                        <tr id="grades_eng" class="grades1112">
+                            <td id="grades_subj_eng" class="grades1112_subjects">Angol</td>
+                            <td>
+                                <input id="input_eng_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[3].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_eng_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[3].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_eng_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[3].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_eng_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[3].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Französisch / Francia -->
+                        <tr id="grades_frz" class="grades1112">
+                            <td id="grades_subj_frz" class="grades1112_subjects"></td>
+                            <td>
+                                <input id="input_frz_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[4].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_frz_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[4].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_frz_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[4].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_frz_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[4].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Spanisch / Spanyol -->
+                        <tr id="grades_spa" class="grades1112">
+                            <td id="grades_subj_spa" class="grades1112_subjects">Spanyol</td>
+                            <td>
+                                <input id="input_spa_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[5].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spa_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[5].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spa_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[5].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spa_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[5].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Mathematik / Matematika -->
+                        <tr id="grades_mat" class="grades1112">
+                            <td id="grades_subj_mat" class="grades1112_subjects">Matematika</td>
+                            <td>
+                                <input id="input_mat_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[6].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mat_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[6].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mat_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[6].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mat_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[6].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Physik / Fizika -->
+                        <tr id="grades_phy" class="grades1112">
+                            <td id="grades_subj_phy" class="grades1112_subjects">Fizika</td>
+                            <td>
+                                <input id="input_phy_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[7].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_phy_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[7].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_phy_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[7].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_phy_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[7].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Biologie / Biológia -->
+                        <tr id="grades_bio" class="grades1112">
+                            <td id="grades_subj_bio" class="grades1112_subjects">Biológia</td>
+                            <td>
+                                <input id="input_bio_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[8].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_bio_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[8].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_bio_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[8].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_bio_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[8].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Chemie / Kémia-->
+                        <tr id="grades_ch" class="grades1112">
+                            <td id="grades_subj_ch" class="grades1112_subjects">Kémia</td>
+                            <td>
+                                <input id="input_ch_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[9].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ch_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[9].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ch_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[9].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ch_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[9].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Geschichte / Német történelem -->
+                        <tr id="grades_ge" class="grades1112">
+                            <td id="grades_subj_ge" class="grades1112_subjects">Német történelem</td>
+                            <td>
+                                <input id="input_ge_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[10].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ge_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[10].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ge_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[10].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_ge_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[10].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Ungarische Geschichte / Történelem -->
+                        <tr id="grades_uge" class="grades1112">
+                            <td id="grades_subj_uge" class="grades1112_subjects">Történelem</td>
+                            <td>
+                                <input id="input_uge_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[11].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_uge_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[11].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_uge_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[11].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_uge_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[11].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Bildende Kunst / Rajz -->
+                        <tr id="grades_bk" class="grades1112">
+                            <td id="grades_subj_bk" class="grades1112_subjects"></td>
+                            <td>
+                                <input id="input_uge_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[12].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_uge_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[12].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_uge_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[12].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_uge_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[12].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Musik / Ének-zene -->
+                        <tr id="grades_mus" class="grades1112">
+                            <td id="grades_subj_mus" class="grades1112_subjects">Ének-zene</td>
+                            <td>
+                                <input id="input_mus_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[13].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mus_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[13].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mus_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[13].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mus_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[13].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Sozialkunde / Társadalomismeret -->
+                        <tr id="grades_soz" class="grades1112">
+                            <td id="grades_subj_soz" class="grades1112_subjects"></td>
+                            <td>
+                                <input id="input_mus_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[14].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mus_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[14].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mus_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[14].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_mus_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[14].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Sport / Sport -->
+                        <tr id="grades_spo" class="grades1112">
+                            <td id="grades_subj_spo" class="grades1112_subjects">Sport</td>
+                            <td>
+                                <input id="input_spo_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[15].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[15].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[15].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[15].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Erdkunde / Földrajz -->
+                        <tr id="grades_ek" class="grades1112">
+                            <td id="grades_subj_ek" class="grades1112_subjects"></td>
+                            <td>
+                                <input id="input_spo_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[16].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[16].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[16].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[16].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                        <!-- Ethik (oder Religion) / Etika (vagy Hittan) -->
+                        <tr id="grades_eth" class="grades1112">
+                            <td id="grades_subj_eth" class="grades1112_subjects"></td>
+                            <td>
+                                <input id="input_spo_note_1" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[17].note[1] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_2" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[17].note[2] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_3" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[17].note[3] = tempNum.valueOf();}" />
+                            </td>
+                            <td>
+                                <input id="input_spo_note_4" class="grades1112" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.fach[17].note[4] = tempNum.valueOf();}" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="section_exams" class="block" style="display:none;">
+                <div id="exams_title" class="section_title"></div>
+                <table class="exams">
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td id="exams_1_mode"></td>
+                            <td id="exams_1_subj">dt</td>
+                            <td>
+                                <input id="input_abiNote_1" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}" />
+                                <span> NP</span>
+                            </td>
+                            <td id="exams_1_req">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td id="exams_2_mode"></td>
+                            <td id="exams_2_subj">
+                                <span id="exams_2_hu_subj">Magyar</span>
+                                <span id="exams_2_de_subj" style="display:none;">
+                                    <select id="input_abiFach_2" onchange="tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();">
+                                        <option id="opt_ex_2_choose" value="0"></option>
+                                        <option id="opt_ex_2_eng" value="3"></option>
+                                        <option id="opt_ex_2_frz" value="4"></option>
+                                        <option id="opt_ex_2_mat" value="6"></option>
+                                    </select>
+                                </span>
+                            </td>
+                            <td>
+                                <input id="input_abiNote_2" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}" />
+                                <span> NP</span>
+                            </td>
+                            <td id="exams_2_req">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td id="exams_3_mode"></td>
+                            <td>
+                                <select id="input_abiFach_3" onchange="tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();">
+                                    <option id="opt_ex_3_choose" value="0"></option>
+                                    <option id="opt_ex_3_mat" value="6"></option>
+                                    <option id="opt_ex_3_phy" value="7"></option>
+                                    <option id="opt_ex_3_bio" value="8"></option>
+                                    <option id="opt_ex_3_ch" value="9" style="display:none;"></option>
+                                </select>
+                            </td>
+                            <td>
+                                <input id="input_abiNote_3" type="text" class="exam_points" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}" />
+                                <span> NP</span>
+                            </td>
+                            <td id="exams_3_req">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td id="exams_4_mode"></td>
+                            <td>
+                                <select id="input_abiFach_4" onchange="tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();">
+                                    <option id="opt_ex_4_choose" value="0"></option>
+                                    <option id="opt_ex_4_eng" value="3"></option>
+                                    <option id="opt_ex_4_frz" value="4" style="display:none;"></option>
+                                    <option id="opt_ex_4_mat" value="6"></option>
+                                    <option id="opt_ex_4_phy" value="7"></option>
+                                    <option id="opt_ex_4_bio" value="8" style="display:none;"></option>
+                                    <option id="opt_ex_4_ch" value="9" style="display:none;"></option>
+                                    <option id="opt_ex_4_ge" value="10"></option>
+                                    <option id="opt_ex_4_uge" value="11" style="display:none;"></option>
+                                    <option id="opt_ex_4_soz" value="14" style="display:none;"></option>
+                                </select>
+                            </td>
+                            <td>
+                                <input id="input_abiNote_4" type="text" class="exam_points" maxlength="3" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}" />
+                                <span> NP</span>
+                            </td>
+                            <td id="exams_4_req">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="section_buttons" class="block" style="display:none;">
+                <input id="button_calculate" type="button" value="CALCULATE" class="send" onclick="cc.calculate();" />
+                <a id="exportLink">
+                    <input id="button_export" type="button" onclick="cc.exportData();" value="EXPORT" />
+                </a>
             </section>
             <section id="section_ergebnis" class="block" style="display:none;">
             </section>

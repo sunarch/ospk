@@ -244,20 +244,39 @@ input.q_answers { }
 
 /*11.-12.-es jegyek*/
 
-table.grades1112 { width: 500px; }
-tr.grades1112 { height: 25px; }
-td.grades1112_headers {
+table.grades1112 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+thead.grades1112 {
     font-size: 16px;
     font-weight: bold;
 }
-td.grades1112_subjects { }
-input.grades1112 { width: 40px; }
+tr.grades1112 { height: 25px; }
+tr.grades1112 td {
+    width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+tr.grades1112 td.grades1112_subjects {
+    width: 150px;
+    text-align: left;
+}
+input.grades1112 {
+    width: 100%;
+    text-align: center;
+}
 div.grades1112_averages { }
 div.grades1112_grand_average { }
 
 /* Érettségi vizsgatárgyak és -eredmények */
 
-table.exams { width: 400px; }
+table.exams {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
 tr.exams { height: 25px; }
 td.exam_no { }
 td.exam_type { }
@@ -265,7 +284,10 @@ td.exam_subject { }
 select.exam_subject { }
 option.exam_subject { }
 td.exam_points { }
-input.exam_points { width: 40px; }
+input.exam_points {
+    width: 40px;
+    text-align: center;
+}
 
 /* Összesített eredmények */
 

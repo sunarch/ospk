@@ -85,18 +85,16 @@ function OberstufenPunkteKalkulator() {
             case "options":
 
                 // What we hide
-                document.getElementById('td_button_importData').style.display = "none";
+                document.getElementById('branches_import').style.display = "none";
 
                 switch(cc.student.zweig) {
 
                     default: case "hu":
-                        document.getElementById('text_zweig_titel_de').style.display = "none";
-                        document.getElementById('text_zweig_fahne_de').style.display = "none";
+                        document.getElementById('branches_de').style.display = "none";
                         break;
 
                     case "de":
-                        document.getElementById('text_zweig_titel_hu').style.display = "none";
-                        document.getElementById('text_zweig_fahne_hu').style.display = "none";
+                        document.getElementById('branches_hu').style.display = "none";
                         break;
                 }
 

@@ -45,27 +45,24 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     <h1>Oberstufenpunktekalkulator</h1>
                 </section>
                 <section id="branches">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td id="text_zweig_titel_hu">Magyar ág</td>
-                                <td id="text_zweig_fahne_hu">
-                                    <div onClick="gui.chooseBranch('hu');">
-                                        <img src="images/flag-of-hungary.svg" width="50" height="30" alt="flag of Hungary" />
-                                    </div>
-                                </td>
-                                <td id="text_zweig_titel_de">Deutscher Zweig</td>
-                                <td id="text_zweig_fahne_de">
-                                    <div onClick="gui.chooseBranch('de');">
-                                        <img src="images/flag-of-germany.svg" width="50" height="30" alt="flag of Germany" />
-                                    </div>
-                                </td>
-                                <td id="td_button_importData">
-                                    <input type="button" value="Import" onClick="gui.importData()" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div id="branches_hu">
+                        <span>Magyar ág</span>
+                        <span onClick="gui.chooseBranch('hu');">
+                            <img src="images/flag-of-hungary.svg" width="50" height="30" alt="flag of Hungary" />
+                        </span>
+                    </div>
+                    <div id="branches_de">
+                        <span>Deutscher Zweig</span>
+                        <span onClick="gui.chooseBranch('de');">
+                            <img src="images/flag-of-germany.svg" width="50" height="30" alt="flag of Germany" />
+                        </span>
+                    </div>
+                    <div id="branches_import">
+                        <span>Import</span>
+                        <span>
+                            <input type="button" value="Enter data" onClick="gui.importData()" />
+                        </span>
+                    </div>
                 </section>
                 <section id="options" style="display:none;">
                     <h2 id="options_title"></h2>

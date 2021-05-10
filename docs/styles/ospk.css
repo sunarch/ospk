@@ -259,15 +259,8 @@ aside h2 {
 
 /* Opciók választása */
 
-.categories {
-    color: black;
-    line-height: 1.2em;
-    font-weight: bold;
-    font-size: 18px;
-    text-decoration: underline;
-}
-
-.questions {
+#branches td,
+#options td:first-of-type {
     color: black;
     line-height: 1.0em;
     font-weight: bold;

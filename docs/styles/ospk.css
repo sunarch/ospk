@@ -331,18 +331,18 @@ input.q_answers { }
 
 /* Összesített eredmények */
 
-table.ergebnisse {
+#results table {
     width: 99%;
 }
 
-td.ergebnisse {
+#results td {
     width: 33%;
 }
 
-#result_B_tbody td {
+#results_B_tbody td {
     width: 33%;
 }
 
-.right{
+#results_B_tbody td:last-of-type {
     text-align: right;
 }

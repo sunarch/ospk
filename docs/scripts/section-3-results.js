@@ -13,7 +13,7 @@ function results_setup() {
     document.getElementById('result_bereichB').innerHTML = cc.bereichB.ergebnis;
     document.getElementById('result_bereichC').innerHTML = cc.bereichC.ergebnis;
 
-    var dom_tbody_B = document.getElementById('result_B_tbody');
+    var dom_tbody_B = document.getElementById('results_B_tbody');
 
     for(n1 = 1; n1 < cc.bereichB.all.length; n1 = n1 + 1) {
 
@@ -33,7 +33,6 @@ function results_setup() {
 
         // cell 3 - grade
         var dom_td_B = document.createElement('td');
-        dom_td_B.setAttribute("class", "right");
         var dom_text = document.createTextNode(cc.bereichB.all[n1].note + ' Punkte')
         dom_td_B.appendChild(dom_text);
         dom_tr_B.appendChild(dom_td_B);

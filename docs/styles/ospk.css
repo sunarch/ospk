@@ -316,6 +316,7 @@ input.q_answers { }
 
 #grades th:first-of-type, #grades td:first-of-type {
     width: 150px;
+    padding-left: 0px;
     text-align: left;
 }
 

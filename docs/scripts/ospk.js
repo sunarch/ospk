@@ -82,7 +82,7 @@ function OberstufenPunkteKalkulator() {
 
         switch(what) {
 
-            case "section_options":
+            case "options":
 
                 // What we hide
                 document.getElementById('td_button_importData').style.display = "none";
@@ -106,22 +106,22 @@ function OberstufenPunkteKalkulator() {
                 // enable first question
                 document.getElementById("wahlArt").disabled = false
 
-                document.getElementById('section_options').style.display = "block";
+                document.getElementById('options').style.display = "block";
 
                 break;
 
             case "section_inputs":
                 if(this.optsready.indexOf(false) == -1) {
                     inputs_setup();
-                    document.getElementById('section_grades').style.display = "block";
-                    document.getElementById('section_exams').style.display = "block";
-                    document.getElementById('section_buttons').style.display = "block";
+                    document.getElementById('grades').style.display = "block";
+                    document.getElementById('exams').style.display = "block";
+                    document.getElementById('buttons').style.display = "block";
                 }
                 break;
 
             case "section_results":
                 results_setup();
-                document.getElementById('section_ergebnis').style.display = "block";
+                document.getElementById('results').style.display = "block";
                 break;
 
             default:
@@ -336,7 +336,7 @@ function OberstufenPunkteKalkulator() {
 
         // Wahl des Zweigs
         this.student.set_zweig(importArray[1]);
-        this.display('section_options');
+        this.display('options');
 
         // Optionen
         this.useOption("wahlArt", importArray[2]);
@@ -496,7 +496,7 @@ function OberstufenPunkteKalkulator() {
     ]
     this.abiFach = ["Kurs-IDs",0,0,0,0];
     this.abiNote = ["Noten",0,0,0,0];
-    
+
     this.fachIdConvert = ["Kurs",
                           "dt",  "ung", "eng", "frz", "spa",
                           "mat", "phy", "bio", "ch",  "ge",

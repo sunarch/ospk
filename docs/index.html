@@ -48,13 +48,13 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                         <tr>
                             <td class="questions" id="text_zweig_titel_hu">Magyar ág</td>
                             <td id="text_zweig_fahne_hu">
-                                <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('hu'); cc.display('section_options');">
+                                <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('hu'); cc.display('options');">
                                     <img src="images/flag-of-hungary.svg" width="50" height="30" />
                                 </div>
                             </td>
                             <td class="questions" id="text_zweig_titel_de">Deutscher Zweig</td>
                             <td id="text_zweig_fahne_de">
-                                <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('de'); cc.display('section_options');">
+                                <div class="nationality" style="cursor: pointer;" onClick="cc.student.set_zweig('de'); cc.display('options');">
                                     <img src="images/flag-of-germany.svg" width="50" height="30" />
                                 </div>
                             </td>
@@ -65,9 +65,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </tbody>
                 </table>
             </section>
-            <section id="section_options" class="block" style="display:none;">
+            <section id="options" class="block" style="display:none;">
                 <h2 id="title_options"></h2>
-                <table id="section_options_content">
+                <table>
                     <tbody>
                         <tr>
                             <td id="label_wahl_art" class="questions"></td>
@@ -138,7 +138,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </tbody>
                 </table>
             </section>
-            <section id="section_grades" class="block" style="display:none;">
+            <section id="grades" class="block" style="display:none;">
                 <h2 id="grades_title"></h2>
                 <table class="grades">
                     <thead>
@@ -426,7 +426,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </tbody>
                 </table>
             </section>
-            <section id="section_exams" class="block" style="display:none;">
+            <section id="exams" class="block" style="display:none;">
                 <h2 id="exams_title"></h2>
                 <table class="exams">
                     <tbody>
@@ -504,15 +504,15 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </tbody>
                 </table>
             </section>
-            <section id="section_buttons" class="block" style="display:none;">
+            <section id="buttons" class="block" style="display:none;">
                 <input id="button_calculate" type="button" value="CALCULATE" class="send" onclick="cc.calculate();" />
                 <a id="exportLink">
                     <input id="button_export" type="button" onclick="cc.exportData();" value="EXPORT" />
                 </a>
             </section>
-            <section id="section_ergebnis" class="block" style="display:none;">
+            <section id="results" class="block" style="display:none;">
                 <h2>Ergebnisse:</h2>
-                <table id="section_ergebnis_content" class="ergebnisse">
+                <table class="ergebnisse">
                     <tbody>
                         <tr>
                             <td colspan="3">Insgesamt: <span id="result_sum">?</span> von 900 Punkten erreicht.</td>

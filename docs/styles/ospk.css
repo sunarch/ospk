@@ -296,13 +296,13 @@ input.q_answers { }
     height: 25px;
 }
 
-#grades td {
+#grades th, #grades td {
     width: 60px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-#grades td.grades_subjects {
+#grades th:first-of-type, #grades td:first-of-type {
     width: 150px;
     text-align: left;
 }

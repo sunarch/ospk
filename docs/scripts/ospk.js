@@ -496,6 +496,12 @@ function OberstufenPunkteKalkulator() {
     ]
     this.abiFach = ["Kurs-IDs",0,0,0,0];
     this.abiNote = ["Noten",0,0,0,0];
+    
+    this.fachIdConvert = ["Kurs",
+                          "dt",  "ung", "eng", "frz", "spa",
+                          "mat", "phy", "bio", "ch",  "ge",
+                          "uge", "bk",  "mus", "soz", "spo",
+                          "ek",  "eth"]
 }
 
 /* SUBOBJECTS - constructors -----------------------------------------*/

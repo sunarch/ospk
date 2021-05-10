@@ -283,33 +283,33 @@ input.q_answers { }
 
 /*11.-12.-es jegyek*/
 
-table.grades {
+#grades table {
     margin-left: auto;
     margin-right: auto;
     width: 600px;
 }
 
-table.grades thead {
+#grades thead {
     font-size: 16px;
     font-weight: bold;
 }
 
-table.grades tr {
+#grades tr {
     height: 25px;
 }
 
-table.grades td {
+#grades td {
     width: 60px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-table.grades td.grades_subjects {
+#grades td.grades_subjects {
     width: 150px;
     text-align: left;
 }
 
-table.grades input {
+#grades input {
     width: 100%;
     text-align: center;
 }

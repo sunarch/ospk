@@ -257,19 +257,34 @@ aside h2 {
     font-size: 16px;
 }
 
-/* Opciók választása */
+/* branches --------------------------------------------------------- */
 
-#branches td,
-#options td:first-of-type {
-    color: black;
-    line-height: 1.0em;
+#branches table {
+    margin-left: 20px;
+}
+
+#branches td {
+    padding-left: 20px;
+    padding-right: 20px;
     font-weight: bold;
     font-size: 16px;
-    text-indent: 40px;
 }
 
 #branches div {
     cursor: pointer;
+}
+
+/* options ---------------------------------------------------------- */
+
+#options table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+#options td:first-of-type {
+    font-weight: bold;
+    font-size: 16px;
 }
 
 /* Fakultációk választása */

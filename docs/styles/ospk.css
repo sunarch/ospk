@@ -54,19 +54,19 @@ body {
 
 @media screen and (min-width: 1215px) {
 
-    body, div.header, footer div {
+    body, header div, footer div {
         width: 80%;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1214px) {
-    body, div.header, footer div {
+    body, header div, footer div {
         width: 90%;
     }
 }
 
 @media handheld or (max-width: 1024px) {
-    body, div.header, footer div {
+    body, header div, footer div {
         width: 100%;
     }
 }
@@ -93,7 +93,7 @@ header {
     background-color: #213C84;
 }
 
-div.header {
+header div {
     height: 80px;
     margin-top: 0px;
     margin-left: auto;
@@ -105,7 +105,7 @@ div.header {
     padding-right: 0px;
 }
 
-img.header {
+header img {
     margin-top: 8px;
     margin-left: 0px;
     margin-right: 0px;
@@ -118,7 +118,7 @@ img.header {
 
 @media all {
 
-    main,aside {
+    main, aside {
         min-height: 100%;
     }
 

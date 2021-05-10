@@ -5,6 +5,16 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function GuiInteraction() {
+    
+    this.chooseBranch = function(s_branch) {
+        cc.student.set_zweig(s_branch);
+        cc.display('options');
+    }
+    
+    this.importData = function() {
+        s_input = window.prompt('Data String:');
+        cc.importData(s_input);
+    }
 
     this.updateGrade = function(s_fach, i_semester) {
         s_id = "input_" + s_fach + "_note_" + i_semester

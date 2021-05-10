@@ -46,7 +46,7 @@ body {
     /* min-height: 100%; */
 }
 
-.content_body {
+#content_body {
     display: block;
 
     margin-top: 0px;
@@ -76,7 +76,7 @@ body {
 
 @media screen and (min-width: 1215px) {
 
-    .content_body, header div, footer div {
+    #content_body, header div, footer div {
         width: 80%;
     }
 
@@ -94,7 +94,7 @@ body {
 
 @media screen and (min-width: 1025px) and (max-width: 1214px) {
 
-    .content_body, header div, footer div {
+    #content_body, header div, footer div {
         width: 90%;
     }
 
@@ -112,7 +112,7 @@ body {
 
 @media handheld or (max-width: 1024px) {
 
-    .content_body, header div, footer div {
+    #content_body, header div, footer div {
         width: 100%;
     }
 

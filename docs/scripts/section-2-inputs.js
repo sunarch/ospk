@@ -36,7 +36,7 @@ function inputs_setup() {
 
     document.getElementById('exams_2_mode').innerHTML = i18n.get("written");
 
-    document.getElementById('exams_2_hu_subj').innerHTML = cc.fach[2].getFullName();
+    document.getElementById('exams_2_branch_hu_subj').innerHTML = cc.fach[2].getFullName();
 
     // DE only
 
@@ -55,8 +55,8 @@ function inputs_setup() {
     document.getElementById("input_abiFach_2").options.selectedIndex = 0
 
     if (cc.student.zweig == "de") {
-        document.getElementById('exams_2_hu_subj').style.display = "none";
-        document.getElementById('exams_2_de_subj').style.display = "initial";
+        document.getElementById('exams_2_branch_hu_subj').style.display = "none";
+        document.getElementById('exams_2_branch_de_subj').style.display = "initial";
     }
 
     // req for HU only

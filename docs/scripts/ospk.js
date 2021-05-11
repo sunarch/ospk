@@ -431,7 +431,7 @@ function OberstufenPunkteKalkulator() {
         document.getElementById("opts_ges_wis").value = this.student.optionGesWis;
 
         for (n1 = abiFachWahlMin; n1 <= 4; n1 = n1 + 1) {
-            document.getElementById("input_abiFach_" + n1).value = this.abiFach[n1];
+            document.getElementById("ex_" + n1 + "_subj").value = this.abiFach[n1];
         }
 
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {

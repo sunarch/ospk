@@ -52,7 +52,7 @@ function inputs_setup() {
     document.getElementById('ex_2_subj_sel_mat').innerHTML = cc.fach[6].getFullName();
 
     // select top ('choose') entry
-    document.getElementById("input_abiFach_2").options.selectedIndex = 0
+    document.getElementById("ex_2_subj").options.selectedIndex = 0
 
     if (cc.student.zweig == "de") {
         document.getElementById('exams_2_branch_hu_subj').style.display = "none";
@@ -90,7 +90,7 @@ function inputs_setup() {
     }
 
     // select top ('choose') entry
-    document.getElementById("input_abiFach_3").options.selectedIndex = 0
+    document.getElementById("ex_3_subj").options.selectedIndex = 0
 
     // no req
 
@@ -145,7 +145,7 @@ function inputs_setup() {
     }
 
     // select top ('choose') entry
-    document.getElementById("input_abiFach_4").options.selectedIndex = 0
+    document.getElementById("ex_4_subj").options.selectedIndex = 0
 
     // no req
 

@@ -12,4 +12,22 @@ function GuiInteractions() {
     this.exams = new GuiInteractionsForExams();
     this.buttons = new GuiInteractionsForButtons();
     this.results = new GuiInteractionsForResults();
+
+    this.validate_grade = function(n_grade) {
+
+        var gradesAllowed = ["0",
+                             "1",   "2",  "3",
+                             "4",   "5",  "6",
+                             "7",   "8",  "9",
+                             "10", "11", "12",
+                             "13", "14", "15"
+                            ]
+
+
+        if (gradesAllowed.indexOf(n_grade) == -1) {
+            return false;
+        }
+
+        return true;
+    }
 }

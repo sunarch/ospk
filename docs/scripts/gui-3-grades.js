@@ -24,7 +24,7 @@ function GuiInteractionsForGrades() {
         dom_input = document.getElementById(s_id)
         s_value = dom_input.value
 
-        if (!valid.grade(s_value)) {
+        if (!gui.validate_grade(s_value)) {
             dom_input.value = "";
             return;
         }

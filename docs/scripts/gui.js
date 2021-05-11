@@ -42,7 +42,6 @@ function GuiInteraction() {
             return;
         }
 
-        i_fach = cc.fachIdConvert.indexOf(s_fach)
         tempNum = new Number(s_value);
         cc.abiNote[i_exam] = tempNum.valueOf()
 

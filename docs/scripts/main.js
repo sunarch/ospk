@@ -160,12 +160,12 @@ function OberstufenPunkteKalkulator() {
     this.applyValuesToInputFields = function() {
 
         o_options = {
-            "art": this.student.wahlArt,
-            "de_lang": this.student.deWahlLang,
-            "de_nat_wis": this.student.deWahlNatWis,
-            "lang": this.student.optionLang,
-            "nat_wis": this.student.optionNatWis,
-            "ges_wis": this.student.optionGesWis
+            art: this.student.wahlArt,
+            deLang: this.student.deWahlLang,
+            deNatWis: this.student.deWahlNatWis,
+            lang: this.student.optionLang,
+            natWis: this.student.optionNatWis,
+            gesWis: this.student.optionGesWis
         };
 
         gui.options.setFields(o_options);

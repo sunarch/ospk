@@ -30,11 +30,11 @@ function GuiInteractionsForOptions() {
     
     this.setFields = function(o_values) {
         this.setFieldArt(o_values['art']);
-        this.setFieldDeLang(o_values['de_lang']);
-        this.setFieldDeNatWis(o_values['de_nat_wis']);
+        this.setFieldDeLang(o_values['deLang']);
+        this.setFieldDeNatWis(o_values['deNatWis']);
         this.setFieldLang(o_values['lang']);
-        this.setFieldNatWis(o_values['nat_wis']);
-        this.setFieldGesWis(o_values['ges_wis']);
+        this.setFieldNatWis(o_values['natWis']);
+        this.setFieldGesWis(o_values['gesWis']);
     }
 
     // 1

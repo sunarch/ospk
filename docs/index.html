@@ -447,7 +447,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td>
                                     <span id="exams_2_branch_hu_subj">--SUBJECT--</span>
                                     <span id="exams_2_branch_de_subj" style="display:none;">
-                                        <select id="ex_2_subj" onchange="tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();">
+                                        <select id="ex_2_subj" onchange="gui.updateExamSubj(2);">
                                             <option id="ex_2_subj_sel_choose" value="0">--CHOOSE--</option>
                                             <option id="ex_2_subj_sel_eng" value="3">--ENG--</option>
                                             <option id="ex_2_subj_sel_frz" value="4">--FRZ--</option>
@@ -465,7 +465,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td>3.</td>
                                 <td id="exams_3_mode">--MODE--</td>
                                 <td>
-                                    <select id="ex_3_subj" onchange="tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();">
+                                    <select id="ex_3_subj" onchange="gui.updateExamSubj(3);">
                                         <option id="ex_3_subj_sel_choose" value="0">--CHOOSE--</option>
                                         <option id="ex_3_subj_sel_mat" value="6">--MAT--</option>
                                         <option id="ex_3_subj_sel_phy" value="7">--PHY--</option>
@@ -483,7 +483,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td>4.</td>
                                 <td id="exams_4_mode">--MODE--</td>
                                 <td>
-                                    <select id="ex_4_subj" onchange="tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();">
+                                    <select id="ex_4_subj" onchange="gui.updateExamSubj(4);">
                                         <option id="ex_4_subj_sel_choose" value="0">--CHOOSE--</option>
                                         <option id="ex_4_subj_sel_eng" value="3">--ENG--</option>
                                         <option id="ex_4_subj_sel_frz" value="4" style="display:none;">--FRZ--</option>

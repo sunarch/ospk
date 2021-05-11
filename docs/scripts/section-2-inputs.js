@@ -40,16 +40,16 @@ function inputs_setup() {
 
     // DE only
 
-    document.getElementById('opt_ex_2_choose').innerHTML = i18n.get("answer_toChoose");
+    document.getElementById('ex_2_subj_sel_choose').innerHTML = i18n.get("answer_toChoose");
 
     // Englisch
-    document.getElementById('opt_ex_2_eng').innerHTML = cc.fach[3].getFullName();
+    document.getElementById('ex_2_subj_sel_eng').innerHTML = cc.fach[3].getFullName();
 
     // Französisch
-    document.getElementById('opt_ex_2_frz').innerHTML = cc.fach[4].getFullName();
+    document.getElementById('ex_2_subj_sel_frz').innerHTML = cc.fach[4].getFullName();
 
     // Mathematik
-    document.getElementById('opt_ex_2_mat').innerHTML = cc.fach[6].getFullName();
+    document.getElementById('ex_2_subj_sel_mat').innerHTML = cc.fach[6].getFullName();
 
     // select top ('choose') entry
     document.getElementById("input_abiFach_2").options.selectedIndex = 0
@@ -69,22 +69,22 @@ function inputs_setup() {
 
     document.getElementById('exams_3_mode').innerHTML = i18n.get("written");
 
-    document.getElementById('opt_ex_3_choose').innerHTML = i18n.get("answer_toChoose");
+    document.getElementById('ex_3_subj_sel_choose').innerHTML = i18n.get("answer_toChoose");
 
     // Mathematik
-    document.getElementById('opt_ex_3_mat').innerHTML = cc.fach[6].getFullName();
+    document.getElementById('ex_3_subj_sel_mat').innerHTML = cc.fach[6].getFullName();
 
     // Physik
-    document.getElementById('opt_ex_3_phy').innerHTML = cc.fach[7].getFullName();
+    document.getElementById('ex_3_subj_sel_phy').innerHTML = cc.fach[7].getFullName();
 
     // Biologie
-    document.getElementById('opt_ex_3_bio').innerHTML = cc.fach[8].getFullName();
+    document.getElementById('ex_3_subj_sel_bio').innerHTML = cc.fach[8].getFullName();
 
     // Chemie (only HU)
-    document.getElementById('opt_ex_3_ch').innerHTML = cc.fach[9].getFullName();
+    document.getElementById('ex_3_subj_sel_ch').innerHTML = cc.fach[9].getFullName();
 
     if(cc.student.zweig == "hu") {
-        document.getElementById('opt_ex_3_ch').style.display = "initial";
+        document.getElementById('ex_3_subj_sel_ch').style.display = "initial";
     }
 
     // select top ('choose') entry
@@ -94,48 +94,48 @@ function inputs_setup() {
 
     document.getElementById('exams_4_mode').innerHTML = i18n.get("oral");
 
-    document.getElementById('opt_ex_4_choose').innerHTML = i18n.get("answer_toChoose");
+    document.getElementById('ex_4_subj_sel_choose').innerHTML = i18n.get("answer_toChoose");
 
     // Englisch
-    document.getElementById('opt_ex_4_eng').innerHTML = cc.fach[3].getFullName();
+    document.getElementById('ex_4_subj_sel_eng').innerHTML = cc.fach[3].getFullName();
 
     // Mathematik
-    document.getElementById('opt_ex_4_mat').innerHTML = cc.fach[6].getFullName();
+    document.getElementById('ex_4_subj_sel_mat').innerHTML = cc.fach[6].getFullName();
 
     // Physik
-    document.getElementById('opt_ex_4_phy').innerHTML = cc.fach[7].getFullName();
+    document.getElementById('ex_4_subj_sel_phy').innerHTML = cc.fach[7].getFullName();
 
     // Geschichte
-    document.getElementById('opt_ex_4_ge').innerHTML = cc.fach[10].getFullName();
+    document.getElementById('ex_4_subj_sel_ge').innerHTML = cc.fach[10].getFullName();
 
     // DE only
 
     // Französisch (DE only)
-    document.getElementById('opt_ex_4_frz').innerHTML = cc.fach[4].getFullName();
+    document.getElementById('ex_4_subj_sel_frz').innerHTML = cc.fach[4].getFullName();
 
     // Biologie (DE only)
-    document.getElementById('opt_ex_4_bio').innerHTML = cc.fach[8].getFullName();
+    document.getElementById('ex_4_subj_sel_bio').innerHTML = cc.fach[8].getFullName();
 
     // Chemie (DE only)
-    document.getElementById('opt_ex_4_ch').innerHTML = cc.fach[9].getFullName();
+    document.getElementById('ex_4_subj_sel_ch').innerHTML = cc.fach[9].getFullName();
 
     // Sozialkunde (DE only)
-    document.getElementById('opt_ex_4_soz').innerHTML = cc.fach[14].getFullName();
+    document.getElementById('ex_4_subj_sel_soz').innerHTML = cc.fach[14].getFullName();
 
     if (cc.student.zweig == "de") {
-        document.getElementById('opt_ex_4_frz').style.display = "initial";
-        document.getElementById('opt_ex_4_bio').style.display = "initial";
-        document.getElementById('opt_ex_4_ch').style.display = "initial";
-        document.getElementById('opt_ex_4_soz').style.display = "initial";
+        document.getElementById('ex_4_subj_sel_frz').style.display = "initial";
+        document.getElementById('ex_4_subj_sel_bio').style.display = "initial";
+        document.getElementById('ex_4_subj_sel_ch').style.display = "initial";
+        document.getElementById('ex_4_subj_sel_soz').style.display = "initial";
     }
 
     // HU only
 
     // Ungarische Geschichte (HU only)
-    document.getElementById('opt_ex_4_uge').innerHTML = cc.fach[11].getFullName();
+    document.getElementById('ex_4_subj_sel_uge').innerHTML = cc.fach[11].getFullName();
 
     if (cc.student.zweig == "hu") {
-        document.getElementById('opt_ex_4_uge').style.display = "initial";
+        document.getElementById('ex_4_subj_sel_uge').style.display = "initial";
     }
 
     // select top ('choose') entry

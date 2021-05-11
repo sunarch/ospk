@@ -434,7 +434,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="exams_1_mode"></td>
                                 <td id="exams_1_subj"></td>
                                 <td>
-                                    <input id="input_abiNote_1" type="text" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[1] = tempNum.valueOf();}" />
+                                    <input id="exams_1_grade" type="text" maxlength="2" onchange="updateExamGrade(1);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_1_req">&nbsp;</td>
@@ -454,7 +454,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="input_abiNote_2" type="text" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[2] = tempNum.valueOf();}" />
+                                    <input id="exams_2_grade" type="text" maxlength="2" onchange="updateExamGrade(2);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_2_req">&nbsp;</td>
@@ -472,7 +472,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     </select>
                                 </td>
                                 <td>
-                                    <input id="input_abiNote_3" type="text" maxlength="2" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[3] = tempNum.valueOf();}" />
+                                    <input id="exams_3_grade" type="text" maxlength="2" onchange="updateExamGrade(3);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_3_req">&nbsp;</td>
@@ -495,7 +495,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     </select>
                                 </td>
                                 <td>
-                                    <input id="input_abiNote_4" type="text" maxlength="3" onchange="if(validateGradeField(this)){tempNum = new Number(this.value); cc.abiNote[4] = tempNum.valueOf();}" />
+                                    <input id="exams_4_grade" type="text" maxlength="3" onchange="updateExamGrade(4);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_4_req">&nbsp;</td>

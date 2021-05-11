@@ -434,7 +434,7 @@ function OberstufenPunkteKalkulator() {
         }
 
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
-            document.getElementById("input_abiNote_" + n1).value = this.abiNote[n1];
+            document.getElementById("exams_" + n1 + "_grade").value = this.abiNote[n1];
         }
 
         for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {

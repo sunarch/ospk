@@ -31,5 +31,21 @@ function GuiInteraction() {
         cc.fach[i_fach].note[i_semester] = tempNum.valueOf();
 
     }
+    
+    this.updateExamGrade = function(i_exam) {
+        s_id = "exams_" + i_exam + "_grade"
+        dom_input = document.getElementById(s_id)
+        s_value = dom_input.value
+
+        if (!valid.grade(s_value)) {
+            dom_input.value = "";
+            return;
+        }
+
+        i_fach = cc.fachIdConvert.indexOf(s_fach)
+        tempNum = new Number(s_value);
+        cc.abiNote[i_exam] = tempNum.valueOf()
+
+    }
 
 }

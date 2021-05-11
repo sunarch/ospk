@@ -1,10 +1,10 @@
+@charset "UTF-8";
+
 /*
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
-
-@charset 'utf-8';
 
 html {
     display: block;
@@ -41,7 +41,7 @@ body {
 
     /* position: relative; */
     /* width | big: 976px | small: 400px */
-    width: 100%
+    width: 100%;
     height: auto;
     /* min-height: 100%; */
 }
@@ -61,7 +61,7 @@ body {
     height: auto;
 }
 
-@media all {
+@media screen {
 
     main, aside {
         min-height: 100%;
@@ -112,7 +112,7 @@ body {
     }
 }
 
-@media handheld or (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 
     #content_body, header div, footer div {
         width: 100%;

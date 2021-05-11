@@ -17,7 +17,7 @@ function GuiInteraction() {
     }
 
     this.updateGrade = function(s_fach, i_semester) {
-        s_id = "input_" + s_fach + "_note_" + i_semester
+        s_id = "grades_" + s_fach + "_sem_" + i_semester
         dom_input = document.getElementById(s_id)
         s_value = dom_input.value
 

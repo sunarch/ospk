@@ -440,7 +440,7 @@ function OberstufenPunkteKalkulator() {
         for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {
             if (this.fach[n1].active) {
                 for (n2 = 1; n2 <= 4; n2 = n2 + 1) {
-                    document.getElementById("input_" + this.fach[n1].name + "_note_" + n2).value = this.fach[n1].note[n2];
+                    document.getElementById("grades_" + this.fach[n1].name + "_sem_" + n2).value = this.fach[n1].note[n2];
                 }
             }
         }
@@ -453,7 +453,7 @@ function OberstufenPunkteKalkulator() {
         for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {
             if (this.fach[n1].active) {
                 for  (n2 = 1; n2 <= 4; n2 = n2 + 1) {
-                    field_id = "input_" + this.fach[n1].name + "_note_" + n2;
+                    field_id = "grades_" + this.fach[n1].name + "_sem_" + n2;
                     document.getElementById(field_id).style.backgroundColor = "#FFFFFF";
                 }
             }
@@ -461,7 +461,7 @@ function OberstufenPunkteKalkulator() {
 
         // set Bereich B markings
             for (n4 = 0; n4 < this.bereichB.all.length; n4 = n4 + 1) {
-                field_id = "input_" + this.bereichB.all[n4].fachname + "_note_" + this.bereichB.all[n4].halbjahrno;
+                field_id = "grades_" + this.bereichB.all[n4].fachname + "_sem_" + this.bereichB.all[n4].halbjahrno;
                 document.getElementById(field_id).style.backgroundColor = "#FFA640";
             }
     }

@@ -50,6 +50,11 @@ function GuiInteraction() {
             dom_input.value = "";
             return;
         }
+        
+        if (cc.abiFach[i_exam] == 0) {
+            dom_input.value = "";
+            return;
+        }
 
         tempNum = new Number(s_value);
         cc.abiNote[i_exam] = tempNum.valueOf()

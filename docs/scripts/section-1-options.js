@@ -10,7 +10,7 @@ function options_setup() {
 
     /* wahlArt (1) -------------------------------------------------- */
 
-    document.getElementById("label_wahl_art").innerHTML = i18n.get("question_wahlArt");
+    document.getElementById("options_art_label").innerHTML = i18n.get("question_wahlArt");
 
     document.getElementById("wahl_art_choose").innerHTML = i18n.get("answer_toChoose");
 
@@ -32,9 +32,9 @@ function options_setup() {
 
         /* deWahlLang (2) ------------------------------------------- */
 
-        document.getElementById("de_wahl_lang").style.display = "table-row";
+        document.getElementById("options_de_lang").style.display = "table-row";
 
-        document.getElementById("label_de_wahl_lang").innerHTML = i18n.get("question_deWahlLang");
+        document.getElementById("options_de_lang_label").innerHTML = i18n.get("question_deWahlLang");
 
         document.getElementById("de_wahl_lang_choose").innerHTML = i18n.get("answer_toChoose");
 
@@ -52,9 +52,9 @@ function options_setup() {
 
         /* deWahlNatWis (3) ----------------------------------------- */
 
-        document.getElementById("de_wahl_nat_wis").style.display = "table-row";
+        document.getElementById("options_de_nat_wis").style.display = "table-row";
 
-        document.getElementById("label_de_wahl_nat_wis").innerHTML = i18n.get("question_deWahlNatWis");
+        document.getElementById("options_de_nat_wis_label").innerHTML = i18n.get("question_deWahlNatWis");
 
         document.getElementById("de_wahl_nat_wis_choose").innerHTML = i18n.get("answer_toChoose");
 
@@ -77,7 +77,7 @@ function options_setup() {
 
     /* optionLang (4) ----------------------------------------------- */
 
-    document.getElementById("label_option_lang").innerHTML = i18n.get("question_optionLang");
+    document.getElementById("options_lang_label").innerHTML = i18n.get("question_optionLang");
 
     document.getElementById("option_lang_choose").innerHTML = i18n.get("answer_toChoose");
 
@@ -102,7 +102,7 @@ function options_setup() {
 
     /* optionNatWis (5) --------------------------------------------- */
 
-    document.getElementById("label_option_nat_wis").innerHTML = i18n.get("question_optionNatWis");
+    document.getElementById("options_nat_wis_label").innerHTML = i18n.get("question_optionNatWis");
 
     document.getElementById("option_nat_wis_choose").innerHTML = i18n.get("answer_toChoose");
 
@@ -141,7 +141,7 @@ function options_setup() {
 
     /* optionGesWis (6) --------------------------------------------- */
 
-    document.getElementById("label_option_ges_wis").innerHTML = i18n.get("question_optionGesWis");
+    document.getElementById("options_ges_wis_label").innerHTML = i18n.get("question_optionGesWis");
 
     document.getElementById("option_ges_wis_choose").innerHTML = i18n.get("answer_toChoose");
 

@@ -8,14 +8,12 @@ function GuiInteractionsForGrades() {
 
     this.show = function() {
 
-        if(cc.optsready.indexOf(false) == -1) {
-            this.setup();
-            gui.exams.setup();
-            gui.buttons.setup();
-            document.getElementById('grades').style.display = "block";
-            document.getElementById('exams').style.display = "block";
-            document.getElementById('buttons').style.display = "block";
-        }
+        this.setup();
+        gui.exams.setup();
+        gui.buttons.setup();
+        document.getElementById('grades').style.display = "block";
+        document.getElementById('exams').style.display = "block";
+        document.getElementById('buttons').style.display = "block";
     }
 
     this.updateGrade = function(s_fach, i_semester) {

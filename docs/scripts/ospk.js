@@ -10,9 +10,6 @@ function OberstufenPunkteKalkulator() {
 
     /* properties -*/
 
-    // indicates whether the options have been selected
-    this.optsready = ["option_completition", false, false, false, false, false, false];
-
     this.ergebnis_gesamt = 0;
     this.ergebnis_durchschnitt = "0";
 
@@ -590,8 +587,6 @@ function Student() {
                     i18n.set_lang(cc.student.zweig)
                     cc.fach[14].active = false;
                     cc.abiFach[2] = 2;
-                    cc.optsready[2] = true;
-                    cc.optsready[3] = true;
                     break;
             }
         }

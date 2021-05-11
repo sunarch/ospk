@@ -38,7 +38,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_art").disabled = true;
         
         cc.student.wahlArt = s_value;
-        cc.optsready[1] = true;
 
         switch(cc.student.wahlArt) {
 
@@ -69,7 +68,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_de_lang").disabled = true;
         
         cc.student.deWahlLang = s_value;
-        cc.optsready[2] = true;
 
         switch(cc.student.deWahlLang) {
 
@@ -94,7 +92,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_de_nat_wis").disabled = true;
         
         cc.student.deWahlNatWis = s_value;
-        cc.optsready[3] = true;
 
         switch(cc.student.deWahlNatWis) {
 
@@ -139,7 +136,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_lang").disabled = true;
         
         cc.student.optionLang = s_value;
-        cc.optsready[4] = true;
 
         switch(cc.student.optionLang) {
 
@@ -171,7 +167,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_nat_wis").disabled = true;
         
         cc.student.optionNatWis = s_value;
-        cc.optsready[5] = true;
 
         switch(cc.student.optionNatWis) {
 
@@ -214,7 +209,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_ges_wis").disabled = true;
         
         cc.student.optionGesWis = s_value;
-        cc.optsready[6] = true;
 
         switch(cc.student.optionGesWis) {
 

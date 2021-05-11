@@ -257,10 +257,33 @@ h3 {
     padding: 0px;
 }
 
+/* general: aside --------------------------------------------------- */
+
+aside {
+    color: black;
+    font-size: 14px;
+}
+
 aside h2 {
+    margin-top: 0px;
     color: black;
     font-weight: bold;
     font-size: 16px;
+}
+
+aside h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+aside ul:first-of-type {
+    margin-top: 0px;
+}
+
+aside ul:last-of-type {
+    margin-bottom: 0px;;
 }
 
 /* branches --------------------------------------------------------- */

@@ -159,23 +159,20 @@ function OberstufenPunkteKalkulator() {
 
     this.applyValuesToInputFields = function() {
 
-        if (this.student.zweig == "hu") {
-            var abiFachWahlMin = 3;
-        }
-        else if (this.student.zweig == "de") {
-            var abiFachWahlMin = 2;
+        document.getElementById("opts_art").value = this.student.wahlArt;
+        if (this.student.zweig == "de") {
             document.getElementById("opts_de_lang").value = this.student.deWahlLang;
             document.getElementById("opts_de_nat_wis").value = this.student.deWahlNatWis;
         }
-
-        document.getElementById("opts_art").value = this.student.wahlArt;
         document.getElementById("opts_lang").value = this.student.optionLang;
         document.getElementById("opts_nat_wis").value = this.student.optionNatWis;
         document.getElementById("opts_ges_wis").value = this.student.optionGesWis;
 
-        for (n1 = abiFachWahlMin; n1 <= 4; n1 = n1 + 1) {
-            document.getElementById("ex_" + n1 + "_subj").value = this.abiFach[n1];
+        if (this.student.zweig == "de") {
+            document.getElementById("ex_2_subj").value = this.abiFach[2];
         }
+        document.getElementById("ex_3_subj").value = this.abiFach[3];
+        document.getElementById("ex_4_subj").value = this.abiFach[4];
 
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
             document.getElementById("exams_" + n1 + "_grade").value = this.abiNote[n1];

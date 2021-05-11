@@ -82,32 +82,6 @@ function OberstufenPunkteKalkulator() {
 
         switch(what) {
 
-            case "options":
-
-                // What we hide
-                document.getElementById('branches_import').style.display = "none";
-
-                switch(cc.student.zweig) {
-
-                    default: case "hu":
-                        document.getElementById('branches_de').style.display = "none";
-                        break;
-
-                    case "de":
-                        document.getElementById('branches_hu').style.display = "none";
-                        break;
-                }
-
-                // What we show
-                options_setup();
-
-                // enable first question
-                document.getElementById("opts_art").disabled = false
-
-                document.getElementById('options').style.display = "block";
-
-                break;
-
             case "section_inputs":
                 if(this.optsready.indexOf(false) == -1) {
                     inputs_setup();
@@ -122,8 +96,6 @@ function OberstufenPunkteKalkulator() {
                 document.getElementById('results').style.display = "block";
                 break;
 
-            default:
-                break;
         }
     }
 
@@ -333,7 +305,7 @@ function OberstufenPunkteKalkulator() {
 
         // Wahl des Zweigs
         this.student.set_zweig(importArray[1]);
-        this.display('options');
+        gui.options.show();
 
         // Optionen
         this.useOption("opts_art", importArray[2]);

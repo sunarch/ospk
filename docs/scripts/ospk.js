@@ -36,7 +36,7 @@ function OberstufenPunkteKalkulator() {
 
         this.ergebnis_durchschnitt = this.calculateAverage(this.ergebnis_gesamt)
 
-        this.display('section_results');
+        gui.results.show();
 
     }
 
@@ -76,18 +76,6 @@ function OberstufenPunkteKalkulator() {
         if (n_ergebnis_gesamt >= 301) {return "3.9";}
 
         return "4.0";
-    }
-
-    this.display = function(what) {
-
-        switch(what) {
-
-            case "section_results":
-                results_setup();
-                document.getElementById('results').style.display = "block";
-                break;
-
-        }
     }
 
     this.useOption = function(optionId,optionValue) {
@@ -331,7 +319,7 @@ function OberstufenPunkteKalkulator() {
 
         // Ergebnisse
         this.calculate();
-        this.display('section_results');
+        gui.results.show();
     }
 
     this.exportData = function() {

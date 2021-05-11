@@ -11,6 +11,7 @@ function GuiInteractions() {
     this.grades = new GuiInteractionsForGrades();
     this.exams = new GuiInteractionsForExams();
     this.buttons = new GuiInteractionsForButtons();
+    this.results = new GuiInteractionsForResults();
 }
 
 function GuiInteractionsForBranches() {
@@ -126,5 +127,13 @@ function GuiInteractionsForButtons() {
 
     this.exportData = function() {
         cc.exportData()
+    }
+}
+
+function GuiInteractionsForResults() {
+
+    this.show = function() {
+        results_setup();
+        document.getElementById('results').style.display = "block";
     }
 }

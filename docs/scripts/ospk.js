@@ -206,17 +206,17 @@ function OberstufenPunkteKalkulator() {
 
                 // Physik (Grundkurs)
                 if(this.fach[7].active) {
-                    document.getElementById("fluidOptionPhy").disabled = true;
+                    document.getElementById("opts_nat_wis_sel_phy").disabled = true;
                 }
 
                 // Biologie
                 if(this.fach[8].active) {
-                    document.getElementById("fluidOptionBio").disabled = true;
+                    document.getElementById("opts_nat_wis_sel_bio").disabled = true;
                 }
 
                 // Chemie
                 if(this.fach[9].active) {
-                    document.getElementById("fluidOptionCh").disabled = true;
+                    document.getElementById("opts_nat_wis_sel_ch").disabled = true;
                 }
 
                 document.getElementById("optionLang").disabled = false;

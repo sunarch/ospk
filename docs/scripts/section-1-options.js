@@ -12,13 +12,13 @@ function options_setup() {
 
     document.getElementById("options_art_label").innerHTML = i18n.get("question_wahlArt");
 
-    document.getElementById("wahl_art_choose").innerHTML = i18n.get("answer_toChoose");
+    document.getElementById("opts_art_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
     // Bildende Kunst
-    document.getElementById("wahl_art_arts").innerHTML = cc.fach[12].getFullName();
+    document.getElementById("opts_art_sel_arts").innerHTML = cc.fach[12].getFullName();
 
     // Musik
-    document.getElementById("wahl_art_music").innerHTML = cc.fach[13].getFullName();
+    document.getElementById("opts_art_sel_music").innerHTML = cc.fach[13].getFullName();
 
     // select top (label) entry
     document.getElementById("wahlArt").options.selectedIndex = 0
@@ -36,13 +36,13 @@ function options_setup() {
 
         document.getElementById("options_de_lang_label").innerHTML = i18n.get("question_deWahlLang");
 
-        document.getElementById("de_wahl_lang_choose").innerHTML = i18n.get("answer_toChoose");
+        document.getElementById("opts_de_lang_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
         // UZ
-        document.getElementById("de_wahl_lang_uz").innerHTML = cc.fach[2].getFullName();
+        document.getElementById("opts_de_lang_sel_uz").innerHTML = cc.fach[2].getFullName();
 
         // Französisch
-        document.getElementById("de_wahl_lang_fra").innerHTML = cc.fach[4].getFullName();
+        document.getElementById("opts_de_lang_sel_fra").innerHTML = cc.fach[4].getFullName();
 
         // select top (label) entry
         document.getElementById("deWahlLang").options.selectedIndex = 0
@@ -56,16 +56,16 @@ function options_setup() {
 
         document.getElementById("options_de_nat_wis_label").innerHTML = i18n.get("question_deWahlNatWis");
 
-        document.getElementById("de_wahl_nat_wis_choose").innerHTML = i18n.get("answer_toChoose");
+        document.getElementById("opts_de_nat_wis_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
         // Physik und Biologie
-        document.getElementById("de_wahl_nat_wis_phy_bio").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[8].getFullName();
+        document.getElementById("opts_de_nat_wis_sel_").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[8].getFullName();
 
         // Physik und Chemie
-        document.getElementById("de_wahl_nat_wis_phy_ch").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[9].getFullName();
+        document.getElementById("opts_de_nat_wis_sel_phy_ch").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[9].getFullName();
 
         // Biologie und Chemie
-        document.getElementById("de_wahl_nat_wis_bio_ch").innerHTML = cc.fach[8].getFullName() + " und " + cc.fach[9].getFullName();
+        document.getElementById("opts_de_nat_wis_sel_bio_ch").innerHTML = cc.fach[8].getFullName() + " und " + cc.fach[9].getFullName();
 
         // select top (label) entry
         document.getElementById("deWahlNatWis").options.selectedIndex = 0
@@ -79,20 +79,20 @@ function options_setup() {
 
     document.getElementById("options_lang_label").innerHTML = i18n.get("question_optionLang");
 
-    document.getElementById("option_lang_choose").innerHTML = i18n.get("answer_toChoose");
+    document.getElementById("opts_lang_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
     // nicht gewählt
-    document.getElementById("option_lang_none").innerHTML = i18n.get("answer_notChosen");
+    document.getElementById("opts_lang_sel_none").innerHTML = i18n.get("answer_notChosen");
 
     // Französisch (hidden by default)
-    document.getElementById("option_lang_fra").innerHTML = cc.fach[4].getFullName();
+    document.getElementById("opts_lang_sel_fra").innerHTML = cc.fach[4].getFullName();
 
     if (cc.student.zweig == "hu") {
-        document.getElementById('option_lang_fra').style.display = "initial";
+        document.getElementById('opts_lang_sel_fra').style.display = "initial";
     }
 
     // Spanisch
-    document.getElementById("option_lang_spa").innerHTML = cc.fach[5].getFullName();
+    document.getElementById("opts_lang_sel_spa").innerHTML = cc.fach[5].getFullName();
 
     // select top (label) entry
     document.getElementById("optionLang").options.selectedIndex = 0
@@ -104,33 +104,33 @@ function options_setup() {
 
     document.getElementById("options_nat_wis_label").innerHTML = i18n.get("question_optionNatWis");
 
-    document.getElementById("option_nat_wis_choose").innerHTML = i18n.get("answer_toChoose");
+    document.getElementById("opts_nat_wis_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
     // nicht gewählt
-    document.getElementById("option_nat_wis_none").innerHTML = i18n.get("answer_notChosen");
+    document.getElementById("opts_nat_wis_sel_none").innerHTML = i18n.get("answer_notChosen");
 
     // Physik Grundkurs
-    document.getElementById("fluidOptionPhy").innerHTML = cc.fach[7].getFullName();
+    document.getElementById("opts_nat_wis_sel_phy").innerHTML = cc.fach[7].getFullName();
 
     // Physik Leistungskurs
-    document.getElementById("option_nat_wis_phy_lk").innerHTML = i18n.get("answer_physikLk");
+    document.getElementById("opts_nat_wis_sel_phy_lk").innerHTML = i18n.get("answer_physikLk");
 
     // Biologie
     // standard id would be: option_nat_wis_bio
 
-    document.getElementById("fluidOptionBio").innerHTML = cc.fach[8].getFullName();
+    document.getElementById("opts_nat_wis_sel_bio").innerHTML = cc.fach[8].getFullName();
 
     if (cc.student.zweig == "de") {
-        document.getElementById('fluidOptionBio').style.display = "initial";
+        document.getElementById('opts_nat_wis_sel_bio').style.display = "initial";
     }
 
     // Chemie
     // standard id would be: option_nat_wis_ch
 
-    document.getElementById("fluidOptionCh").innerHTML = cc.fach[9].getFullName();
+    document.getElementById("opts_nat_wis_sel_ch").innerHTML = cc.fach[9].getFullName();
 
     if (cc.student.zweig == "de") {
-        document.getElementById('fluidOptionCh').style.display = "initial";
+        document.getElementById('opts_nat_wis_sel_ch').style.display = "initial";
     }
 
     // select top (label) entry
@@ -143,16 +143,16 @@ function options_setup() {
 
     document.getElementById("options_ges_wis_label").innerHTML = i18n.get("question_optionGesWis");
 
-    document.getElementById("option_ges_wis_choose").innerHTML = i18n.get("answer_toChoose");
+    document.getElementById("opts_ges_wis_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
     // nicht gewählt
-    document.getElementById("option_ges_wis_none").innerHTML = i18n.get("answer_notChosen");
+    document.getElementById("opts_ges_wis_sel_none").innerHTML = i18n.get("answer_notChosen");
 
     // Erdkunde
-    document.getElementById("option_ges_wis_ek").innerHTML = cc.fach[16].getFullName();
+    document.getElementById("opts_ges_wis_sel_ek").innerHTML = cc.fach[16].getFullName();
 
     // Ethik (oder Religion)
-    document.getElementById("option_ges_wis_eth").innerHTML = cc.fach[17].getFullName();
+    document.getElementById("opts_ges_wis_sel_eth").innerHTML = cc.fach[17].getFullName();
 
     // select top (label) entry
     document.getElementById("optionGesWis").options.selectedIndex = 0

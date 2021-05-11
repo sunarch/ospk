@@ -35,6 +35,43 @@ function GuiInteractionsForExams() {
 
     }
 
+    this.setFields = function(a_exams) {
+
+        this.setFieldSubject(1, a_exams[0].subject);
+        this.setFieldSubject(2, a_exams[1].subject);
+        this.setFieldSubject(3, a_exams[2].subject);
+        this.setFieldSubject(4, a_exams[3].subject);
+
+        this.setFieldGrade(1, a_exams[0].grade);
+        this.setFieldGrade(2, a_exams[1].grade);
+        this.setFieldGrade(3, a_exams[2].grade);
+        this.setFieldGrade(4, a_exams[3].grade);
+    }
+
+    this.setFieldSubject = function(i_exam, x_value) {
+
+        if (i_exam == 1) {
+            document.getElementById('exams_1_subj').innerHTML = cc.fach[1].getFullName();
+            return;
+        }
+
+        if (i_exam == 2 && x_value == 2) {
+            document.getElementById('exams_2_branch_hu_subj').innerHTML = cc.fach[2].getFullName();
+            return;
+        }
+
+        if ([2, 3, 4].indexOf(i_exam) != -1) {
+            document.getElementById("ex_" + i_exam + "_subj").value = x_value;
+            return;
+        }
+
+        console.log("invalid i_exam in setFieldSubject");
+    }
+
+    this.setFieldGrade = function(i_exam, x_value) {
+        document.getElementById("exams_" + i_exam + "_grade").value = x_value;
+    }
+
     this.setup = function() {
 
         /* ABITURERGEBNISSE ----------------------------------------- */

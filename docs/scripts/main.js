@@ -158,7 +158,7 @@ function OberstufenPunkteKalkulator() {
     }
 
     this.applyValuesToInputFields = function() {
-        
+
         o_options = {
             "art": this.student.wahlArt,
             "de_lang": this.student.deWahlLang,
@@ -166,19 +166,30 @@ function OberstufenPunkteKalkulator() {
             "lang": this.student.optionLang,
             "nat_wis": this.student.optionNatWis,
             "ges_wis": this.student.optionGesWis
-        }
-        
-        gui.options.setFields(o_options)
+        };
 
-        if (this.student.zweig == "de") {
-            document.getElementById("ex_2_subj").value = this.abiFach[2];
-        }
-        document.getElementById("ex_3_subj").value = this.abiFach[3];
-        document.getElementById("ex_4_subj").value = this.abiFach[4];
+        gui.options.setFields(o_options);
 
-        for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
-            document.getElementById("exams_" + n1 + "_grade").value = this.abiNote[n1];
-        }
+        a_exams = [
+            {
+                subject: this.abiFach[1],
+                grade: this.abiNote[1]
+            },
+            {
+                subject: this.abiFach[2],
+                grade: this.abiNote[2]
+            },
+            {
+                subject: this.abiFach[3],
+                grade: this.abiNote[3]
+            },
+            {
+                subject: this.abiFach[4],
+                grade: this.abiNote[4]
+            }
+        ];
+
+        gui.exams.setFields(a_exams);
 
         for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {
             if (this.fach[n1].active) {

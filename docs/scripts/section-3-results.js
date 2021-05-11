@@ -6,14 +6,14 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function results_setup() {
 
-    document.getElementById('result_sum').innerHTML = cc.ergebnis_gesamt;
-    document.getElementById('result_avg').innerHTML = cc.ergebnis_durchschnitt;
+    document.getElementById('results_main_sum').innerHTML = cc.ergebnis_gesamt;
+    document.getElementById('results_main_avg').innerHTML = cc.ergebnis_durchschnitt;
 
-    document.getElementById('result_bereichA').innerHTML = cc.bereichA.ergebnis;
-    document.getElementById('result_bereichB').innerHTML = cc.bereichB.ergebnis;
-    document.getElementById('result_bereichC').innerHTML = cc.bereichC.ergebnis;
+    document.getElementById('results_a_sum').innerHTML = cc.bereichA.ergebnis;
+    document.getElementById('results_b_sum').innerHTML = cc.bereichB.ergebnis;
+    document.getElementById('results_c_sum').innerHTML = cc.bereichC.ergebnis;
 
-    var dom_tbody_B = document.getElementById('results_B_tbody');
+    var dom_tbody_B = document.getElementById('results_b_tbody');
 
     for(n1 = 1; n1 < cc.bereichB.all.length; n1 = n1 + 1) {
 

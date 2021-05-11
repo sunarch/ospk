@@ -395,10 +395,10 @@ aside h2 {
     width: 33%;
 }
 
-#results_B_tbody td {
+#results_b_tbody td {
     width: 33%;
 }
 
-#results_B_tbody td:last-of-type {
+#results_b_tbody td:last-of-type {
     text-align: right;
 }

@@ -36,7 +36,7 @@ function OberstufenPunkteKalkulator() {
 
         this.ergebnis_durchschnitt = this.calculateAverage(this.ergebnis_gesamt)
 
-        this.display('section_results', true);
+        this.display('section_results');
 
     }
 
@@ -368,7 +368,7 @@ function OberstufenPunkteKalkulator() {
 
         // Ergebnisse
         this.calculate();
-        this.display('section_results',true);
+        this.display('section_results');
     }
 
     this.exportData = function() {

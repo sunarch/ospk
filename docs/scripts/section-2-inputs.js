@@ -61,7 +61,7 @@ function inputs_setup() {
 
     // req for HU only
 
-    document.getElementById('exams_1_req').innerHTML = "";
+    document.getElementById('exams_2_req').innerHTML = "";
 
     if(cc.student.zweig == "hu") {
         document.getElementById('exams_2_req').innerHTML = i18n.get("obligatory");

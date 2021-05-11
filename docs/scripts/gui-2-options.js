@@ -27,9 +27,213 @@ function GuiInteractionsForOptions() {
         this.setup();
 
         // enable first question
-        document.getElementById("opts_art").disabled = false
+        document.getElementById("opts_art").disabled = false;
 
         document.getElementById('options').style.display = "block";
+    }
+    
+    // 1
+    this.selectArt = function(s_value) {
+        
+        document.getElementById("opts_art").disabled = true;
+        
+        cc.student.wahlArt = s_value;
+        cc.optsready[1] = true;
+
+        switch(cc.student.wahlArt) {
+
+            case "12": // Bildende Kunst
+                cc.fach[13].active = false;
+                break;
+
+            case "13": // Musik
+                cc.fach[12].active = false;
+                break;
+
+            default:
+                break;
+        }
+
+        if (cc.student.zweig == "de") {
+            document.getElementById("opts_de_lang").disabled = false;
+        }
+        else if (cc.student.zweig == "hu") {
+            document.getElementById("opts_lang").disabled = false;
+
+        }
+    }
+    
+    // 2
+    this.selectDeLang = function(s_value) {
+        
+        document.getElementById("opts_de_lang").disabled = true;
+        
+        cc.student.deWahlLang = s_value;
+        cc.optsready[2] = true;
+
+        switch(cc.student.deWahlLang) {
+
+            case "2": // UZ
+                cc.fach[4].active = false;
+                break;
+
+            case "4": // Französisch
+                cc.fach[2].active = false;
+                break;
+
+            default:
+                break;
+        }
+
+        document.getElementById("opts_de_nat_wis").disabled = false;
+    }
+    
+    // 3
+    this.selectDeNatWis = function(s_value) {
+        
+        document.getElementById("opts_de_nat_wis").disabled = true;
+        
+        cc.student.deWahlNatWis = s_value;
+        cc.optsready[3] = true;
+
+        switch(cc.student.deWahlNatWis) {
+
+            case "78": // Physik und Biologie
+                cc.fach[9].active = false;
+                break;
+
+            case "79": // Physik und Chemie
+                cc.fach[8].active = false;
+                break;
+
+            case "89": // Biologie und Chemie
+                cc.fach[7].active = false;
+                break;
+
+            default: break;
+        }
+
+        // disable already chosen options in opts_nat_wis
+
+        // Physik (Grundkurs)
+        if(cc.fach[7].active) {
+            document.getElementById("opts_nat_wis_sel_phy").disabled = true;
+        }
+
+        // Biologie
+        if(cc.fach[8].active) {
+            document.getElementById("opts_nat_wis_sel_bio").disabled = true;
+        }
+
+        // Chemie
+        if(cc.fach[9].active) {
+            document.getElementById("opts_nat_wis_sel_ch").disabled = true;
+        }
+
+        document.getElementById("opts_lang").disabled = false;
+    }
+    
+    // 4
+    this.selectLang = function(s_value) {
+        
+        document.getElementById("opts_lang").disabled = true;
+        
+        cc.student.optionLang = s_value;
+        cc.optsready[4] = true;
+
+        switch(cc.student.optionLang) {
+
+            case "4": // Französisch
+                cc.fach[5].active = false;
+                break;
+
+            case "5": // Spanisch
+                if (cc.student.zweig == "hu") {
+                    cc.fach[4].active = false;
+                }
+                break;
+
+            default:
+            case "0":
+                if (cc.student.zweig == "hu") {
+                    cc.fach[4].active = false;
+                }
+                cc.fach[5].active = false;
+                break;
+        }
+
+        document.getElementById("opts_nat_wis").disabled = false;
+    }
+    
+    // 5
+    this.selectNatWis = function(s_value) {
+        
+        document.getElementById("opts_nat_wis").disabled = true;
+        
+        cc.student.optionNatWis = s_value;
+        cc.optsready[5] = true;
+
+        switch(cc.student.optionNatWis) {
+
+            case "7": // Physik Grundkurs
+                if (cc.student.zweig == "de") {
+                    cc.fach[7].active = true;
+                }
+                break;
+
+            case "7+": // Physik Leistungskurs
+                if (cc.student.zweig == "de") {
+                    cc.fach[7].active = true;
+                }
+                cc.student.physikLk = true;
+                break;
+
+            case "8": // Biologie
+                cc.fach[8].active = true;
+                break;
+
+            case "9": // Chemie
+                cc.fach[9].active = true;
+                break;
+
+            default:
+            case "0":
+                // Beim deutschen Zweig wird das bereits bei "deWahlNatWis" geregelt
+                if (cc.student.zweig == "hu") {
+                    cc.fach[7].active = false;
+                }
+                break;
+        }
+
+        document.getElementById("opts_ges_wis").disabled = false;
+    }
+    
+    // 6
+    this.selectGesWis = function(s_value) {
+        
+        document.getElementById("opts_ges_wis").disabled = true;
+        
+        cc.student.optionGesWis = s_value;
+        cc.optsready[6] = true;
+
+        switch(cc.student.optionGesWis) {
+
+            case "16": // Erdkunde
+                cc.fach[17].active = false;
+                break;
+
+            case "17": // Ethik (oder Religion)
+                cc.fach[16].active = false;
+                break;
+
+            default:
+            case "0":
+                cc.fach[16].active = false;
+                cc.fach[17].active = false;
+                break;
+        }
+        
+        gui.grades.show();
     }
     
     this.setup = function() {
@@ -87,7 +291,7 @@ function GuiInteractionsForOptions() {
             document.getElementById("opts_de_nat_wis_sel_choose").innerHTML = i18n.get("answer_toChoose");
 
             // Physik und Biologie
-            document.getElementById("opts_de_nat_wis_sel_").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[8].getFullName();
+            document.getElementById("opts_de_nat_wis_sel_phy_bio").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[8].getFullName();
 
             // Physik und Chemie
             document.getElementById("opts_de_nat_wis_sel_phy_ch").innerHTML = cc.fach[7].getFullName() + " und " + cc.fach[9].getFullName();

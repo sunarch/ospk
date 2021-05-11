@@ -78,198 +78,6 @@ function OberstufenPunkteKalkulator() {
         return "4.0";
     }
 
-    this.useOption = function(optionId,optionValue) {
-
-        document.getElementById(optionId).disabled = true;
-
-        switch(optionId) {
-
-            case "opts_art": // 1
-                this.student.wahlArt = optionValue;
-                this.optsready[1] = true;
-
-                switch(this.student.wahlArt) {
-
-                    case "12": // Bildende Kunst
-                        this.fach[13].active = false;
-                        break;
-
-                    case "13": // Musik
-                        this.fach[12].active = false;
-                        break;
-
-                    default:
-                        break;
-                }
-
-                if (this.student.zweig == "de") {
-                    document.getElementById("opts_de_lang").disabled = false;
-                }
-                else if (this.student.zweig == "hu") {
-                    document.getElementById("opts_lang").disabled = false;
-
-                }
-                break;
-
-            case "opts_de_lang": // 2
-                this.student.deWahlLang = optionValue;
-                this.optsready[2] = true;
-
-                switch(this.student.deWahlLang) {
-
-                    case "2": // UZ
-                        cc.fach[4].active = false;
-                        break;
-
-                    case "4": // Französisch
-                        cc.fach[2].active = false;
-                        break;
-
-                    default:
-                        break;
-                }
-
-                document.getElementById("opts_de_nat_wis").disabled = false;
-                break;
-
-            case "opts_de_nat_wis": // 3
-                this.student.deWahlNatWis = optionValue;
-                this.optsready[3] = true;
-
-                switch(this.student.deWahlNatWis) {
-
-                    case "78": // Physik und Biologie
-                        this.fach[9].active = false;
-                        break;
-
-                    case "79": // Physik und Chemie
-                        this.fach[8].active = false;
-                        break;
-
-                    case "89": // Biologie und Chemie
-                        this.fach[7].active = false;
-                        break;
-
-                    default: break;
-                }
-
-                // disable already chosen options in opts_nat_wis
-
-                // Physik (Grundkurs)
-                if(this.fach[7].active) {
-                    document.getElementById("opts_nat_wis_sel_phy").disabled = true;
-                }
-
-                // Biologie
-                if(this.fach[8].active) {
-                    document.getElementById("opts_nat_wis_sel_bio").disabled = true;
-                }
-
-                // Chemie
-                if(this.fach[9].active) {
-                    document.getElementById("opts_nat_wis_sel_ch").disabled = true;
-                }
-
-                document.getElementById("opts_lang").disabled = false;
-                break;
-
-            case "opts_lang": // 4
-                this.student.optionLang = optionValue;
-                this.optsready[4] = true;
-
-                switch(this.student.optionLang) {
-
-                    case "4": // Französisch
-                        this.fach[5].active = false;
-                        break;
-
-                    case "5": // Spanisch
-                        if (this.student.zweig == "hu") {
-                            this.fach[4].active = false;
-                        }
-                        break;
-
-                    default:
-                    case "0":
-                        if (this.student.zweig == "hu") {
-                            this.fach[4].active = false;
-                        }
-                        this.fach[5].active = false;
-                        break;
-                }
-
-                document.getElementById("opts_nat_wis").disabled = false;
-
-                break;
-
-            case "opts_nat_wis": // 5
-                this.student.optionNatWis = optionValue;
-                this.optsready[5] = true;
-
-                switch(this.student.optionNatWis) {
-
-                    case "7": // Physik Grundkurs
-                        if (cc.student.zweig == "de") {
-                            this.fach[7].active = true;
-                        }
-                        break;
-
-                    case "7+": // Physik Leistungskurs
-                        if (cc.student.zweig == "de") {
-                            this.fach[7].active = true;
-                        }
-                        this.student.physikLk = true;
-                        break;
-
-                    case "8": // Biologie
-                        this.fach[8].active = true;
-                        break;
-
-                    case "9": // Chemie
-                        this.fach[9].active = true;
-                        break;
-
-                    default:
-                    case "0":
-                        // Beim deutschen Zweig wird das bereits bei "deWahlNatWis" geregelt
-                        if (cc.student.zweig == "hu") {
-                            this.fach[7].active = false;
-                        }
-                        break;
-                }
-
-                document.getElementById("opts_ges_wis").disabled = false;
-                break;
-
-            case "opts_ges_wis": // 6
-                this.student.optionGesWis = optionValue;
-                this.optsready[6] = true;
-
-                switch(this.student.optionGesWis) {
-
-                    case "16": // Erdkunde
-                        this.fach[17].active = false;
-                        break;
-
-                    case "17": // Ethik (oder Religion)
-                        this.fach[16].active = false;
-                        break;
-
-                    default:
-                    case "0":
-                        this.fach[16].active = false;
-                        this.fach[17].active = false;
-                        break;
-                }
-
-                break;
-
-            default:
-                break;
-        }
-        gui.grades.show();
-    }
-
     this.importData = function(importText) {
 
         var importArray = importText.split(",");
@@ -287,14 +95,14 @@ function OberstufenPunkteKalkulator() {
         gui.options.show();
 
         // Optionen
-        this.useOption("opts_art", importArray[2]);
+        gui.options.selectArt(importArray[2]);
         if (this.student.zweig == "de") {
-            this.useOption("opts_de_lang", importArray[3]);
-            this.useOption("opts_de_nat_wis", importArray[4]);
+            gui.options.selectDeLang(importArray[3]);
+            gui.options.selectDeNatWis(importArray[4]);
         }
-        this.useOption("opts_lang", importArray[5]);
-        this.useOption("opts_nat_wis", importArray[6]);
-        this.useOption("opts_ges_wis", importArray[7]);
+        gui.options.selectLang(importArray[5]);
+        gui.options.selectNatWis(importArray[6]);
+        gui.options.selectGesWis(importArray[7]);
 
         // Inputs
 

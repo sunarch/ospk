@@ -76,7 +76,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr>
                                 <td id="options_art_label">--ART--</td>
                                 <td>
-                                    <select id="opts_art" onchange="cc.useOption(this.id,this.value);" disabled>
+                                    <select id="opts_art" onchange="gui.options.selectArt(this.value);" disabled>
                                         <option id="opts_art_sel_choose" value="-1">--CHOOSE--</option>
                                         <option id="opts_art_sel_arts" value="12">--ARTS--</option>
                                         <option id="opts_art_sel_music" value="13">--MUSIC--</option>
@@ -86,7 +86,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr id="options_de_lang" style="display:none;">
                                 <td id="options_de_lang_label">--DE_LANG--</td>
                                 <td>
-                                    <select id="opts_de_lang" onchange="cc.useOption(this.id,this.value);" disabled>
+                                    <select id="opts_de_lang" onchange="gui.options.selectDeLang(this.value);" disabled>
                                         <option id="opts_de_lang_sel_choose" value="-1">--CHOOSE--</option>
                                         <option id="opts_de_lang_sel_uz" value="2">--UZ--</option>
                                         <option id="opts_de_lang_sel_fra" value="4">--FRZ--</option>
@@ -96,7 +96,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr id="options_de_nat_wis" style="display:none;">
                                 <td id="options_de_nat_wis_label">--DE_NAT_WIS--</td>
                                 <td>
-                                    <select id="opts_de_nat_wis" onchange="cc.useOption(this.id,this.value);" disabled>
+                                    <select id="opts_de_nat_wis" onchange="gui.options.selectDeNatWis(this.value);" disabled>
                                         <option id="opts_de_nat_wis_sel_choose" value="-1">--CHOOSE--</option>
                                         <option id="opts_de_nat_wis_sel_phy_bio" value="78">--PHY_BIO--</option>
                                         <option id="opts_de_nat_wis_sel_phy_ch" value="79">--PHY_CH--</option>
@@ -107,7 +107,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr>
                                 <td id="options_lang_label">--LANG--</td>
                                 <td>
-                                    <select id="opts_lang" onchange="cc.useOption(this.id,this.value);" disabled>
+                                    <select id="opts_lang" onchange="gui.options.selectLang(this.value);" disabled>
                                         <option id="opts_lang_sel_choose" value="-1">--CHOOSE--</option>
                                         <option id="opts_lang_sel_none" value="0">--NONE--</option>
                                         <option id="opts_lang_sel_fra" value="4" style="display:none;">--FRZ--</option>
@@ -118,7 +118,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr>
                                 <td id="options_nat_wis_label">--NAT_WIS--</td>
                                 <td>
-                                    <select id="opts_nat_wis" onchange="cc.useOption(this.id,this.value);" disabled>
+                                    <select id="opts_nat_wis" onchange="gui.options.selectNatWis(this.value);" disabled>
                                         <option id="opts_nat_wis_sel_choose" value="-1">--CHOOSE--</option>
                                         <option id="opts_nat_wis_sel_none" value="0">--NONE--</option>
                                         <option id="opts_nat_wis_sel_phy" value="7">--PHY--</option>
@@ -131,7 +131,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr>
                                 <td id="options_ges_wis_label">--GES_WIS--</td>
                                 <td>
-                                    <select id="opts_ges_wis" onchange="cc.useOption(this.id,this.value);" disabled>
+                                    <select id="opts_ges_wis" onchange="gui.options.selectGesWis(this.value);" disabled>
                                         <option id="opts_ges_wis_sel_choose" value="-1">--CHOOSE--</option>
                                         <option id="opts_ges_wis_sel_none" value="0">--NONE--</option>
                                         <option id="opts_ges_wis_sel_ek" value="16">--EK--</option>

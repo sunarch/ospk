@@ -255,7 +255,74 @@ function OberstufenPunkteKalkulator() {
         /* ID 15 */ new Fach("spo", "sport"),                      /* Sport */
         /* ID 16 */ new Fach("ek",  "gesellschaftswissentschaft"), /* Erdkunde */
         /* ID 17 */ new Fach("eth", "gesellschaftswissentschaft")  /* Ethik (oder Religion) */
-    ]
+    ];
+
+    this.subjectTypes = {
+        deutsch:                    "deutsch",
+        ungarisch:                  "ungarisch",
+        fremdsprache:               "fremdsprache",
+        mathematik:                 "mathematik",
+        naturwissentschaft:         "naturwissentschaft",
+        geschichte:                 "geschichte",
+        ung_geschichte:             "ung_geschichte",
+        kunst_und_musik:            "kunst_und_musik",
+        gesellschaftswissentschaft: "gesellschaftswissentschaft",
+        sport:                      "sport"
+    };
+
+    this.subjects = {
+        /* Deutsch */
+        "dt":  {type: this.subjectTypes.deutsch},
+
+        /* Ungarisch */
+        "ung": {type: this.subjectTypes.ungarisch},
+
+        /* English */
+        "eng": {type: this.subjectTypes.fremdsprache},
+
+        /* Französisch */
+        "frz": {type: this.subjectTypes.fremdsprache},
+
+        /* Spanisch */
+        "spa": {type: this.subjectTypes.fremdsprache},
+
+        /* Mathematik */
+        "mat": {type: this.subjectTypes.mathematik},
+
+        /* Physik */
+        "phy": {type: this.subjectTypes.naturwissentschaft},
+
+        /* Biologie */
+        "bio": {type: this.subjectTypes.naturwissentschaft},
+
+        /* Chemie */
+        "ch":  {type: this.subjectTypes.naturwissentschaft},
+
+        /* Geschichte */
+        "ge":  {type: this.subjectTypes.geschichte},
+
+        /* Ungarische Geschichte */
+        "uge": {type: this.subjectTypes.ung_geschichte},
+
+        /* Bildende Kunst */
+        "bk":  {type: this.subjectTypes.kunst_und_musik},
+
+        /* Musik */
+        "mus": {type: this.subjectTypes.kunst_und_musik},
+
+        /* Sozialkunde */
+        "soz": {type: this.subjectTypes.gesellschaftswissentschaft},
+
+        /* Sport */
+        "spo": {type: this.subjectTypes.sport},
+
+        /* Erdkunde */
+        "ek":  {type: this.subjectTypes.gesellschaftswissentschaft},
+
+        /* Ethik (oder Religion) */
+        "eth": {type: this.subjectTypes.gesellschaftswissentschaft}
+    };
+
     this.abiFach = ["Kurs-IDs",0,0,0,0];
     this.abiNote = ["Noten",0,0,0,0];
 
@@ -595,6 +662,62 @@ function Fach(name, type) {
 
     this.getFullName = function() {
         return i18n.getSubject(this.name);
+    }
+}
+
+function Subject(s_code) {
+
+    this._code = s_code;
+    this._active = true;
+    this._grades = [0, 0, 0, 0];
+
+    this.getCode = function() {
+        return this._code;
+    }
+
+    this.isActive = function() {
+        return this._active;
+    }
+
+    this.enable = function() {
+        this._active = true;
+    }
+
+    this.disable = function() {
+        this._active = false;
+    }
+
+    this.getName = function() {
+        return i18n.getSubject(this._code);
+    }
+
+    this.getType = function() {
+        return cc.subjects[this._code].type;
+    }
+
+    this.getGrade = function(i_sem) {
+        return this._grades[i_sem - 1];
+    }
+
+    this.setGrade = function(i_sem, i_grade) {
+        this._grades[i_sem - 1] = i_grade;
+    }
+}
+
+function Exam(s_subj) {
+    this._subjectCode = s_subj;
+    this._grade = i_grade;
+
+    this.getSubjCode = function() {
+        return this._subjectCode;
+    }
+
+    this.getGrade = function() {
+        return this._grade;
+    }
+
+    this.setGrade = function(i_grade) {
+        this._grade = i_grade;
     }
 }
 

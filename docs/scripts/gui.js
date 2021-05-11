@@ -60,6 +60,15 @@ function GuiInteractionsForOptions() {
 
 function GuiInteractionsForGrades() {
 
+    this.show = function() {
+        if(cc.optsready.indexOf(false) == -1) {
+            inputs_setup();
+            document.getElementById('grades').style.display = "block";
+            document.getElementById('exams').style.display = "block";
+            document.getElementById('buttons').style.display = "block";
+        }
+    }
+
     this.updateGrade = function(s_fach, i_semester) {
         s_id = "grades_" + s_fach + "_sem_" + i_semester
         dom_input = document.getElementById(s_id)

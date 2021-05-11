@@ -82,15 +82,6 @@ function OberstufenPunkteKalkulator() {
 
         switch(what) {
 
-            case "section_inputs":
-                if(this.optsready.indexOf(false) == -1) {
-                    inputs_setup();
-                    document.getElementById('grades').style.display = "block";
-                    document.getElementById('exams').style.display = "block";
-                    document.getElementById('buttons').style.display = "block";
-                }
-                break;
-
             case "section_results":
                 results_setup();
                 document.getElementById('results').style.display = "block";
@@ -288,7 +279,7 @@ function OberstufenPunkteKalkulator() {
             default:
                 break;
         }
-        this.display('section_inputs');
+        gui.grades.show();
     }
 
     this.importData = function(importText) {

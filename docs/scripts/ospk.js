@@ -158,15 +158,17 @@ function OberstufenPunkteKalkulator() {
     }
 
     this.applyValuesToInputFields = function() {
-
-        document.getElementById("opts_art").value = this.student.wahlArt;
-        if (this.student.zweig == "de") {
-            document.getElementById("opts_de_lang").value = this.student.deWahlLang;
-            document.getElementById("opts_de_nat_wis").value = this.student.deWahlNatWis;
+        
+        o_options = {
+            "art": this.student.wahlArt,
+            "de_lang": this.student.deWahlLang,
+            "de_nat_wis": this.student.deWahlNatWis,
+            "lang": this.student.optionLang,
+            "nat_wis": this.student.optionNatWis,
+            "ges_wis": this.student.optionGesWis
         }
-        document.getElementById("opts_lang").value = this.student.optionLang;
-        document.getElementById("opts_nat_wis").value = this.student.optionNatWis;
-        document.getElementById("opts_ges_wis").value = this.student.optionGesWis;
+        
+        gui.options.setFields(o_options)
 
         if (this.student.zweig == "de") {
             document.getElementById("ex_2_subj").value = this.abiFach[2];

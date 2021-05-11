@@ -27,8 +27,22 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_art").disabled = false;
         document.getElementById('options').style.display = "block";
     }
+    
+    this.setFields = function(o_values) {
+        this.setFieldArt(o_values['art']);
+        this.setFieldDeLang(o_values['de_lang']);
+        this.setFieldDeNatWis(o_values['de_nat_wis']);
+        this.setFieldLang(o_values['lang']);
+        this.setFieldNatWis(o_values['nat_wis']);
+        this.setFieldGesWis(o_values['ges_wis']);
+    }
 
     // 1
+
+    this.setFieldArt = function(x_value) {
+        document.getElementById("opts_art").value = x_value;
+    }
+
     this.selectArt = function(s_value) {
 
         document.getElementById("opts_art").disabled = true;
@@ -59,6 +73,11 @@ function GuiInteractionsForOptions() {
     }
 
     // 2
+
+    this.setFieldDeLang = function(x_value) {
+        document.getElementById("opts_de_lang").value = x_value;
+    }
+
     this.selectDeLang = function(s_value) {
 
         document.getElementById("opts_de_lang").disabled = true;
@@ -83,6 +102,11 @@ function GuiInteractionsForOptions() {
     }
 
     // 3
+
+    this.setFieldDeNatWis = function(x_value) {
+        document.getElementById("opts_de_nat_wis").value = x_value;
+    }
+
     this.selectDeNatWis = function(s_value) {
 
         document.getElementById("opts_de_nat_wis").disabled = true;
@@ -127,6 +151,11 @@ function GuiInteractionsForOptions() {
     }
 
     // 4
+
+    this.setFieldLang = function(x_value) {
+        document.getElementById("opts_lang").value = x_value;
+    }
+
     this.selectLang = function(s_value) {
 
         document.getElementById("opts_lang").disabled = true;
@@ -158,6 +187,11 @@ function GuiInteractionsForOptions() {
     }
 
     // 5
+
+    this.setFieldNatWis = function(x_value) {
+        document.getElementById("opts_nat_wis").value = x_value;
+    }
+
     this.selectNatWis = function(s_value) {
 
         document.getElementById("opts_nat_wis").disabled = true;
@@ -200,6 +234,11 @@ function GuiInteractionsForOptions() {
     }
 
     // 6
+
+    this.setFieldGesWis = function(x_value) {
+        document.getElementById("opts_ges_wis").value = x_value;
+    }
+
     this.selectGesWis = function(s_value) {
 
         document.getElementById("opts_ges_wis").disabled = true;

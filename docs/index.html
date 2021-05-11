@@ -4,21 +4,23 @@ This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 -->
-<html dir="ltr" >
+<html lang="de" dir="ltr">
     <head>
         <title>DSB OSPK</title>
-        <meta charset="UTF-8" >
-        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="description" content="Oberstufenpunktekalkulator">
+        <meta name="keywords" content="oberstufe, punkt, kalkulator">
+        <meta name="author" content="András Németh">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/ospk.css">
-        <script src="scripts/ospk.js" type="application/javascript"></script>
-        <script src="scripts/utility.js" type="application/javascript"></script>
-        <script src="scripts/localization.js" type="application/javascript"></script>
-        <script src="scripts/section-1-options.js" type="application/javascript"></script>
-        <script src="scripts/section-2-inputs.js" type="application/javascript"></script>
-        <script src="scripts/section-3-results.js" type="application/javascript"></script>
-        <script src="scripts/gui.js" type="application/javascript"></script>
-        <script src="scripts/init.js" type="application/javascript"></script>
+        <script src="scripts/ospk.js"></script>
+        <script src="scripts/utility.js"></script>
+        <script src="scripts/localization.js"></script>
+        <script src="scripts/section-1-options.js"></script>
+        <script src="scripts/section-2-inputs.js"></script>
+        <script src="scripts/section-3-results.js"></script>
+        <script src="scripts/gui.js"></script>
+        <script src="scripts/init.js"></script>
     </head>
     <body>
         <header>
@@ -29,7 +31,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
         <div id="content_body">
             <aside>
                 <section>
-                    <h2 id="name_title"></h2>
+                    <h2 id="name_title">&nbsp;</h2>
                 </section>
                 <section>
                     <h2>OSPK v. 3.0</h2>
@@ -65,72 +67,72 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </div>
                 </section>
                 <section id="options" style="display:none;">
-                    <h2 id="options_title"></h2>
+                    <h2 id="options_title">--OPTIONS--</h2>
                     <table>
                         <tbody>
                             <tr>
-                                <td id="options_art_label"></td>
+                                <td id="options_art_label">--ART--</td>
                                 <td>
                                     <select id="opts_art" onchange="cc.useOption(this.id,this.value);" disabled>
-                                        <option id="opts_art_sel_choose" value="-1"></option>
-                                        <option id="opts_art_sel_arts" value="12"></option>
-                                        <option id="opts_art_sel_music" value="13"></option>
+                                        <option id="opts_art_sel_choose" value="-1">--CHOOSE--</option>
+                                        <option id="opts_art_sel_arts" value="12">--ARTS--</option>
+                                        <option id="opts_art_sel_music" value="13">--MUSIC--</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr id="options_de_lang" style="display:none;">
-                                <td id="options_de_lang_label"></td>
+                                <td id="options_de_lang_label">--DE_LANG--</td>
                                 <td>
                                     <select id="opts_de_lang" onchange="cc.useOption(this.id,this.value);" disabled>
-                                        <option id="opts_de_lang_sel_choose" value="-1"></option>
-                                        <option id="opts_de_lang_sel_uz" value="2"></option>
-                                        <option id="opts_de_lang_sel_fra" value="4"></option>
+                                        <option id="opts_de_lang_sel_choose" value="-1">--CHOOSE--</option>
+                                        <option id="opts_de_lang_sel_uz" value="2">--UZ--</option>
+                                        <option id="opts_de_lang_sel_fra" value="4">--FRZ--</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr id="options_de_nat_wis" style="display:none;">
-                                <td id="options_de_nat_wis_label"></td>
+                                <td id="options_de_nat_wis_label">--DE_NAT_WIS--</td>
                                 <td>
                                     <select id="opts_de_nat_wis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                        <option id="opts_de_nat_wis_sel_choose" value="-1"></option>
-                                        <option id="opts_de_nat_wis_sel_phy_bio" value="78"></option>
-                                        <option id="opts_de_nat_wis_sel_phy_ch" value="79"></option>
-                                        <option id="opts_de_nat_wis_sel_bio_ch" value="89"></option>
+                                        <option id="opts_de_nat_wis_sel_choose" value="-1">--CHOOSE--</option>
+                                        <option id="opts_de_nat_wis_sel_phy_bio" value="78">--PHY_BIO--</option>
+                                        <option id="opts_de_nat_wis_sel_phy_ch" value="79">--PHY_CH--</option>
+                                        <option id="opts_de_nat_wis_sel_bio_ch" value="89">--BIO_CH--</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td id="options_lang_label"></td>
+                                <td id="options_lang_label">--LANG--</td>
                                 <td>
                                     <select id="opts_lang" onchange="cc.useOption(this.id,this.value);" disabled>
-                                        <option id="opts_lang_sel_choose" value="-1"></option>
-                                        <option id="opts_lang_sel_none" value="0"></option>
-                                        <option id="opts_lang_sel_fra" value="4" style="display:none;"></option>
-                                        <option id="opts_lang_sel_spa" value="5"></option>
+                                        <option id="opts_lang_sel_choose" value="-1">--CHOOSE--</option>
+                                        <option id="opts_lang_sel_none" value="0">--NONE--</option>
+                                        <option id="opts_lang_sel_fra" value="4" style="display:none;">--FRZ--</option>
+                                        <option id="opts_lang_sel_spa" value="5">--SPA--</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td id="options_nat_wis_label"></td>
+                                <td id="options_nat_wis_label">--NAT_WIS--</td>
                                 <td>
                                     <select id="opts_nat_wis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                        <option id="opts_nat_wis_sel_choose" value="-1"></option>
-                                        <option id="opts_nat_wis_sel_none" value="0"></option>
-                                        <option id="opts_nat_wis_sel_phy" value="7"></option>
-                                        <option id="opts_nat_wis_sel_phy_lk" value="7+"></option>
-                                        <option id="opts_nat_wis_sel_bio" value="8" style="display:none;"></option>
-                                        <option id="opts_nat_wis_sel_ch" value="9" style="display:none;"></option>
+                                        <option id="opts_nat_wis_sel_choose" value="-1">--CHOOSE--</option>
+                                        <option id="opts_nat_wis_sel_none" value="0">--NONE--</option>
+                                        <option id="opts_nat_wis_sel_phy" value="7">--PHY--</option>
+                                        <option id="opts_nat_wis_sel_phy_lk" value="7+">--PHY_LK--</option>
+                                        <option id="opts_nat_wis_sel_bio" value="8" style="display:none;">--BIO--</option>
+                                        <option id="opts_nat_wis_sel_ch" value="9" style="display:none;">--CH--</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td id="options_ges_wis_label"></td>
+                                <td id="options_ges_wis_label">--GES_WIS--</td>
                                 <td>
                                     <select id="opts_ges_wis" onchange="cc.useOption(this.id,this.value);" disabled>
-                                        <option id="opts_ges_wis_sel_choose" value="-1"></option>
-                                        <option id="opts_ges_wis_sel_none" value="0"></option>
-                                        <option id="opts_ges_wis_sel_ek" value="16"></option>
-                                        <option id="opts_ges_wis_sel_eth" value="17"></option>
+                                        <option id="opts_ges_wis_sel_choose" value="-1">--CHOOSE--</option>
+                                        <option id="opts_ges_wis_sel_none" value="0">--NONE--</option>
+                                        <option id="opts_ges_wis_sel_ek" value="16">--EK--</option>
+                                        <option id="opts_ges_wis_sel_eth" value="17">--ETH--</option>
                                     </select>
                                 </td>
                             </tr>
@@ -138,11 +140,11 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </table>
                 </section>
                 <section id="grades" style="display:none;">
-                    <h2 id="grades_title"></h2>
+                    <h2 id="grades_title">--GRADES--</h2>
                     <table>
                         <thead>
                             <tr>
-                                <th id="grades_header"></th>
+                                <th id="grades_header">--SUBJECTS--</th>
                                 <th>11.1</th>
                                 <th>11.2</th>
                                 <th>12.1</th>
@@ -152,7 +154,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                         <tbody>
                             <!-- Deutsch / Német -->
                             <tr id="grades_dt">
-                                <td id="grades_dt_subj"></td>
+                                <td id="grades_dt_subj">--DT--</td>
                                 <td>
                                     <input id="grades_dt_sem_1" onchange="gui.updateGrade('dt', 1);" />
                                 </td>
@@ -168,7 +170,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- UZ / Magyar -->
                             <tr id="grades_ung">
-                                <td id="grades_ung_subj"></td>
+                                <td id="grades_ung_subj">--UNG--</td>
                                 <td>
                                     <input id="grades_ung_sem_1" onchange="gui.updateGrade('ung', 1);" />
                                 </td>
@@ -184,7 +186,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Englisch / Angol -->
                             <tr id="grades_eng">
-                                <td id="grades_eng_subj"></td>
+                                <td id="grades_eng_subj">--ENG--</td>
                                 <td>
                                     <input id="grades_eng_sem_1" onchange="gui.updateGrade('eng', 1);" />
                                 </td>
@@ -200,7 +202,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Französisch / Francia -->
                             <tr id="grades_frz">
-                                <td id="grades_frz_subj"></td>
+                                <td id="grades_frz_subj">--FRZ--</td>
                                 <td>
                                     <input id="grades_frz_sem_1" onchange="gui.updateGrade('frz', 1);" />
                                 </td>
@@ -216,7 +218,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Spanisch / Spanyol -->
                             <tr id="grades_spa">
-                                <td id="grades_spa_subj"></td>
+                                <td id="grades_spa_subj">--SPA--</td>
                                 <td>
                                     <input id="grades_spa_sem_1" onchange="gui.updateGrade('spa', 1);" />
                                 </td>
@@ -232,7 +234,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Mathematik / Matematika -->
                             <tr id="grades_mat">
-                                <td id="grades_mat_subj"></td>
+                                <td id="grades_mat_subj">--MAT--</td>
                                 <td>
                                     <input id="grades_mat_sem_1" onchange="gui.updateGrade('mat', 1);" />
                                 </td>
@@ -248,7 +250,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Physik / Fizika -->
                             <tr id="grades_phy">
-                                <td id="grades_phy_subj"></td>
+                                <td id="grades_phy_subj">--PHY--</td>
                                 <td>
                                     <input id="grades_phy_sem_1" onchange="gui.updateGrade('phy', 1);" />
                                 </td>
@@ -264,7 +266,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Biologie / Biológia -->
                             <tr id="grades_bio">
-                                <td id="grades_bio_subj"></td>
+                                <td id="grades_bio_subj">--BIO--</td>
                                 <td>
                                     <input id="grades_bio_sem_1" onchange="gui.updateGrade('bio', 1);" />
                                 </td>
@@ -280,7 +282,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Chemie / Kémia-->
                             <tr id="grades_ch">
-                                <td id="grades_ch_subj"></td>
+                                <td id="grades_ch_subj">--CH--</td>
                                 <td>
                                     <input id="grades_ch_sem_1" onchange="gui.updateGrade('ch', 1);" />
                                 </td>
@@ -296,7 +298,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Geschichte / Német történelem -->
                             <tr id="grades_ge">
-                                <td id="grades_ge_subj"></td>
+                                <td id="grades_ge_subj">--GE--</td>
                                 <td>
                                     <input id="grades_ge_sem_1" onchange="gui.updateGrade('ge', 1);" />
                                 </td>
@@ -312,7 +314,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Ungarische Geschichte / Történelem -->
                             <tr id="grades_uge">
-                                <td id="grades_uge_subj"></td>
+                                <td id="grades_uge_subj">--UGE--</td>
                                 <td>
                                     <input id="grades_uge_sem_1" onchange="gui.updateGrade('uge', 1);" />
                                 </td>
@@ -328,7 +330,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Bildende Kunst / Rajz -->
                             <tr id="grades_bk">
-                                <td id="grades_bk_subj"></td>
+                                <td id="grades_bk_subj">--BK--</td>
                                 <td>
                                     <input id="grades_bk_sem_1" onchange="gui.updateGrade('bk', 1);" />
                                 </td>
@@ -344,7 +346,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Musik / Ének-zene -->
                             <tr id="grades_mus">
-                                <td id="grades_mus_subj"></td>
+                                <td id="grades_mus_subj">--MUS--</td>
                                 <td>
                                     <input id="grades_mus_sem_1" onchange="gui.updateGrade('mus', 1);" />
                                 </td>
@@ -360,7 +362,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Sozialkunde / Társadalomismeret -->
                             <tr id="grades_soz">
-                                <td id="grades_soz_subj"></td>
+                                <td id="grades_soz_subj">--SOZ--</td>
                                 <td>
                                     <input id="grades_soz_sem_1" onchange="gui.updateGrade('soz', 1);" />
                                 </td>
@@ -376,7 +378,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Sport / Sport -->
                             <tr id="grades_spo">
-                                <td id="grades_spo_subj"></td>
+                                <td id="grades_spo_subj">--SPO--</td>
                                 <td>
                                     <input id="grades_spo_sem_1" onchange="gui.updateGrade('spo', 1);" />
                                 </td>
@@ -392,7 +394,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Erdkunde / Földrajz -->
                             <tr id="grades_ek">
-                                <td id="grades_ek_subj"></td>
+                                <td id="grades_ek_subj">--EK--</td>
                                 <td>
                                     <input id="grades_ek_sem_1" onchange="gui.updateGrade('ek', 1);" />
                                 </td>
@@ -408,7 +410,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             </tr>
                             <!-- Ethik (oder Religion) / Etika (vagy Hittan) -->
                             <tr id="grades_eth">
-                                <td id="grades_eth_subj"></td>
+                                <td id="grades_eth_subj">--ETH--</td>
                                 <td>
                                     <input id="grades_eth_sem_1" onchange="gui.updateGrade('eth', 1);" />
                                 </td>
@@ -426,30 +428,30 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     </table>
                 </section>
                 <section id="exams" style="display:none;">
-                    <h2 id="exams_title"></h2>
+                    <h2 id="exams_title">--EXAMS--</h2>
                     <table>
                         <tbody>
                             <tr>
                                 <td>1.</td>
-                                <td id="exams_1_mode"></td>
-                                <td id="exams_1_subj"></td>
+                                <td id="exams_1_mode">--MODE--</td>
+                                <td id="exams_1_subj">--SUBJECT--</td>
                                 <td>
                                     <input id="exams_1_grade" type="text" maxlength="2" onchange="gui.updateExamGrade(1);" />
                                     <span> NP</span>
                                 </td>
-                                <td id="exams_1_req"></td>
+                                <td id="exams_1_req">--REQ--</td>
                             </tr>
                             <tr>
                                 <td>2.</td>
-                                <td id="exams_2_mode"></td>
+                                <td id="exams_2_mode">--MODE--</td>
                                 <td>
-                                    <span id="exams_2_branch_hu_subj"></span>
+                                    <span id="exams_2_branch_hu_subj">--SUBJECT--</span>
                                     <span id="exams_2_branch_de_subj" style="display:none;">
                                         <select id="input_abiFach_2" onchange="tempNum = new Number(this.value); cc.abiFach[2] = tempNum.valueOf();">
-                                            <option id="ex_2_subj_sel_choose" value="0"></option>
-                                            <option id="ex_2_subj_sel_eng" value="3"></option>
-                                            <option id="ex_2_subj_sel_frz" value="4"></option>
-                                            <option id="ex_2_subj_sel_mat" value="6"></option>
+                                            <option id="ex_2_subj_sel_choose" value="0">--CHOOSE--</option>
+                                            <option id="ex_2_subj_sel_eng" value="3">--ENG--</option>
+                                            <option id="ex_2_subj_sel_frz" value="4">--FRZ--</option>
+                                            <option id="ex_2_subj_sel_mat" value="6">--MAT--</option>
                                         </select>
                                     </span>
                                 </td>
@@ -457,67 +459,66 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     <input id="exams_2_grade" type="text" maxlength="2" onchange="gui.updateExamGrade(2);" />
                                     <span> NP</span>
                                 </td>
-                                <td id="exams_2_req"></td>
+                                <td id="exams_2_req">--REQ--</td>
                             </tr>
                             <tr>
                                 <td>3.</td>
-                                <td id="exams_3_mode"></td>
+                                <td id="exams_3_mode">--MODE--</td>
                                 <td>
                                     <select id="input_abiFach_3" onchange="tempNum = new Number(this.value); cc.abiFach[3] = tempNum.valueOf();">
-                                        <option id="ex_3_subj_sel_choose" value="0"></option>
-                                        <option id="ex_3_subj_sel_mat" value="6"></option>
-                                        <option id="ex_3_subj_sel_phy" value="7"></option>
-                                        <option id="ex_3_subj_sel_bio" value="8"></option>
-                                        <option id="ex_3_subj_sel_ch" value="9" style="display:none;"></option>
+                                        <option id="ex_3_subj_sel_choose" value="0">--CHOOSE--</option>
+                                        <option id="ex_3_subj_sel_mat" value="6">--MAT--</option>
+                                        <option id="ex_3_subj_sel_phy" value="7">--PHY--</option>
+                                        <option id="ex_3_subj_sel_bio" value="8">--BIO--</option>
+                                        <option id="ex_3_subj_sel_ch" value="9" style="display:none;">--CH--</option>
                                     </select>
                                 </td>
                                 <td>
                                     <input id="exams_3_grade" type="text" maxlength="2" onchange="gui.updateExamGrade(3);" />
                                     <span> NP</span>
                                 </td>
-                                <td id="exams_3_req"></td>
+                                <td id="exams_3_req">--REQ--</td>
                             </tr>
                             <tr>
                                 <td>4.</td>
-                                <td id="exams_4_mode"></td>
+                                <td id="exams_4_mode">--MODE--</td>
                                 <td>
                                     <select id="input_abiFach_4" onchange="tempNum = new Number(this.value); cc.abiFach[4] = tempNum.valueOf();">
-                                        <option id="ex_4_subj_sel_choose" value="0"></option>
-                                        <option id="ex_4_subj_sel_eng" value="3"></option>
-                                        <option id="ex_4_subj_sel_frz" value="4" style="display:none;"></option>
-                                        <option id="ex_4_subj_sel_mat" value="6"></option>
-                                        <option id="ex_4_subj_sel_phy" value="7"></option>
-                                        <option id="ex_4_subj_sel_bio" value="8" style="display:none;"></option>
-                                        <option id="ex_4_subj_sel_ch" value="9" style="display:none;"></option>
-                                        <option id="ex_4_subj_sel_ge" value="10"></option>
-                                        <option id="ex_4_subj_sel_uge" value="11" style="display:none;"></option>
-                                        <option id="ex_4_subj_sel_soz" value="14" style="display:none;"></option>
+                                        <option id="ex_4_subj_sel_choose" value="0">--CHOOSE--</option>
+                                        <option id="ex_4_subj_sel_eng" value="3">--ENG--</option>
+                                        <option id="ex_4_subj_sel_frz" value="4" style="display:none;">--FRZ--</option>
+                                        <option id="ex_4_subj_sel_mat" value="6">--MAT--</option>
+                                        <option id="ex_4_subj_sel_phy" value="7">--PHY--</option>
+                                        <option id="ex_4_subj_sel_bio" value="8" style="display:none;">--BIO--</option>
+                                        <option id="ex_4_subj_sel_ch" value="9" style="display:none;">--CH--</option>
+                                        <option id="ex_4_subj_sel_ge" value="10">--GE--</option>
+                                        <option id="ex_4_subj_sel_uge" value="11" style="display:none;">--UGE--</option>
+                                        <option id="ex_4_subj_sel_soz" value="14" style="display:none;">--SOZ--</option>
                                     </select>
                                 </td>
                                 <td>
                                     <input id="exams_4_grade" type="text" maxlength="3" onchange="gui.updateExamGrade(4);" />
                                     <span> NP</span>
                                 </td>
-                                <td id="exams_4_req"></td>
+                                <td id="exams_4_req">--REQ--</td>
                             </tr>
                         </tbody>
                     </table>
                 </section>
                 <section id="buttons" style="display:none;">
                     <input id="button_calculate" type="button" value="CALCULATE" onclick="cc.calculate();" />
-                    <a id="exportLink" download="" href="" type="">
-                        <input id="button_export" type="button" onclick="cc.exportData();" value="EXPORT" />
-                    </a>
+                    <a id="exportLink" download="" href="" type="text/plain">&nbsp;</a>
+                    <input id="button_export" type="button" onclick="cc.exportData();" value="EXPORT" />
                 </section>
                 <section id="results" style="display:none;">
                     <h2>Ergebnisse:</h2>
                     <table>
                         <tbody>
                             <tr>
-                                <td colspan="3">Insgesamt: <span id="result_sum">?</span> von 900 Punkten erreicht.</td>
+                                <td colspan="3">Insgesamt: <span id="result_sum">--SUM--</span> von 900 Punkten erreicht.</td>
                             </tr>
                             <tr>
-                                <td colspan="3">Abiturdurchschnitt: <span id="result_avg">?</span></td>
+                                <td colspan="3">Abiturdurchschnitt: <span id="result_avg">--AVG--</span></td>
                             </tr>
                             <tr>
                                 <td><h3>Bereich A</h3></td>

@@ -61,6 +61,8 @@ function inputs_setup() {
 
     // req for HU only
 
+    document.getElementById('exams_1_req').innerHTML = "";
+
     if(cc.student.zweig == "hu") {
         document.getElementById('exams_2_req').innerHTML = i18n.get("obligatory");
     }
@@ -89,6 +91,10 @@ function inputs_setup() {
 
     // select top ('choose') entry
     document.getElementById("input_abiFach_3").options.selectedIndex = 0
+
+    // no req
+
+    document.getElementById('exams_3_req').innerHTML = "";
 
     /* MÜNDLICHES PRÜFUNGSFACH -------------------------------------- */
 
@@ -140,6 +146,10 @@ function inputs_setup() {
 
     // select top ('choose') entry
     document.getElementById("input_abiFach_4").options.selectedIndex = 0
+
+    // no req
+
+    document.getElementById('exams_4_req').innerHTML = "";
 
     /* buttons ------------------------------------------------------ */
 

@@ -876,19 +876,3 @@ function BbHalbjahr(fachname, halbjahrno, note) {
     }
 
 }
-
-/* deprecated functions ----------------------------------------------*/
-
-/*
-function changeinputbg(what, isactive) {
-    if (isactive == "active") {
-        what.style.backgroundColor='#FFA640';
-    }
-    else if (isactive == "inactive") {
-        what.style.backgroundColor='#FFFFFF';
-    }
-    else {
-        what.style.backgroundColor='#000000';
-    }
-}
-*/

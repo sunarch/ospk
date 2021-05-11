@@ -8,7 +8,7 @@ function options_setup() {
 
     document.getElementById('options_title').innerHTML = i18n.get("options_title");
 
-    /* wahlArt (1) -------------------------------------------------- */
+    /* opts_art (1) ------------------------------------------------- */
 
     document.getElementById("options_art_label").innerHTML = i18n.get("question_wahlArt");
 
@@ -21,16 +21,16 @@ function options_setup() {
     document.getElementById("opts_art_sel_music").innerHTML = cc.fach[13].getFullName();
 
     // select top (label) entry
-    document.getElementById("wahlArt").options.selectedIndex = 0
+    document.getElementById("opts_art").options.selectedIndex = 0
 
     // ensure disabled
-    document.getElementById("wahlArt").disabled = true
+    document.getElementById("opts_art").disabled = true
 
     /* 2 Pflichtwahlen nur für den deutschen Zweig ------------------ */
 
     if (cc.student.zweig == "de") {
 
-        /* deWahlLang (2) ------------------------------------------- */
+        /* opts_de_lang (2) ----------------------------------------- */
 
         document.getElementById("options_de_lang").style.display = "table-row";
 
@@ -45,12 +45,12 @@ function options_setup() {
         document.getElementById("opts_de_lang_sel_fra").innerHTML = cc.fach[4].getFullName();
 
         // select top (label) entry
-        document.getElementById("deWahlLang").options.selectedIndex = 0
+        document.getElementById("opts_de_lang").options.selectedIndex = 0
 
         // ensure disabled
-        document.getElementById("deWahlLang").disabled = true
+        document.getElementById("opts_de_lang").disabled = true
 
-        /* deWahlNatWis (3) ----------------------------------------- */
+        /* opts_de_nat_wis (3) -------------------------------------- */
 
         document.getElementById("options_de_nat_wis").style.display = "table-row";
 
@@ -68,14 +68,14 @@ function options_setup() {
         document.getElementById("opts_de_nat_wis_sel_bio_ch").innerHTML = cc.fach[8].getFullName() + " und " + cc.fach[9].getFullName();
 
         // select top (label) entry
-        document.getElementById("deWahlNatWis").options.selectedIndex = 0
+        document.getElementById("opts_de_nat_wis").options.selectedIndex = 0
 
         // ensure disabled
-        document.getElementById("deWahlNatWis").disabled = true
+        document.getElementById("opts_de_nat_wis").disabled = true
 
     }
 
-    /* optionLang (4) ----------------------------------------------- */
+    /* opts_lang (4) ------------------------------------------------ */
 
     document.getElementById("options_lang_label").innerHTML = i18n.get("question_optionLang");
 
@@ -95,12 +95,12 @@ function options_setup() {
     document.getElementById("opts_lang_sel_spa").innerHTML = cc.fach[5].getFullName();
 
     // select top (label) entry
-    document.getElementById("optionLang").options.selectedIndex = 0
+    document.getElementById("opts_lang").options.selectedIndex = 0
 
     // ensure disabled
-    document.getElementById("optionLang").disabled = true
+    document.getElementById("opts_lang").disabled = true
 
-    /* optionNatWis (5) --------------------------------------------- */
+    /* opts_nat_wis (5) --------------------------------------------- */
 
     document.getElementById("options_nat_wis_label").innerHTML = i18n.get("question_optionNatWis");
 
@@ -134,12 +134,12 @@ function options_setup() {
     }
 
     // select top (label) entry
-    document.getElementById("optionNatWis").options.selectedIndex = 0
+    document.getElementById("opts_nat_wis").options.selectedIndex = 0
 
     // ensure disabled
-    document.getElementById("optionNatWis").disabled = true
+    document.getElementById("opts_nat_wis").disabled = true
 
-    /* optionGesWis (6) --------------------------------------------- */
+    /* opts_ges_wis (6) --------------------------------------------- */
 
     document.getElementById("options_ges_wis_label").innerHTML = i18n.get("question_optionGesWis");
 
@@ -155,9 +155,9 @@ function options_setup() {
     document.getElementById("opts_ges_wis_sel_eth").innerHTML = cc.fach[17].getFullName();
 
     // select top (label) entry
-    document.getElementById("optionGesWis").options.selectedIndex = 0
+    document.getElementById("opts_ges_wis").options.selectedIndex = 0
 
     // ensure disabled
-    document.getElementById("optionGesWis").disabled = true
+    document.getElementById("opts_ges_wis").disabled = true
 
 }

@@ -102,7 +102,7 @@ function OberstufenPunkteKalkulator() {
                 options_setup();
 
                 // enable first question
-                document.getElementById("wahlArt").disabled = false
+                document.getElementById("opts_art").disabled = false
 
                 document.getElementById('options').style.display = "block";
 
@@ -133,7 +133,7 @@ function OberstufenPunkteKalkulator() {
 
         switch(optionId) {
 
-            case "wahlArt": // 1
+            case "opts_art": // 1
                 this.student.wahlArt = optionValue;
                 this.optsready[1] = true;
 
@@ -152,15 +152,15 @@ function OberstufenPunkteKalkulator() {
                 }
 
                 if (this.student.zweig == "de") {
-                    document.getElementById("deWahlLang").disabled = false;
+                    document.getElementById("opts_de_lang").disabled = false;
                 }
                 else if (this.student.zweig == "hu") {
-                    document.getElementById("optionLang").disabled = false;
+                    document.getElementById("opts_lang").disabled = false;
 
                 }
                 break;
 
-            case "deWahlLang": // 2
+            case "opts_de_lang": // 2
                 this.student.deWahlLang = optionValue;
                 this.optsready[2] = true;
 
@@ -178,10 +178,10 @@ function OberstufenPunkteKalkulator() {
                         break;
                 }
 
-                document.getElementById("deWahlNatWis").disabled = false;
+                document.getElementById("opts_de_nat_wis").disabled = false;
                 break;
 
-            case "deWahlNatWis": // 3
+            case "opts_de_nat_wis": // 3
                 this.student.deWahlNatWis = optionValue;
                 this.optsready[3] = true;
 
@@ -202,7 +202,7 @@ function OberstufenPunkteKalkulator() {
                     default: break;
                 }
 
-                // disable already chosen options in optionNatWis
+                // disable already chosen options in opts_nat_wis
 
                 // Physik (Grundkurs)
                 if(this.fach[7].active) {
@@ -219,10 +219,10 @@ function OberstufenPunkteKalkulator() {
                     document.getElementById("opts_nat_wis_sel_ch").disabled = true;
                 }
 
-                document.getElementById("optionLang").disabled = false;
+                document.getElementById("opts_lang").disabled = false;
                 break;
 
-            case "optionLang": // 4
+            case "opts_lang": // 4
                 this.student.optionLang = optionValue;
                 this.optsready[4] = true;
 
@@ -247,11 +247,11 @@ function OberstufenPunkteKalkulator() {
                         break;
                 }
 
-                document.getElementById("optionNatWis").disabled = false;
+                document.getElementById("opts_nat_wis").disabled = false;
 
                 break;
 
-            case "optionNatWis": // 5
+            case "opts_nat_wis": // 5
                 this.student.optionNatWis = optionValue;
                 this.optsready[5] = true;
 
@@ -287,10 +287,10 @@ function OberstufenPunkteKalkulator() {
                         break;
                 }
 
-                document.getElementById("optionGesWis").disabled = false;
+                document.getElementById("opts_ges_wis").disabled = false;
                 break;
 
-            case "optionGesWis": // 6
+            case "opts_ges_wis": // 6
                 this.student.optionGesWis = optionValue;
                 this.optsready[6] = true;
 
@@ -337,14 +337,14 @@ function OberstufenPunkteKalkulator() {
         this.display('options');
 
         // Optionen
-        this.useOption("wahlArt", importArray[2]);
+        this.useOption("opts_art", importArray[2]);
         if (this.student.zweig == "de") {
-            this.useOption("deWahlLang", importArray[3]);
-            this.useOption("deWahlNatWis", importArray[4]);
+            this.useOption("opts_de_lang", importArray[3]);
+            this.useOption("opts_de_nat_wis", importArray[4]);
         }
-        this.useOption("optionLang", importArray[5]);
-        this.useOption("optionNatWis", importArray[6]);
-        this.useOption("optionGesWis", importArray[7]);
+        this.useOption("opts_lang", importArray[5]);
+        this.useOption("opts_nat_wis", importArray[6]);
+        this.useOption("opts_ges_wis", importArray[7]);
 
         // Inputs
 
@@ -420,14 +420,14 @@ function OberstufenPunkteKalkulator() {
         }
         else if (this.student.zweig == "de") {
             var abiFachWahlMin = 2;
-            document.getElementById("deWahlLang").value = this.student.deWahlLang;
-            document.getElementById("deWahlNatWis").value = this.student.deWahlNatWis;
+            document.getElementById("opts_de_lang").value = this.student.deWahlLang;
+            document.getElementById("opts_de_nat_wis").value = this.student.deWahlNatWis;
         }
 
-        document.getElementById("wahlArt").value = this.student.wahlArt;
-        document.getElementById("optionLang").value = this.student.optionLang;
-        document.getElementById("optionNatWis").value = this.student.optionNatWis;
-        document.getElementById("optionGesWis").value = this.student.optionGesWis;
+        document.getElementById("opts_art").value = this.student.wahlArt;
+        document.getElementById("opts_lang").value = this.student.optionLang;
+        document.getElementById("opts_nat_wis").value = this.student.optionNatWis;
+        document.getElementById("opts_ges_wis").value = this.student.optionGesWis;
 
         for (n1 = abiFachWahlMin; n1 <= 4; n1 = n1 + 1) {
             document.getElementById("input_abiFach_" + n1).value = this.abiFach[n1];

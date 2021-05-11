@@ -191,13 +191,24 @@ function OberstufenPunkteKalkulator() {
 
         gui.exams.setFields(a_exams);
 
-        for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {
-            if (this.fach[n1].active) {
-                for (n2 = 1; n2 <= 4; n2 = n2 + 1) {
-                    document.getElementById("grades_" + this.fach[n1].name + "_sem_" + n2).value = this.fach[n1].note[n2];
-                }
+        a_subjects = [null, null, null, null, null,
+                      null, null, null, null, null,
+                      null, null, null, null, null,
+                      null, null];
+
+        for (n1 = 0; n1 < (this.fach.length - 1); n1 = n1 + 1) {
+            o_subj = {};
+            o_subj.code = this.fach[n1 + 1].name;
+            o_subj.grades = [0, 0, 0, 0];
+
+            for (n2 = 0; n2 < 4; n2 = n2 + 1) {
+                o_subj.grades[n2] = this.fach[n1 + 1].note[n2 + 1];
             }
+
+            a_subjects[n1] = o_subj;
         }
+
+        gui.grades.setFields(a_subjects);
     }
 
     this.mark_results = function() {

@@ -33,6 +33,20 @@ function GuiInteractionsForGrades() {
 
     }
 
+    this.setFields = function(a_subjects) {
+
+        for (n1 = 0; n1 < a_subjects.length; n1 = n1 + 1) {
+            for (n2 = 0; n2 < 4; n2 = n2 + 1) {
+                this.setField(a_subjects[n1].code, n2 + 1, a_subjects[n1].grades[n2]);
+            }
+        }
+    }
+
+    this.setField = function(s_subj, i_sem, i_grade) {
+        s_dom_id = "grades_" + s_subj + "_sem_" + (i_sem);
+        document.getElementById(s_dom_id).value = i_grade;
+    }
+
     this.setup = function() {
 
         document.getElementById('grades_title').innerHTML = i18n.get("grades1112_title");

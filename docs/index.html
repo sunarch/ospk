@@ -49,20 +49,20 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                 <section id="branches">
                     <div id="branches_hu">
                         <span>Magyar ág</span>
-                        <span onClick="gui.chooseBranch('hu');">
+                        <span onClick="gui.branches.choose('hu');">
                             <img src="images/flag-of-hungary.svg" width="50" height="30" alt="flag of Hungary" />
                         </span>
                     </div>
                     <div id="branches_de">
                         <span>Deutscher Zweig</span>
-                        <span onClick="gui.chooseBranch('de');">
+                        <span onClick="gui.branches.choose('de');">
                             <img src="images/flag-of-germany.svg" width="50" height="30" alt="flag of Germany" />
                         </span>
                     </div>
                     <div id="branches_import">
                         <span>Import</span>
                         <span>
-                            <input type="button" value="Enter data" onClick="gui.importData()" />
+                            <input type="button" value="Enter data" onClick="gui.branches.importData()" />
                         </span>
                     </div>
                 </section>
@@ -156,272 +156,272 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                             <tr id="grades_dt">
                                 <td id="grades_dt_subj">--DT--</td>
                                 <td>
-                                    <input id="grades_dt_sem_1" onchange="gui.updateGrade('dt', 1);" />
+                                    <input id="grades_dt_sem_1" onchange="gui.grades.updateGrade('dt', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_dt_sem_2" onchange="gui.updateGrade('dt', 2);" />
+                                    <input id="grades_dt_sem_2" onchange="gui.grades.updateGrade('dt', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_dt_sem_3" onchange="gui.updateGrade('dt', 3);" />
+                                    <input id="grades_dt_sem_3" onchange="gui.grades.updateGrade('dt', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_dt_sem_4" onchange="gui.updateGrade('dt', 4);" />
+                                    <input id="grades_dt_sem_4" onchange="gui.grades.updateGrade('dt', 4);" />
                                 </td>
                             </tr>
                             <!-- UZ / Magyar -->
                             <tr id="grades_ung">
                                 <td id="grades_ung_subj">--UNG--</td>
                                 <td>
-                                    <input id="grades_ung_sem_1" onchange="gui.updateGrade('ung', 1);" />
+                                    <input id="grades_ung_sem_1" onchange="gui.grades.updateGrade('ung', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ung_sem_2" onchange="gui.updateGrade('ung', 2);" />
+                                    <input id="grades_ung_sem_2" onchange="gui.grades.updateGrade('ung', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ung_sem_3" onchange="gui.updateGrade('ung', 3);" />
+                                    <input id="grades_ung_sem_3" onchange="gui.grades.updateGrade('ung', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ung_sem_4" onchange="gui.updateGrade('ung', 4);" />
+                                    <input id="grades_ung_sem_4" onchange="gui.grades.updateGrade('ung', 4);" />
                                 </td>
                             </tr>
                             <!-- Englisch / Angol -->
                             <tr id="grades_eng">
                                 <td id="grades_eng_subj">--ENG--</td>
                                 <td>
-                                    <input id="grades_eng_sem_1" onchange="gui.updateGrade('eng', 1);" />
+                                    <input id="grades_eng_sem_1" onchange="gui.grades.updateGrade('eng', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_eng_sem_2" onchange="gui.updateGrade('eng', 2);" />
+                                    <input id="grades_eng_sem_2" onchange="gui.grades.updateGrade('eng', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_eng_sem_3" onchange="gui.updateGrade('eng', 3);" />
+                                    <input id="grades_eng_sem_3" onchange="gui.grades.updateGrade('eng', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_eng_sem_4" onchange="gui.updateGrade('eng', 4);" />
+                                    <input id="grades_eng_sem_4" onchange="gui.grades.updateGrade('eng', 4);" />
                                 </td>
                             </tr>
                             <!-- Französisch / Francia -->
                             <tr id="grades_frz">
                                 <td id="grades_frz_subj">--FRZ--</td>
                                 <td>
-                                    <input id="grades_frz_sem_1" onchange="gui.updateGrade('frz', 1);" />
+                                    <input id="grades_frz_sem_1" onchange="gui.grades.updateGrade('frz', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_frz_sem_2" onchange="gui.updateGrade('frz', 2);" />
+                                    <input id="grades_frz_sem_2" onchange="gui.grades.updateGrade('frz', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_frz_sem_3" onchange="gui.updateGrade('frz', 3);" />
+                                    <input id="grades_frz_sem_3" onchange="gui.grades.updateGrade('frz', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_frz_sem_4" onchange="gui.updateGrade('frz', 4);" />
+                                    <input id="grades_frz_sem_4" onchange="gui.grades.updateGrade('frz', 4);" />
                                 </td>
                             </tr>
                             <!-- Spanisch / Spanyol -->
                             <tr id="grades_spa">
                                 <td id="grades_spa_subj">--SPA--</td>
                                 <td>
-                                    <input id="grades_spa_sem_1" onchange="gui.updateGrade('spa', 1);" />
+                                    <input id="grades_spa_sem_1" onchange="gui.grades.updateGrade('spa', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_spa_sem_2" onchange="gui.updateGrade('spa', 2);" />
+                                    <input id="grades_spa_sem_2" onchange="gui.grades.updateGrade('spa', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_spa_sem_3" onchange="gui.updateGrade('spa', 3);" />
+                                    <input id="grades_spa_sem_3" onchange="gui.grades.updateGrade('spa', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_spa_sem_4" onchange="gui.updateGrade('spa', 4);" />
+                                    <input id="grades_spa_sem_4" onchange="gui.grades.updateGrade('spa', 4);" />
                                 </td>
                             </tr>
                             <!-- Mathematik / Matematika -->
                             <tr id="grades_mat">
                                 <td id="grades_mat_subj">--MAT--</td>
                                 <td>
-                                    <input id="grades_mat_sem_1" onchange="gui.updateGrade('mat', 1);" />
+                                    <input id="grades_mat_sem_1" onchange="gui.grades.updateGrade('mat', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_mat_sem_2" onchange="gui.updateGrade('mat', 2);" />
+                                    <input id="grades_mat_sem_2" onchange="gui.grades.updateGrade('mat', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_mat_sem_3" onchange="gui.updateGrade('mat', 3);" />
+                                    <input id="grades_mat_sem_3" onchange="gui.grades.updateGrade('mat', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_mat_sem_4" onchange="gui.updateGrade('mat', 4);" />
+                                    <input id="grades_mat_sem_4" onchange="gui.grades.updateGrade('mat', 4);" />
                                 </td>
                             </tr>
                             <!-- Physik / Fizika -->
                             <tr id="grades_phy">
                                 <td id="grades_phy_subj">--PHY--</td>
                                 <td>
-                                    <input id="grades_phy_sem_1" onchange="gui.updateGrade('phy', 1);" />
+                                    <input id="grades_phy_sem_1" onchange="gui.grades.updateGrade('phy', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_phy_sem_2" onchange="gui.updateGrade('phy', 2);" />
+                                    <input id="grades_phy_sem_2" onchange="gui.grades.updateGrade('phy', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_phy_sem_3" onchange="gui.updateGrade('phy', 3);" />
+                                    <input id="grades_phy_sem_3" onchange="gui.grades.updateGrade('phy', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_phy_sem_4" onchange="gui.updateGrade('phy', 4);" />
+                                    <input id="grades_phy_sem_4" onchange="gui.grades.updateGrade('phy', 4);" />
                                 </td>
                             </tr>
                             <!-- Biologie / Biológia -->
                             <tr id="grades_bio">
                                 <td id="grades_bio_subj">--BIO--</td>
                                 <td>
-                                    <input id="grades_bio_sem_1" onchange="gui.updateGrade('bio', 1);" />
+                                    <input id="grades_bio_sem_1" onchange="gui.grades.updateGrade('bio', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_bio_sem_2" onchange="gui.updateGrade('bio', 2);" />
+                                    <input id="grades_bio_sem_2" onchange="gui.grades.updateGrade('bio', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_bio_sem_3" onchange="gui.updateGrade('bio', 3);" />
+                                    <input id="grades_bio_sem_3" onchange="gui.grades.updateGrade('bio', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_bio_sem_4" onchange="gui.updateGrade('bio', 4);" />
+                                    <input id="grades_bio_sem_4" onchange="gui.grades.updateGrade('bio', 4);" />
                                 </td>
                             </tr>
                             <!-- Chemie / Kémia-->
                             <tr id="grades_ch">
                                 <td id="grades_ch_subj">--CH--</td>
                                 <td>
-                                    <input id="grades_ch_sem_1" onchange="gui.updateGrade('ch', 1);" />
+                                    <input id="grades_ch_sem_1" onchange="gui.grades.updateGrade('ch', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ch_sem_2" onchange="gui.updateGrade('ch', 2);" />
+                                    <input id="grades_ch_sem_2" onchange="gui.grades.updateGrade('ch', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ch_sem_3" onchange="gui.updateGrade('ch', 3);" />
+                                    <input id="grades_ch_sem_3" onchange="gui.grades.updateGrade('ch', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ch_sem_4" onchange="gui.updateGrade('ch', 4);" />
+                                    <input id="grades_ch_sem_4" onchange="gui.grades.updateGrade('ch', 4);" />
                                 </td>
                             </tr>
                             <!-- Geschichte / Német történelem -->
                             <tr id="grades_ge">
                                 <td id="grades_ge_subj">--GE--</td>
                                 <td>
-                                    <input id="grades_ge_sem_1" onchange="gui.updateGrade('ge', 1);" />
+                                    <input id="grades_ge_sem_1" onchange="gui.grades.updateGrade('ge', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ge_sem_2" onchange="gui.updateGrade('ge', 2);" />
+                                    <input id="grades_ge_sem_2" onchange="gui.grades.updateGrade('ge', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ge_sem_3" onchange="gui.updateGrade('ge', 3);" />
+                                    <input id="grades_ge_sem_3" onchange="gui.grades.updateGrade('ge', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ge_sem_4" onchange="gui.updateGrade('ge', 4);" />
+                                    <input id="grades_ge_sem_4" onchange="gui.grades.updateGrade('ge', 4);" />
                                 </td>
                             </tr>
                             <!-- Ungarische Geschichte / Történelem -->
                             <tr id="grades_uge">
                                 <td id="grades_uge_subj">--UGE--</td>
                                 <td>
-                                    <input id="grades_uge_sem_1" onchange="gui.updateGrade('uge', 1);" />
+                                    <input id="grades_uge_sem_1" onchange="gui.grades.updateGrade('uge', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_uge_sem_2" onchange="gui.updateGrade('uge', 2);" />
+                                    <input id="grades_uge_sem_2" onchange="gui.grades.updateGrade('uge', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_uge_sem_3" onchange="gui.updateGrade('uge', 3);" />
+                                    <input id="grades_uge_sem_3" onchange="gui.grades.updateGrade('uge', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_uge_sem_4" onchange="gui.updateGrade('uge', 4);" />
+                                    <input id="grades_uge_sem_4" onchange="gui.grades.updateGrade('uge', 4);" />
                                 </td>
                             </tr>
                             <!-- Bildende Kunst / Rajz -->
                             <tr id="grades_bk">
                                 <td id="grades_bk_subj">--BK--</td>
                                 <td>
-                                    <input id="grades_bk_sem_1" onchange="gui.updateGrade('bk', 1);" />
+                                    <input id="grades_bk_sem_1" onchange="gui.grades.updateGrade('bk', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_bk_sem_2" onchange="gui.updateGrade('bk', 2);" />
+                                    <input id="grades_bk_sem_2" onchange="gui.grades.updateGrade('bk', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_bk_sem_3" onchange="gui.updateGrade('bk', 3);" />
+                                    <input id="grades_bk_sem_3" onchange="gui.grades.updateGrade('bk', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_bk_sem_4" onchange="gui.updateGrade('bk', 4);" />
+                                    <input id="grades_bk_sem_4" onchange="gui.grades.updateGrade('bk', 4);" />
                                 </td>
                             </tr>
                             <!-- Musik / Ének-zene -->
                             <tr id="grades_mus">
                                 <td id="grades_mus_subj">--MUS--</td>
                                 <td>
-                                    <input id="grades_mus_sem_1" onchange="gui.updateGrade('mus', 1);" />
+                                    <input id="grades_mus_sem_1" onchange="gui.grades.updateGrade('mus', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_mus_sem_2" onchange="gui.updateGrade('mus', 2);" />
+                                    <input id="grades_mus_sem_2" onchange="gui.grades.updateGrade('mus', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_mus_sem_3" onchange="gui.updateGrade('mus', 3);" />
+                                    <input id="grades_mus_sem_3" onchange="gui.grades.updateGrade('mus', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_mus_sem_4" onchange="gui.updateGrade('mus', 4);" />
+                                    <input id="grades_mus_sem_4" onchange="gui.grades.updateGrade('mus', 4);" />
                                 </td>
                             </tr>
                             <!-- Sozialkunde / Társadalomismeret -->
                             <tr id="grades_soz">
                                 <td id="grades_soz_subj">--SOZ--</td>
                                 <td>
-                                    <input id="grades_soz_sem_1" onchange="gui.updateGrade('soz', 1);" />
+                                    <input id="grades_soz_sem_1" onchange="gui.grades.updateGrade('soz', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_soz_sem_2" onchange="gui.updateGrade('soz', 2);" />
+                                    <input id="grades_soz_sem_2" onchange="gui.grades.updateGrade('soz', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_soz_sem_3" onchange="gui.updateGrade('soz', 3);" />
+                                    <input id="grades_soz_sem_3" onchange="gui.grades.updateGrade('soz', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_soz_sem_4" onchange="gui.updateGrade('soz', 4);" />
+                                    <input id="grades_soz_sem_4" onchange="gui.grades.updateGrade('soz', 4);" />
                                 </td>
                             </tr>
                             <!-- Sport / Sport -->
                             <tr id="grades_spo">
                                 <td id="grades_spo_subj">--SPO--</td>
                                 <td>
-                                    <input id="grades_spo_sem_1" onchange="gui.updateGrade('spo', 1);" />
+                                    <input id="grades_spo_sem_1" onchange="gui.grades.updateGrade('spo', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_spo_sem_2" onchange="gui.updateGrade('spo', 2);" />
+                                    <input id="grades_spo_sem_2" onchange="gui.grades.updateGrade('spo', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_spo_sem_3" onchange="gui.updateGrade('spo', 3);" />
+                                    <input id="grades_spo_sem_3" onchange="gui.grades.updateGrade('spo', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_spo_sem_4" onchange="gui.updateGrade('spo', 4);" />
+                                    <input id="grades_spo_sem_4" onchange="gui.grades.updateGrade('spo', 4);" />
                                 </td>
                             </tr>
                             <!-- Erdkunde / Földrajz -->
                             <tr id="grades_ek">
                                 <td id="grades_ek_subj">--EK--</td>
                                 <td>
-                                    <input id="grades_ek_sem_1" onchange="gui.updateGrade('ek', 1);" />
+                                    <input id="grades_ek_sem_1" onchange="gui.grades.updateGrade('ek', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ek_sem_2" onchange="gui.updateGrade('ek', 2);" />
+                                    <input id="grades_ek_sem_2" onchange="gui.grades.updateGrade('ek', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ek_sem_3" onchange="gui.updateGrade('ek', 3);" />
+                                    <input id="grades_ek_sem_3" onchange="gui.grades.updateGrade('ek', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_ek_sem_4" onchange="gui.updateGrade('ek', 4);" />
+                                    <input id="grades_ek_sem_4" onchange="gui.grades.updateGrade('ek', 4);" />
                                 </td>
                             </tr>
                             <!-- Ethik (oder Religion) / Etika (vagy Hittan) -->
                             <tr id="grades_eth">
                                 <td id="grades_eth_subj">--ETH--</td>
                                 <td>
-                                    <input id="grades_eth_sem_1" onchange="gui.updateGrade('eth', 1);" />
+                                    <input id="grades_eth_sem_1" onchange="gui.grades.updateGrade('eth', 1);" />
                                 </td>
                                 <td>
-                                    <input id="grades_eth_sem_2" onchange="gui.updateGrade('eth', 2);" />
+                                    <input id="grades_eth_sem_2" onchange="gui.grades.updateGrade('eth', 2);" />
                                 </td>
                                 <td>
-                                    <input id="grades_eth_sem_3" onchange="gui.updateGrade('eth', 3);" />
+                                    <input id="grades_eth_sem_3" onchange="gui.grades.updateGrade('eth', 3);" />
                                 </td>
                                 <td>
-                                    <input id="grades_eth_sem_4" onchange="gui.updateGrade('eth', 4);" />
+                                    <input id="grades_eth_sem_4" onchange="gui.grades.updateGrade('eth', 4);" />
                                 </td>
                             </tr>
                         </tbody>
@@ -436,7 +436,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="exams_1_mode">--MODE--</td>
                                 <td id="exams_1_subj">--SUBJECT--</td>
                                 <td>
-                                    <input id="exams_1_grade" type="text" maxlength="2" onchange="gui.updateExamGrade(1);" />
+                                    <input id="exams_1_grade" type="text" maxlength="2" onchange="gui.exams.updateGrade(1);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_1_req">--REQ--</td>
@@ -447,7 +447,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td>
                                     <span id="exams_2_branch_hu_subj">--SUBJECT--</span>
                                     <span id="exams_2_branch_de_subj" style="display:none;">
-                                        <select id="ex_2_subj" onchange="gui.updateExamSubj(2);">
+                                        <select id="ex_2_subj" onchange="gui.exams.updateSubj(2);">
                                             <option id="ex_2_subj_sel_choose" value="0">--CHOOSE--</option>
                                             <option id="ex_2_subj_sel_eng" value="3">--ENG--</option>
                                             <option id="ex_2_subj_sel_frz" value="4">--FRZ--</option>
@@ -456,7 +456,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="exams_2_grade" type="text" maxlength="2" onchange="gui.updateExamGrade(2);" />
+                                    <input id="exams_2_grade" type="text" maxlength="2" onchange="gui.exams.updateGrade(2);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_2_req">--REQ--</td>
@@ -465,7 +465,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td>3.</td>
                                 <td id="exams_3_mode">--MODE--</td>
                                 <td>
-                                    <select id="ex_3_subj" onchange="gui.updateExamSubj(3);">
+                                    <select id="ex_3_subj" onchange="gui.exams.updateSubj(3);">
                                         <option id="ex_3_subj_sel_choose" value="0">--CHOOSE--</option>
                                         <option id="ex_3_subj_sel_mat" value="6">--MAT--</option>
                                         <option id="ex_3_subj_sel_phy" value="7">--PHY--</option>
@@ -474,7 +474,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     </select>
                                 </td>
                                 <td>
-                                    <input id="exams_3_grade" type="text" maxlength="2" onchange="gui.updateExamGrade(3);" />
+                                    <input id="exams_3_grade" type="text" maxlength="2" onchange="gui.exams.updateGrade(3);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_3_req">--REQ--</td>
@@ -483,7 +483,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td>4.</td>
                                 <td id="exams_4_mode">--MODE--</td>
                                 <td>
-                                    <select id="ex_4_subj" onchange="gui.updateExamSubj(4);">
+                                    <select id="ex_4_subj" onchange="gui.exams.updateSubj(4);">
                                         <option id="ex_4_subj_sel_choose" value="0">--CHOOSE--</option>
                                         <option id="ex_4_subj_sel_eng" value="3">--ENG--</option>
                                         <option id="ex_4_subj_sel_frz" value="4" style="display:none;">--FRZ--</option>
@@ -497,7 +497,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                     </select>
                                 </td>
                                 <td>
-                                    <input id="exams_4_grade" type="text" maxlength="3" onchange="gui.updateExamGrade(4);" />
+                                    <input id="exams_4_grade" type="text" maxlength="3" onchange="gui.exams.updateGrade(4);" />
                                     <span> NP</span>
                                 </td>
                                 <td id="exams_4_req">--REQ--</td>

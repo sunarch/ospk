@@ -4,17 +4,33 @@ License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-function GuiInteraction() {
-    
-    this.chooseBranch = function(s_branch) {
+function GuiInteractions() {
+
+    this.branches = new GuiInteractionsForBranches();
+    this.options = new GuiInteractionsForOptions();
+    this.grades = new GuiInteractionsForGrades();
+    this.exams = new GuiInteractionsForExams();
+    this.buttons = new GuiInteractionsForButtons();
+}
+
+function GuiInteractionsForBranches() {
+
+    this.choose = function(s_branch) {
         cc.student.set_zweig(s_branch);
         cc.display('options');
     }
-    
+
     this.importData = function() {
         s_input = window.prompt('Data String:');
         cc.importData(s_input);
     }
+}
+
+function GuiInteractionsForOptions() {
+    this.empty = "empty";
+}
+
+function GuiInteractionsForGrades() {
 
     this.updateGrade = function(s_fach, i_semester) {
         s_id = "grades_" + s_fach + "_sem_" + i_semester
@@ -31,17 +47,20 @@ function GuiInteraction() {
         cc.fach[i_fach].note[i_semester] = tempNum.valueOf();
 
     }
-    
-    this.updateExamSubj = function(i_exam) {
+}
+
+function GuiInteractionsForExams() {
+
+    this.updateSubj = function(i_exam) {
         s_id = "ex_" + i_exam + "_subj"
         dom_input = document.getElementById(s_id)
         s_value = dom_input.value
-        
+
         tempNum = new Number(s_value);
         cc.abiFach[i_exam] = tempNum.valueOf();
     }
-    
-    this.updateExamGrade = function(i_exam) {
+
+    this.updateGrade = function(i_exam) {
         s_id = "exams_" + i_exam + "_grade"
         dom_input = document.getElementById(s_id)
         s_value = dom_input.value
@@ -50,7 +69,7 @@ function GuiInteraction() {
             dom_input.value = "";
             return;
         }
-        
+
         if (cc.abiFach[i_exam] == 0) {
             dom_input.value = "";
             return;
@@ -60,5 +79,8 @@ function GuiInteraction() {
         cc.abiNote[i_exam] = tempNum.valueOf()
 
     }
+}
 
+function GuiInteractionsForButtons() {
+    this.empty = "empty";
 }

@@ -6,6 +6,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 i18n = new Localization();
 
-gui = new GuiInteraction();
+gui = new GuiInteractions();
 
 cc = new OberstufenPunkteKalkulator();

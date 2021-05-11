@@ -18,7 +18,7 @@ function inputs_setup() {
             document.getElementById("grades_" + cc.fach[n1].name).style.display = "table-row";
         }
 
-        document.getElementById("grades_subj_" + cc.fach[n1].name).innerHTML = cc.fach[n1].getFullName();
+        document.getElementById("grades_" + cc.fach[n1].name + "_subj").innerHTML = cc.fach[n1].getFullName();
     }
 
     /* ABITURERGEBNISSE --------------------------------------------- */

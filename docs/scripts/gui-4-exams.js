@@ -37,18 +37,18 @@ function GuiInteractionsForExams() {
 
     this.setup = function() {
 
-        /* ABITURERGEBNISSE --------------------------------------------- */
+        /* ABITURERGEBNISSE ----------------------------------------- */
 
         document.getElementById('exams_title').innerHTML = i18n.get("examresults_title");
 
-        /* 1. SCHRIFTLICHE PRÜFUNGSFACH --------------------------------- */
+        /* 1. SCHRIFTLICHE PRÜFUNGSFACH ----------------------------- */
 
         document.getElementById('exams_1_mode').innerHTML = i18n.get("written");
         document.getElementById('exams_1_subj').innerHTML = cc.fach[1].getFullName();
 
         document.getElementById('exams_1_req').innerHTML = i18n.get("obligatory");
 
-        /* 2. SCHRIFTLICHE PRÜFUNGSFACH --------------------------------- */
+        /* 2. SCHRIFTLICHE PRÜFUNGSFACH ----------------------------- */
 
         document.getElementById('exams_2_mode').innerHTML = i18n.get("written");
 
@@ -83,7 +83,7 @@ function GuiInteractionsForExams() {
             document.getElementById('exams_2_req').innerHTML = i18n.get("obligatory");
         }
 
-        /* 3. SCHRIFTLICHE PRÜFUNGSFACH --------------------------------- */
+        /* 3. SCHRIFTLICHE PRÜFUNGSFACH ----------------------------- */
 
         document.getElementById('exams_3_mode').innerHTML = i18n.get("written");
 
@@ -112,7 +112,7 @@ function GuiInteractionsForExams() {
 
         document.getElementById('exams_3_req').innerHTML = "";
 
-        /* MÜNDLICHES PRÜFUNGSFACH -------------------------------------- */
+        /* MÜNDLICHES PRÜFUNGSFACH ---------------------------------- */
 
         document.getElementById('exams_4_mode').innerHTML = i18n.get("oral");
 

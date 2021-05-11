@@ -5,9 +5,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function Localization() {
-    
-    /* properties */
-    
+
     this._langToIndex = {
         "de": 0,
         "hu": 1
@@ -79,8 +77,6 @@ function Localization() {
         "ek"  : [ "Erdkunde",              "Földrajz"            ],
         "eth" : [ "Ethik (oder Religion)", "Etika (vagy Hittan)" ]
     };
-
-    /* methods */
 
     this.set_lang = function(s_lang) {
         switch(s_lang) {

@@ -32,7 +32,7 @@ function GuiInteractionsForResults() {
             dom_td_B.appendChild(dom_text);
             dom_tr_B.appendChild(dom_td_B);
 
-            // cell 1 - semester
+            // cell 2 - semester
             var dom_td_B = document.createElement('td');
             var dom_text = document.createTextNode("  " + cc.bereichB.all[n1].getName() + "  ");
             dom_td_B.appendChild(dom_text);
@@ -44,7 +44,6 @@ function GuiInteractionsForResults() {
             dom_td_B.appendChild(dom_text);
             dom_tr_B.appendChild(dom_td_B);
 
-            // append
             dom_tbody_B.appendChild(dom_tr_B);
         }
     }

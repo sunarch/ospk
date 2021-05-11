@@ -8,12 +8,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function OberstufenPunkteKalkulator() {
 
-    /* properties -*/
-
     this.ergebnis_gesamt = 0;
     this.ergebnis_durchschnitt = "0";
-
-    /* methods */
 
     this.calculate = function() {
 
@@ -26,8 +22,6 @@ function OberstufenPunkteKalkulator() {
         this.bereichB.calculate();
 
         this.mark_results();
-
-        // Gesamtergebnis
 
         this.ergebnis_gesamt = this.bereichA.ergebnis + this.bereichB.ergebnis + this.bereichC.ergebnis;
 
@@ -84,14 +78,11 @@ function OberstufenPunkteKalkulator() {
             importArray[n1] = tempNum.valueOf();
         }
 
-        // Importiere Name
         this.student.name = importArray[0];
 
-        // Wahl des Zweigs
         this.student.set_zweig(importArray[1]);
         gui.options.show();
 
-        // Optionen
         gui.options.selectArt(importArray[2]);
         if (this.student.zweig == "de") {
             gui.options.selectDeLang(importArray[3]);
@@ -100,8 +91,6 @@ function OberstufenPunkteKalkulator() {
         gui.options.selectLang(importArray[5]);
         gui.options.selectNatWis(importArray[6]);
         gui.options.selectGesWis(importArray[7]);
-
-        // Inputs
 
         // Abiturfächer
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
@@ -122,8 +111,8 @@ function OberstufenPunkteKalkulator() {
         }
         this.applyValuesToInputFields();
 
-        // Ergebnisse
         this.calculate();
+
         gui.results.show();
     }
 
@@ -161,7 +150,6 @@ function OberstufenPunkteKalkulator() {
             exportArray.push(this.fach[n1].note[4]);
         }
 
-        // Export
         var exportText = exportArray.join();
         document.getElementById("buttons_link_export").download = "dsb_ospk_" + this.student.name + ".txt";
         document.getElementById("buttons_link_export").href = "data:text/plain;base64," + window.btoa(exportText);
@@ -216,13 +204,11 @@ function OberstufenPunkteKalkulator() {
         }
 
         // set Bereich B markings
-            for (n4 = 0; n4 < this.bereichB.all.length; n4 = n4 + 1) {
-                field_id = "grades_" + this.bereichB.all[n4].fachname + "_sem_" + this.bereichB.all[n4].halbjahrno;
-                document.getElementById(field_id).style.backgroundColor = "#FFA640";
-            }
+        for (n4 = 0; n4 < this.bereichB.all.length; n4 = n4 + 1) {
+            field_id = "grades_" + this.bereichB.all[n4].fachname + "_sem_" + this.bereichB.all[n4].halbjahrno;
+            document.getElementById(field_id).style.backgroundColor = "#FFA640";
+        }
     }
-
-    /* subobjects */
 
     this.student = new Student;
     this.bereichA = new BereichA;
@@ -263,14 +249,10 @@ function OberstufenPunkteKalkulator() {
 
 function BereichA() {
 
-    /* properties */
-
     this.ergebnis = 0;
     this.fach1Noten = 0;
     this.fach2Noten = 0;
     this.fach3Noten = 0;
-
-    /* methods */
 
     this.calculate = function() {
         // 3 Noten in den schriftlichen Prüfungsfächern aus 11.1, 11.2 und 12.1
@@ -279,18 +261,13 @@ function BereichA() {
             this.fach3Noten = cc.fach[cc.abiFach[3]].note[1] + cc.fach[cc.abiFach[3]].note[2] + cc.fach[cc.abiFach[3]].note[3];
         this.ergebnis = 2 * (this.fach1Noten + this.fach2Noten + this.fach3Noten);
     }
-
 }
 
 function BereichC() {
 
-    /* properties */
-
     this.ergebnis = 0;
     this.kursNoten = 0;
     this.pruefungsNoten = 0;
-
-    /* methods */
 
     this.calculate = function() {
         // 4 Noten aus 12.2 in den Prüfungsfächern; Gewichtungsfaktor 1
@@ -300,12 +277,10 @@ function BereichC() {
 
         this.ergebnis = (4 * this.pruefungsNoten) + this.kursNoten;
     }
-
 }
 
 function BereichB() {
 
-    // init and reset method
     this.reset = function() {
 
         this.ergebnis = 0;
@@ -333,8 +308,6 @@ function BereichB() {
     // holdover from regular property definitions
     // TODO: why 22 and not 19 ?
     this.restCount = 22;
-
-    /* methods */
 
     this.calculate = function() {
 
@@ -554,8 +527,6 @@ function BereichB() {
 
 function Student() {
 
-    /* properties */
-
     this.name = "";
     this.zweig = "";
 
@@ -567,8 +538,6 @@ function Student() {
     this.optionLang = "0";
     this.optionNatWis = "0";
     this.optionGesWis = "0";
-
-    /* methods */
 
     this.set_zweig = function(zweig) {
         if(cc.student.zweig == "") {
@@ -598,24 +567,17 @@ function Student() {
 
 function Fach(name, type) {
 
-    /* properties */
-
     this.name = name;
     this.type = type;
     this.active = true;
     this.note = [0,0,0,0,0];
 
-    /* methods */
-
     this.getFullName = function() {
         return i18n.getSubject(this.name);
     }
-
 }
 
 function BbHalbjahr(fachname, halbjahrno, note) {
-
-    /* properties */
 
     this.fachname = fachname;
     this.halbjahrno = halbjahrno;
@@ -623,10 +585,7 @@ function BbHalbjahr(fachname, halbjahrno, note) {
 
     this.names = ["11.1", "11.2", "12.1", "12.2"]
 
-    /* methods */
-
     this.getName = function() {
         return this.names[this.halbjahrno - 1];
     }
-
 }

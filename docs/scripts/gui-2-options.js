@@ -8,7 +8,6 @@ function GuiInteractionsForOptions() {
 
     this.show = function() {
 
-        // What we hide
         document.getElementById('branches_import').style.display = "none";
 
         switch(cc.student.zweig) {
@@ -23,20 +22,17 @@ function GuiInteractionsForOptions() {
                 break;
         }
 
-        // What we show
         this.setup();
 
-        // enable first question
         document.getElementById("opts_art").disabled = false;
-
         document.getElementById('options').style.display = "block";
     }
-    
+
     // 1
     this.selectArt = function(s_value) {
-        
+
         document.getElementById("opts_art").disabled = true;
-        
+
         cc.student.wahlArt = s_value;
 
         switch(cc.student.wahlArt) {
@@ -61,12 +57,12 @@ function GuiInteractionsForOptions() {
 
         }
     }
-    
+
     // 2
     this.selectDeLang = function(s_value) {
-        
+
         document.getElementById("opts_de_lang").disabled = true;
-        
+
         cc.student.deWahlLang = s_value;
 
         switch(cc.student.deWahlLang) {
@@ -85,12 +81,12 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_de_nat_wis").disabled = false;
     }
-    
+
     // 3
     this.selectDeNatWis = function(s_value) {
-        
+
         document.getElementById("opts_de_nat_wis").disabled = true;
-        
+
         cc.student.deWahlNatWis = s_value;
 
         switch(cc.student.deWahlNatWis) {
@@ -129,12 +125,12 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_lang").disabled = false;
     }
-    
+
     // 4
     this.selectLang = function(s_value) {
-        
+
         document.getElementById("opts_lang").disabled = true;
-        
+
         cc.student.optionLang = s_value;
 
         switch(cc.student.optionLang) {
@@ -160,12 +156,12 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_nat_wis").disabled = false;
     }
-    
+
     // 5
     this.selectNatWis = function(s_value) {
-        
+
         document.getElementById("opts_nat_wis").disabled = true;
-        
+
         cc.student.optionNatWis = s_value;
 
         switch(cc.student.optionNatWis) {
@@ -202,12 +198,12 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_ges_wis").disabled = false;
     }
-    
+
     // 6
     this.selectGesWis = function(s_value) {
-        
+
         document.getElementById("opts_ges_wis").disabled = true;
-        
+
         cc.student.optionGesWis = s_value;
 
         switch(cc.student.optionGesWis) {
@@ -226,15 +222,15 @@ function GuiInteractionsForOptions() {
                 cc.fach[17].active = false;
                 break;
         }
-        
+
         gui.grades.show();
     }
-    
+
     this.setup = function() {
 
         document.getElementById('options_title').innerHTML = i18n.get("options_title");
 
-        /* opts_art (1) ------------------------------------------------- */
+        /* opts_art (1) --------------------------------------------- */
 
         document.getElementById("options_art_label").innerHTML = i18n.get("question_wahlArt");
 
@@ -252,11 +248,11 @@ function GuiInteractionsForOptions() {
         // ensure disabled
         document.getElementById("opts_art").disabled = true
 
-        /* 2 Pflichtwahlen nur für den deutschen Zweig ------------------ */
+        /* 2 Pflichtwahlen nur für den deutschen Zweig -------------- */
 
         if (cc.student.zweig == "de") {
 
-            /* opts_de_lang (2) ----------------------------------------- */
+            /* opts_de_lang (2) ------------------------------------- */
 
             document.getElementById("options_de_lang").style.display = "table-row";
 
@@ -276,7 +272,7 @@ function GuiInteractionsForOptions() {
             // ensure disabled
             document.getElementById("opts_de_lang").disabled = true
 
-            /* opts_de_nat_wis (3) -------------------------------------- */
+            /* opts_de_nat_wis (3) ---------------------------------- */
 
             document.getElementById("options_de_nat_wis").style.display = "table-row";
 
@@ -301,7 +297,7 @@ function GuiInteractionsForOptions() {
 
         }
 
-        /* opts_lang (4) ------------------------------------------------ */
+        /* opts_lang (4) -------------------------------------------- */
 
         document.getElementById("options_lang_label").innerHTML = i18n.get("question_optionLang");
 
@@ -326,7 +322,7 @@ function GuiInteractionsForOptions() {
         // ensure disabled
         document.getElementById("opts_lang").disabled = true
 
-        /* opts_nat_wis (5) --------------------------------------------- */
+        /* opts_nat_wis (5) ----------------------------------------- */
 
         document.getElementById("options_nat_wis_label").innerHTML = i18n.get("question_optionNatWis");
 
@@ -365,7 +361,7 @@ function GuiInteractionsForOptions() {
         // ensure disabled
         document.getElementById("opts_nat_wis").disabled = true
 
-        /* opts_ges_wis (6) --------------------------------------------- */
+        /* opts_ges_wis (6) ----------------------------------------- */
 
         document.getElementById("options_ges_wis_label").innerHTML = i18n.get("question_optionGesWis");
 

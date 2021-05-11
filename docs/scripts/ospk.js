@@ -330,7 +330,6 @@ function OberstufenPunkteKalkulator() {
 
         // Importiere Name
         this.student.name = importArray[0];
-        document.getElementById("name_title").innerHTML = "Data loaded for: " + this.student.name;
 
         // Wahl des Zweigs
         this.student.set_zweig(importArray[1]);

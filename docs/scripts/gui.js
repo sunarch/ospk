@@ -23,6 +23,9 @@ function GuiInteractionsForBranches() {
     this.importData = function() {
         s_input = window.prompt('Data String:');
         cc.importData(s_input);
+        
+        document.getElementById("loaded_name").innerHTML = cc.student.name;
+        document.getElementById("loaded").style.display = "block";
     }
 }
 

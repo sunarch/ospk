@@ -27,7 +27,7 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_art").disabled = false;
         document.getElementById('options').style.display = "block";
     }
-    
+
     this.setFields = function(o_values) {
         this.setFieldArt(o_values['art']);
         this.setFieldDeLang(o_values['deLang']);
@@ -40,27 +40,29 @@ function GuiInteractionsForOptions() {
     // 1
 
     this.setFieldArt = function(x_value) {
+
         document.getElementById("opts_art").value = x_value;
+        document.getElementById("opts_art").disabled = true;
     }
 
     this.selectArt = function(s_value) {
 
         document.getElementById("opts_art").disabled = true;
 
-        cc.student.wahlArt = s_value;
+        cc.student.setOption("art", s_value);
 
-        switch(cc.student.wahlArt) {
+        // Bildende Kunst
+        if (cc.student.getOption("art") == "bk") {
+            // Musik
+            cc.fach[13].active = false;
+            cc.student.setSubjectActive("mus", false);
+        }
 
-            case "12": // Bildende Kunst
-                cc.fach[13].active = false;
-                break;
-
-            case "13": // Musik
-                cc.fach[12].active = false;
-                break;
-
-            default:
-                break;
+        // Musik
+        if (cc.student.getOption("art") == "mus") {
+            // Bildende Kunst
+            cc.fach[12].active = false;
+            cc.student.setSubjectActive("bk", false);
         }
 
         if (cc.student.zweig == "de") {
@@ -75,27 +77,29 @@ function GuiInteractionsForOptions() {
     // 2
 
     this.setFieldDeLang = function(x_value) {
+
         document.getElementById("opts_de_lang").value = x_value;
+        document.getElementById("opts_de_lang").disabled = true;
     }
 
     this.selectDeLang = function(s_value) {
 
         document.getElementById("opts_de_lang").disabled = true;
 
-        cc.student.deWahlLang = s_value;
+        cc.student.setOption("deLang", s_value);
 
-        switch(cc.student.deWahlLang) {
+        // UZ
+        if (cc.student.getOption("deLang") == "ung") {
+            // Französisch
+            cc.fach[4].active = false;
+            cc.student.setSubjectActive("frz", false);
+        }
 
-            case "2": // UZ
-                cc.fach[4].active = false;
-                break;
-
-            case "4": // Französisch
-                cc.fach[2].active = false;
-                break;
-
-            default:
-                break;
+        // Französisch
+        if (cc.student.getOption("deLang") == "frz") {
+            // UZ
+            cc.fach[2].active = false;
+            cc.student.setSubjectActive("ung", false);
         }
 
         document.getElementById("opts_de_nat_wis").disabled = false;
@@ -104,30 +108,33 @@ function GuiInteractionsForOptions() {
     // 3
 
     this.setFieldDeNatWis = function(x_value) {
+
         document.getElementById("opts_de_nat_wis").value = x_value;
+        document.getElementById("opts_de_nat_wis").disabled = true;
     }
 
     this.selectDeNatWis = function(s_value) {
 
         document.getElementById("opts_de_nat_wis").disabled = true;
 
-        cc.student.deWahlNatWis = s_value;
+        cc.student.setOption("deNatWis", s_value);
 
-        switch(cc.student.deWahlNatWis) {
+        // not included: Physik
+        if (cc.student.getOption("deNatWis").indexOf("phy") == -1) {
+            cc.fach[7].active = false;
+            cc.student.setSubjectActive("phy", false);
+        }
 
-            case "78": // Physik und Biologie
-                cc.fach[9].active = false;
-                break;
+        // not included: Biologie
+        if (cc.student.getOption("deNatWis").indexOf("bio") == -1) {
+            cc.fach[8].active = false;
+            cc.student.setSubjectActive("bio", false);
+        }
 
-            case "79": // Physik und Chemie
-                cc.fach[8].active = false;
-                break;
-
-            case "89": // Biologie und Chemie
-                cc.fach[7].active = false;
-                break;
-
-            default: break;
+        // not included: Chemie
+        if (cc.student.getOption("deNatWis").indexOf("ch") == -1) {
+            cc.fach[9].active = false;
+            cc.student.setSubjectActive("ch", false);
         }
 
         // disable already chosen options in opts_nat_wis
@@ -153,34 +160,41 @@ function GuiInteractionsForOptions() {
     // 4
 
     this.setFieldLang = function(x_value) {
+
         document.getElementById("opts_lang").value = x_value;
+        document.getElementById("opts_lang").disabled = true;
     }
 
     this.selectLang = function(s_value) {
 
         document.getElementById("opts_lang").disabled = true;
 
-        cc.student.optionLang = s_value;
+        cc.student.setOption("lang", s_value);
 
-        switch(cc.student.optionLang) {
+        // Französisch
+        if (cc.student.getOption("lang") == "frz") {
+            // Spanisch
+            cc.fach[5].active = false;
+            cc.student.setSubjectActive("spa", false);
+        }
 
-            case "4": // Französisch
-                cc.fach[5].active = false;
-                break;
+        // Spanisch
+        if (cc.student.getOption("lang") == "spa") {
+            // Französisch
+            cc.fach[4].active = false;
+            cc.student.setSubjectActive("frz", false);
+        }
 
-            case "5": // Spanisch
-                if (cc.student.zweig == "hu") {
-                    cc.fach[4].active = false;
-                }
-                break;
-
-            default:
-            case "0":
-                if (cc.student.zweig == "hu") {
-                    cc.fach[4].active = false;
-                }
-                cc.fach[5].active = false;
-                break;
+        // none
+        if (cc.student.getOption("lang") == "none") {
+            if (cc.student.zweig == "hu") {
+                // Französisch
+                cc.fach[4].active = false;
+                cc.student.setSubjectActive("frz", false);
+            }
+            // Spanisch
+            cc.fach[5].active = false;
+            cc.student.setSubjectActive("spa", false);
         }
 
         document.getElementById("opts_nat_wis").disabled = false;
@@ -189,45 +203,56 @@ function GuiInteractionsForOptions() {
     // 5
 
     this.setFieldNatWis = function(x_value) {
+
         document.getElementById("opts_nat_wis").value = x_value;
+
+        // separate handling for "Physik Leistungskurs"
+        if (x_value == "phy" && cc.student.physikLk == true) {
+            document.getElementById("opts_nat_wis").value = "phy_lk";
+        }
+
+        document.getElementById("opts_nat_wis").disabled = true;
     }
 
     this.selectNatWis = function(s_value) {
 
         document.getElementById("opts_nat_wis").disabled = true;
 
-        cc.student.optionNatWis = s_value;
+        // separate property for "Physik Leistungskurs"
+        if (s_value == "phy_lk") {
+            cc.student.physikLk = true;
+            s_value = "phy";
+        }
 
-        switch(cc.student.optionNatWis) {
+        cc.student.setOption("natWis", s_value);
 
-            case "7": // Physik Grundkurs
-                if (cc.student.zweig == "de") {
-                    cc.fach[7].active = true;
-                }
-                break;
+        // Physik (Grundkurs oder Leistungskurs)
+        if (cc.student.getOption("natWis") == "phy") {
+            if (cc.student.zweig == "de") {
+                cc.fach[7].active = true;
+                cc.student.setSubjectActive("phy", true);
+            }
+        }
 
-            case "7+": // Physik Leistungskurs
-                if (cc.student.zweig == "de") {
-                    cc.fach[7].active = true;
-                }
-                cc.student.physikLk = true;
-                break;
+        // Biologie
+        if (cc.student.getOption("natWis") == "bio") {
+            cc.fach[8].active = true;
+            cc.student.setSubjectActive("bio", true);
+        }
 
-            case "8": // Biologie
-                cc.fach[8].active = true;
-                break;
+        // Chemie
+        if (cc.student.getOption("natWis") == "ch") {
+            cc.fach[9].active = true;
+            cc.student.setSubjectActive("ch", true);
+        }
 
-            case "9": // Chemie
-                cc.fach[9].active = true;
-                break;
-
-            default:
-            case "0":
-                // Beim deutschen Zweig wird das bereits bei "deWahlNatWis" geregelt
-                if (cc.student.zweig == "hu") {
-                    cc.fach[7].active = false;
-                }
-                break;
+        // none
+        if (cc.student.getOption("natWis") == "none") {
+            // Beim deutschen Zweig wird das bereits bei "deWahlNatWis" geregelt
+            if (cc.student.zweig == "hu") {
+                cc.fach[7].active = false;
+                cc.student.setSubjectActive("phy", false);
+            }
         }
 
         document.getElementById("opts_ges_wis").disabled = false;
@@ -236,30 +261,41 @@ function GuiInteractionsForOptions() {
     // 6
 
     this.setFieldGesWis = function(x_value) {
+
         document.getElementById("opts_ges_wis").value = x_value;
+        document.getElementById("opts_ges_wis").disabled = true;
     }
 
     this.selectGesWis = function(s_value) {
 
         document.getElementById("opts_ges_wis").disabled = true;
 
-        cc.student.optionGesWis = s_value;
+        cc.student.setOption("gesWis", s_value);
 
-        switch(cc.student.optionGesWis) {
+        // Erdkunde
+        if (cc.student.getOption("gesWis") == "ek") {
+            // Ethik (oder Religion)
+            cc.fach[17].active = false;
+            cc.student.setSubjectActive("eth", false);
+        }
 
-            case "16": // Erdkunde
-                cc.fach[17].active = false;
-                break;
+        // Ethik (oder Religion)
+        if (cc.student.getOption("gesWis") == "eth") {
+            // Erdkunde
+            cc.fach[16].active = false;
+            cc.student.setSubjectActive("ek", false);
+        }
 
-            case "17": // Ethik (oder Religion)
-                cc.fach[16].active = false;
-                break;
+        // none
+        if (cc.student.getOption("gesWis") == "none") {
 
-            default:
-            case "0":
-                cc.fach[16].active = false;
-                cc.fach[17].active = false;
-                break;
+            // Erdkunde
+            cc.fach[16].active = false;
+            cc.student.setSubjectActive("ek", false);
+
+            // Ethik (oder Religion)
+            cc.fach[17].active = false;
+            cc.student.setSubjectActive("eth", false);
         }
 
         gui.grades.show();

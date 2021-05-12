@@ -56,10 +56,8 @@ function GuiInteractionsForGrades() {
 
     this.clearFieldsBackground = function() {
 
-
-        for (n1 = 0; n1 < dataSubjects.length; n1 = n1 + 1) {
+        for (const s_subjectCode in dataSubjects) {
             for (n2 = 0; n2 < 4; n2 = n2 + 1) {
-                s_subjectCode = dataSubjects[n1];
                 i_semester = n2 + 1
                 s_domId = this.getDomId(s_subjectCode, i_semester);
                 domInput = document.getElementById(s_domId);

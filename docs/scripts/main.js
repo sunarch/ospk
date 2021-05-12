@@ -66,24 +66,27 @@ function OberstufenPunkteKalkulator() {
 
         var importArray = importText.split(",");
 
-        for (n1 = 8; n1 < importArray.length; n1 = n1 + 1) {
+        this.student.name = importArray[0];
+
+        this.student.set_zweig(importArray[1]);
+
+        // separate property for "Physik Leistungskurs" in natWis
+        if (importArray[6] == "7+") {
+            cc.student.physikLk = true;
+            importArray[6] = "7";
+        }
+
+        for (n1 = 2; n1 < importArray.length; n1 = n1 + 1) {
             tempNum = new Number(importArray[n1]);
             importArray[n1] = tempNum.valueOf();
         }
 
-        this.student.name = importArray[0];
-
-        this.student.set_zweig(importArray[1]);
-        gui.options.show();
-
-        gui.options.selectArt(importArray[2]);
-        if (this.student.zweig == "de") {
-            gui.options.selectDeLang(importArray[3]);
-            gui.options.selectDeNatWis(importArray[4]);
-        }
-        gui.options.selectLang(importArray[5]);
-        gui.options.selectNatWis(importArray[6]);
-        gui.options.selectGesWis(importArray[7]);
+        this.student.setOption("art", this.fachIdConvert[importArray[2]]);
+        this.student.setOption("deLang", this.fachIdConvert[importArray[3]]);
+        this.student.setOption("deNatWis", this.fachIdConvert[importArray[4]]);
+        this.student.setOption("lang", this.fachIdConvert[importArray[5]]);
+        this.student.setOption("natWis", this.fachIdConvert[importArray[6]]);
+        this.student.setOption("gesWis", this.fachIdConvert[importArray[7]]);
 
         // Abiturfächer
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
@@ -102,11 +105,10 @@ function OberstufenPunkteKalkulator() {
             this.fach[n1].note[3] = importArray[15 + ((n1 - 1) * 4) + 3];
             this.fach[n1].note[4] = importArray[15 + ((n1 - 1) * 4) + 4];
         }
+
         this.applyValuesToInputFields();
 
         this.calculate();
-
-        gui.results.show();
     }
 
     this.exportData = function() {
@@ -116,12 +118,13 @@ function OberstufenPunkteKalkulator() {
 
         exportArray.push(this.student.name);
         exportArray.push(this.student.zweig);
-        exportArray.push(this.student.wahlArt);
-        exportArray.push(this.student.deWahlLang);
-        exportArray.push(this.student.deWahlNatWis);
-        exportArray.push(this.student.optionLang);
-        exportArray.push(this.student.optionNatWis);
-        exportArray.push(this.student.optionGesWis);
+
+        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("art")));
+        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deLang")));
+        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deNatWis")));
+        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("lang")));
+        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("natWis")));
+        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("gesWis")));
 
         // Abiturfächer
         exportArray.push(this.abiFach[1]);
@@ -152,16 +155,7 @@ function OberstufenPunkteKalkulator() {
 
     this.applyValuesToInputFields = function() {
 
-        o_options = {
-            art: this.student.wahlArt,
-            deLang: this.student.deWahlLang,
-            deNatWis: this.student.deWahlNatWis,
-            lang: this.student.optionLang,
-            natWis: this.student.optionNatWis,
-            gesWis: this.student.optionGesWis
-        };
-
-        gui.options.setFields(o_options);
+        gui.options.setFields(this.student.getOptions());
 
         a_exams = [
             {
@@ -233,7 +227,7 @@ function OberstufenPunkteKalkulator() {
     this.abiFach = ["Kurs-IDs",0,0,0,0];
     this.abiNote = ["Noten",0,0,0,0];
 
-    this.fachIdConvert = ["Kurs",
+    this.fachIdConvert = ["none",
                           "dt",  "ung", "eng", "frz", "spa",
                           "mat", "phy", "bio", "ch",  "ge",
                           "uge", "bk",  "mus", "soz", "spo",
@@ -593,13 +587,6 @@ function Student() {
 
     this.physikLk = false;
 
-    this.wahlArt = "0";
-    this.deWahlLang = "0";
-    this.deWahlNatWis = "0";
-    this.optionLang = "0";
-    this.optionNatWis = "0";
-    this.optionGesWis = "0";
-
     this.set_zweig = function(zweig) {
         if(cc.student.zweig == "") {
             cc.abiFach[1] = 1;
@@ -625,28 +612,31 @@ function Student() {
         }
     }
 
-    this.options = {
-        art: "0",
-        deLang: "0",
-        deNatWis: "0",
-        lang: "0",
-        natWis: "0",
-        gesWis: "0"
+    this._options = {
+        art: undefined,
+        deLang: undefined,
+        deNatWis: undefined,
+        lang: undefined,
+        natWis: undefined,
+        gesWis: undefined
     };
 
+    this.getOptions = function() {
+        return this._options;
+    }
+
     this.getOption = function(s_key) {
-        return this.options[s_key];
+        return this._options[s_key];
     }
 
     this.setOption = function(s_key, s_value) {
-        this.options[s_key] = s_value;
+        this._options[s_key] = s_value;
     }
 
-    this.subjects = [];
+    this.subjects = {};
 
-    for (n1 = 0; n1 < dataSubjects.length; n1 = n1 + 1) {
-        o_subj = new Subject(dataSubjects[n1]);
-        this.subjects.push(o_subj);
+    for (const s_subjectCode in dataSubjects) {
+        this.subjects[s_subjectCode] = new Subject(s_subjectCode);
     }
 
     this.getSubject = function(s_subjectCode) {
@@ -690,6 +680,7 @@ function Student() {
 
         this.exams[i_exam - 1].setGrade(i_grade);
     }
+
 }
 
 function Fach(name, type) {

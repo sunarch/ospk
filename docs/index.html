@@ -77,9 +77,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="options_art_label">--ART--</td>
                                 <td>
                                     <select id="opts_art" onchange="gui.options.selectArt(this.value);" disabled>
-                                        <option id="opts_art_sel_choose" value="-1">--CHOOSE--</option>
-                                        <option id="opts_art_sel_arts" value="12">--ARTS--</option>
-                                        <option id="opts_art_sel_music" value="13">--MUSIC--</option>
+                                        <option id="opts_art_sel_choose" value="undefined">--CHOOSE--</option>
+                                        <option id="opts_art_sel_arts" value="bk">--ARTS--</option>
+                                        <option id="opts_art_sel_music" value="mus">--MUSIC--</option>
                                     </select>
                                 </td>
                             </tr>
@@ -87,9 +87,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="options_de_lang_label">--DE_LANG--</td>
                                 <td>
                                     <select id="opts_de_lang" onchange="gui.options.selectDeLang(this.value);" disabled>
-                                        <option id="opts_de_lang_sel_choose" value="-1">--CHOOSE--</option>
-                                        <option id="opts_de_lang_sel_uz" value="2">--UZ--</option>
-                                        <option id="opts_de_lang_sel_fra" value="4">--FRZ--</option>
+                                        <option id="opts_de_lang_sel_choose" value="undefined">--CHOOSE--</option>
+                                        <option id="opts_de_lang_sel_uz" value="ung">--UZ--</option>
+                                        <option id="opts_de_lang_sel_fra" value="frz">--FRZ--</option>
                                     </select>
                                 </td>
                             </tr>
@@ -97,10 +97,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="options_de_nat_wis_label">--DE_NAT_WIS--</td>
                                 <td>
                                     <select id="opts_de_nat_wis" onchange="gui.options.selectDeNatWis(this.value);" disabled>
-                                        <option id="opts_de_nat_wis_sel_choose" value="-1">--CHOOSE--</option>
-                                        <option id="opts_de_nat_wis_sel_phy_bio" value="78">--PHY_BIO--</option>
-                                        <option id="opts_de_nat_wis_sel_phy_ch" value="79">--PHY_CH--</option>
-                                        <option id="opts_de_nat_wis_sel_bio_ch" value="89">--BIO_CH--</option>
+                                        <option id="opts_de_nat_wis_sel_choose" value="undefined">--CHOOSE--</option>
+                                        <option id="opts_de_nat_wis_sel_phy_bio" value="phy-bio">--PHY_BIO--</option>
+                                        <option id="opts_de_nat_wis_sel_phy_ch" value="phy-ch">--PHY_CH--</option>
+                                        <option id="opts_de_nat_wis_sel_bio_ch" value="bio-ch">--BIO_CH--</option>
                                     </select>
                                 </td>
                             </tr>
@@ -108,10 +108,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="options_lang_label">--LANG--</td>
                                 <td>
                                     <select id="opts_lang" onchange="gui.options.selectLang(this.value);" disabled>
-                                        <option id="opts_lang_sel_choose" value="-1">--CHOOSE--</option>
-                                        <option id="opts_lang_sel_none" value="0">--NONE--</option>
-                                        <option id="opts_lang_sel_fra" value="4" style="display:none;">--FRZ--</option>
-                                        <option id="opts_lang_sel_spa" value="5">--SPA--</option>
+                                        <option id="opts_lang_sel_choose" value="undefined">--CHOOSE--</option>
+                                        <option id="opts_lang_sel_none" value="none">--NONE--</option>
+                                        <option id="opts_lang_sel_fra" value="frz" style="display:none;">--FRZ--</option>
+                                        <option id="opts_lang_sel_spa" value="spa">--SPA--</option>
                                     </select>
                                 </td>
                             </tr>
@@ -119,12 +119,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="options_nat_wis_label">--NAT_WIS--</td>
                                 <td>
                                     <select id="opts_nat_wis" onchange="gui.options.selectNatWis(this.value);" disabled>
-                                        <option id="opts_nat_wis_sel_choose" value="-1">--CHOOSE--</option>
-                                        <option id="opts_nat_wis_sel_none" value="0">--NONE--</option>
-                                        <option id="opts_nat_wis_sel_phy" value="7">--PHY--</option>
-                                        <option id="opts_nat_wis_sel_phy_lk" value="7+">--PHY_LK--</option>
-                                        <option id="opts_nat_wis_sel_bio" value="8" style="display:none;">--BIO--</option>
-                                        <option id="opts_nat_wis_sel_ch" value="9" style="display:none;">--CH--</option>
+                                        <option id="opts_nat_wis_sel_choose" value="undefined">--CHOOSE--</option>
+                                        <option id="opts_nat_wis_sel_none" value="none">--NONE--</option>
+                                        <option id="opts_nat_wis_sel_phy" value="phy">--PHY--</option>
+                                        <option id="opts_nat_wis_sel_phy_lk" value="phy_lk">--PHY_LK--</option>
+                                        <option id="opts_nat_wis_sel_bio" value="bio" style="display:none;">--BIO--</option>
+                                        <option id="opts_nat_wis_sel_ch" value="ch" style="display:none;">--CH--</option>
                                     </select>
                                 </td>
                             </tr>
@@ -132,10 +132,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                                 <td id="options_ges_wis_label">--GES_WIS--</td>
                                 <td>
                                     <select id="opts_ges_wis" onchange="gui.options.selectGesWis(this.value);" disabled>
-                                        <option id="opts_ges_wis_sel_choose" value="-1">--CHOOSE--</option>
-                                        <option id="opts_ges_wis_sel_none" value="0">--NONE--</option>
-                                        <option id="opts_ges_wis_sel_ek" value="16">--EK--</option>
-                                        <option id="opts_ges_wis_sel_eth" value="17">--ETH--</option>
+                                        <option id="opts_ges_wis_sel_choose" value="undefined">--CHOOSE--</option>
+                                        <option id="opts_ges_wis_sel_none" value="none">--NONE--</option>
+                                        <option id="opts_ges_wis_sel_ek" value="ek">--EK--</option>
+                                        <option id="opts_ges_wis_sel_eth" value="eth">--ETH--</option>
                                     </select>
                                 </td>
                             </tr>

@@ -12,10 +12,15 @@ function GuiInteractionsForBranches() {
     }
 
     this.importData = function() {
+        gui.options.show();
+        gui.grades.show();
+        
         s_input = window.prompt('Data String:');
         cc.importData(s_input);
 
         document.getElementById("loaded_name").innerHTML = cc.student.name;
         document.getElementById("loaded").style.display = "block";
+        
+        gui.results.show();
     }
 }

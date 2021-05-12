@@ -381,6 +381,8 @@ aside ul:last-of-type {
 }
 
 #grades input {
+    border-width: 2px;
+    border-style: solid;
     width: 100%;
     text-align: center;
 }
@@ -398,8 +400,28 @@ aside ul:last-of-type {
 }
 
 #exams input {
+    border-width: 2px;
+    border-style: solid;
     width: 40px;
     text-align: center;
+}
+
+/* grades & exams (temporary) --------------------------------------- */
+
+.cleared {
+    background-color: White;
+}
+
+.selected {
+    background-color: LightGreen;
+}
+
+.warning {
+    background-color: Coral;
+}
+
+.error {
+    background-color: Crimson;
 }
 
 /* buttons ---------------------------------------------------------- */

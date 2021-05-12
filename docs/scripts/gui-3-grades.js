@@ -6,8 +6,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForGrades() {
 
-    this.getDomId = function(s_fach, i_semester) {
-        return "grades_" + s_fach + "_sem_" + i_semester;
+    this.getDomId = function(s_subjectCode, i_semester) {
+        return "grades_" + s_subjectCode + "_sem_" + i_semester;
     }
 
     this.show = function() {
@@ -23,15 +23,17 @@ function GuiInteractionsForGrades() {
     this.updateGrade = function(s_subjectCode, i_semester) {
 
         s_domId = this.getDomId(s_subjectCode, i_semester);
-        domInput = document.getElementById(s_domId)
-        s_value = domInput.value
+        domInput = document.getElementById(s_domId);
+        s_value = domInput.value;
 
         if (!gui.validateGrade(s_value)) {
             domInput.value = "";
+            domInput.className = "error";
             return;
         }
 
-        i_subjectNumber = cc.fachIdConvert.indexOf(s_subjectCode)
+        domInput.className = "cleared";
+        i_subjectNumber = cc.fachIdConvert.indexOf(s_subjectCode);
         tempNum = new Number(s_value);
         cc.fach[i_subjectNumber].note[i_semester] = tempNum.valueOf();
 
@@ -50,6 +52,26 @@ function GuiInteractionsForGrades() {
 
         s_domId = this.getDomId(s_subjectCode, i_semester);
         document.getElementById(s_domId).value = i_grade;
+    }
+
+    this.clearFieldsBackground = function() {
+
+
+        for (n1 = 0; n1 < dataSubjects.length; n1 = n1 + 1) {
+            for (n2 = 0; n2 < 4; n2 = n2 + 1) {
+                s_subjectCode = dataSubjects[n1];
+                i_semester = n2 + 1
+                s_domId = this.getDomId(s_subjectCode, i_semester);
+                domInput = document.getElementById(s_domId);
+                domInput.className = "cleared";
+            }
+        }
+    }
+
+    this.setFieldBgSelected = function(s_subjectCode, i_semester) {
+        s_domId = this.getDomId(s_subjectCode, i_semester);
+        domInput = document.getElementById(s_domId);
+        domInput.className = "selected";
     }
 
     this.setup = function() {

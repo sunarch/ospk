@@ -7,7 +7,16 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 function GuiInteractionsForResults() {
 
     this.show = function() {
+
         this.setup();
+
+        gui.grades.clearFieldsBackground();
+
+        // mark Bereich B selections in grades
+        for (n = 0; n < cc.bereichB.all.length; n = n + 1) {
+            gui.grades.setFieldBgSelected(cc.bereichB.all[n].fachname, cc.bereichB.all[n].halbjahrno)
+        }
+
         document.getElementById('results').style.display = "block";
     }
 

@@ -8,8 +8,8 @@ function GuiInteractionsForExams() {
 
     this.updateSubj = function(i_exam) {
         s_id = "ex_" + i_exam + "_subj"
-        dom_input = document.getElementById(s_id)
-        s_value = dom_input.value
+        domInput = document.getElementById(s_id)
+        s_value = domInput.value
 
         tempNum = new Number(s_value);
         cc.abiFach[i_exam] = tempNum.valueOf();
@@ -17,19 +17,22 @@ function GuiInteractionsForExams() {
 
     this.updateGrade = function(i_exam) {
         s_id = "exams_" + i_exam + "_grade"
-        dom_input = document.getElementById(s_id)
-        s_value = dom_input.value
+        domInput = document.getElementById(s_id)
+        s_value = domInput.value
 
         if (!gui.validateGrade(s_value)) {
-            dom_input.value = "";
+            domInput.value = "";
+            domInput.className = "error";
             return;
         }
 
         if (cc.abiFach[i_exam] == 0) {
-            dom_input.value = "";
+            domInput.value = "";
+            domInput.className = "warning";
             return;
         }
 
+        domInput.className = "cleared";
         tempNum = new Number(s_value);
         cc.abiNote[i_exam] = tempNum.valueOf()
 

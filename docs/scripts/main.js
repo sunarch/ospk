@@ -19,8 +19,6 @@ function OberstufenPunkteKalkulator() {
         this.bereichC.calculate();
         this.bereichB.calculate();
 
-        this.mark_results();
-
         this.ergebnis_gesamt = this.bereichA.ergebnis + this.bereichB.ergebnis + this.bereichC.ergebnis;
 
         this.ergebnis_durchschnitt = this.calculateAverage(this.ergebnis_gesamt)
@@ -204,26 +202,6 @@ function OberstufenPunkteKalkulator() {
         }
 
         gui.grades.setFields(a_subjects);
-    }
-
-    this.mark_results = function() {
-        // reset Bereich B markings
-        var field_id = "";
-
-        for (n1 = 1; n1 < this.fach.length; n1 = n1 + 1) {
-            if (this.fach[n1].active) {
-                for  (n2 = 1; n2 <= 4; n2 = n2 + 1) {
-                    field_id = "grades_" + this.fach[n1].name + "_sem_" + n2;
-                    document.getElementById(field_id).style.backgroundColor = "#FFFFFF";
-                }
-            }
-        }
-
-        // set Bereich B markings
-        for (n4 = 0; n4 < this.bereichB.all.length; n4 = n4 + 1) {
-            field_id = "grades_" + this.bereichB.all[n4].fachname + "_sem_" + this.bereichB.all[n4].halbjahrno;
-            document.getElementById(field_id).style.backgroundColor = "#FFA640";
-        }
     }
 
     this.student = new Student;

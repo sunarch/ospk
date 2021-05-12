@@ -119,7 +119,14 @@ function OberstufenPunkteKalkulator() {
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deLang")));
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deNatWis")));
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("lang")));
-        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("natWis")));
+
+        var s_natwis = this.fachIdConvert.indexOf(this.student.getOption("natWis"));
+        // "Physik Leistungskurs" addon for "phy"
+        if (this.student.getOption("natWis") == "phy" && cc.student.physikLk == true) {
+            s_natwis = s_natwis + "+"
+        }
+        exportArray.push(s_natwis);
+
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("gesWis")));
 
         // Abiturfächer

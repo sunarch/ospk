@@ -424,66 +424,66 @@ function BereichB() {
                 switch (cc.fach[n1].type) {
 
                     case "mathematik":
-                        this.mat.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.mat.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.mat.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.mat.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.mat.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.mat.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.mat.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.mat.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "ungarisch":
-                        this.ung.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.ung.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.ung.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.ung.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.ung.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.ung.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.ung.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.ung.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "kunst_und_musik":
-                        this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.bk_mus.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.bk_mus.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.bk_mus.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.bk_mus.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.bk_mus.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "geschichte":
-                        this.dge.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.dge.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.dge.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.dge.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.dge.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.dge.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.dge.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.dge.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "ung_geschichte":
-                        this.uge.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.uge.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.uge.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.uge.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.uge.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.uge.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.uge.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.uge.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "sport":
-                        this.spo.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.spo.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.spo.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.spo.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.spo.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.spo.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.spo.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.spo.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "fremdsprache":
-                        this.frsp.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.frsp.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.frsp.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.frsp.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.frsp.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.frsp.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.frsp.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.frsp.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "naturwissentschaft":
-                        this.natwis.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.natwis.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.natwis.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.natwis.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.natwis.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.natwis.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.natwis.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.natwis.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     case "gesellschaftswissentschaft":
-                        this.geswis.push(new BbHalbjahr(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
-                        this.geswis.push(new BbHalbjahr(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
-                        this.geswis.push(new BbHalbjahr(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
-                        this.geswis.push(new BbHalbjahr(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
+                        this.geswis.push(new SemesterBereichB(cc.fach[n1].name, 1, cc.fach[n1].note[1]));
+                        this.geswis.push(new SemesterBereichB(cc.fach[n1].name, 2, cc.fach[n1].note[2]));
+                        this.geswis.push(new SemesterBereichB(cc.fach[n1].name, 3, cc.fach[n1].note[3]));
+                        this.geswis.push(new SemesterBereichB(cc.fach[n1].name, 4, cc.fach[n1].note[4]));
                         break;
 
                     default:
@@ -800,7 +800,7 @@ function Exam(s_subj) {
     }
 }
 
-function BbHalbjahr(fachname, halbjahrno, note) {
+function SemesterBereichB(fachname, halbjahrno, note) {
 
     this.fachname = fachname;
     this.halbjahrno = halbjahrno;

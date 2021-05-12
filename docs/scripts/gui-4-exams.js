@@ -20,7 +20,7 @@ function GuiInteractionsForExams() {
         dom_input = document.getElementById(s_id)
         s_value = dom_input.value
 
-        if (!gui.validate_grade(s_value)) {
+        if (!gui.validateGrade(s_value)) {
             dom_input.value = "";
             return;
         }

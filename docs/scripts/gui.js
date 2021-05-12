@@ -13,7 +13,7 @@ function GuiInteractions() {
     this.buttons = new GuiInteractionsForButtons();
     this.results = new GuiInteractionsForResults();
 
-    this.validate_grade = function(n_grade) {
+    this.validateGrade = function(n_grade) {
 
         var gradesAllowed = ["0",
                              "1",   "2",  "3",

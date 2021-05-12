@@ -70,12 +70,6 @@ function OberstufenPunkteKalkulator() {
 
         this.student.set_zweig(importArray[1]);
 
-        // separate property for "Physik Leistungskurs" in natWis
-        if (importArray[6] == "7+") {
-            cc.student.physikLk = true;
-            importArray[6] = "7";
-        }
-
         this.student.setOptionArt(this.fachIdConvert[parseInt(importArray[2])]);
         this.student.setOptionDeLang(this.fachIdConvert[parseInt(importArray[3])]);
 
@@ -91,7 +85,14 @@ function OberstufenPunkteKalkulator() {
         }
 
         this.student.setOptionLang(this.fachIdConvert[parseInt(importArray[5])]);
-        this.student.setOptionNatWis(this.fachIdConvert[parseInt(importArray[6])]);
+
+        s_natWisNo = importArray[6];
+        if (s_natWisNo == "0")  {this.student.setOptionNatWis("none");}
+        if (s_natWisNo == "7")  {this.student.setOptionNatWis("phy");}
+        if (s_natWisNo == "7+") {this.student.setOptionNatWis("phy_lk");}
+        if (s_natWisNo == "8")  {this.student.setOptionNatWis("bio");}
+        if (s_natWisNo == "9")  {this.student.setOptionNatWis("ch");}
+
         this.student.setOptionGesWis(this.fachIdConvert[parseInt(importArray[7])]);
 
         for (n1 = 8; n1 < importArray.length; n1 = n1 + 1) {
@@ -143,12 +144,14 @@ function OberstufenPunkteKalkulator() {
 
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("lang")));
 
-        var s_natwis = this.fachIdConvert.indexOf(this.student.getOption("natWis"));
-        // "Physik Leistungskurs" addon for "phy"
-        if (this.student.getOption("natWis") == "phy" && cc.student.physikLk == true) {
-            s_natwis = s_natwis + "+"
-        }
-        exportArray.push(s_natwis);
+        var s_natWis = this.student.getOption("natWis");
+        var s_natWisNo = "?";
+        if (s_natWis == "none")   {s_natWisNo = "0";}
+        if (s_natWis == "phy")    {s_natWisNo = "7";}
+        if (s_natWis == "phy_lk") {s_natWisNo = "7+";}
+        if (s_natWis == "bio")    {s_natWisNo = "8";}
+        if (s_natWis == "ch")     {s_natWisNo = "9";}
+        exportArray.push(s_natWisNo);
 
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("gesWis")));
 

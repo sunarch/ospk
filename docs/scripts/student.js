@@ -144,12 +144,20 @@ function Student() {
     this.setOptionNatWis = function(s_value) {
         this._options['natWis'] = s_value;
 
-        // Physik (Grundkurs oder Leistungskurs)
+        // Physik Grundkurs
         if (s_value == "phy") {
             if (this.zweig == "de") {
                 cc.fach[7].active = true;
                 this.setSubjectActive("phy", true);
             }
+        }
+
+        // Physik Leistungskurs
+        if (s_value == "phy_lk") {
+            this.physikLk = true;
+            // Physik
+            cc.fach[7].active = true;
+            this.setSubjectActive("phy", true);
         }
 
         // Biologie

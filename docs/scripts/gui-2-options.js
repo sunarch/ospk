@@ -129,24 +129,12 @@ function GuiInteractionsForOptions() {
     this.setFieldNatWis = function(x_value) {
 
         document.getElementById("opts_nat_wis").value = x_value;
-
-        // separate handling for "Physik Leistungskurs"
-        if (x_value == "phy" && cc.student.physikLk == true) {
-            document.getElementById("opts_nat_wis").value = "phy_lk";
-        }
-
         document.getElementById("opts_nat_wis").disabled = true;
     }
 
     this.selectNatWis = function(s_value) {
 
         document.getElementById("opts_nat_wis").disabled = true;
-
-        // separate property for "Physik Leistungskurs"
-        if (s_value == "phy_lk") {
-            cc.student.physikLk = true;
-            s_value = "phy";
-        }
 
         cc.student.setOptionNatWis(s_value);
 

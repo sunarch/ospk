@@ -56,6 +56,6 @@ function GuiInteractionsForResults() {
             dom_tbody_B.appendChild(dom_tr_B);
         }
     }
-    
+
     // no setLanguageStrings() method
 }

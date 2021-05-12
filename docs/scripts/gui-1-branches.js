@@ -6,13 +6,17 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForBranches() {
 
+    this.nextSection = function() {
+        gui.options.show();
+    }
+
     this.choose = function(s_branch) {
 
         cc.student.set_zweig(s_branch);
 
         this._hideInactive()
 
-        gui.options.show();
+        this.nextSection();
     }
 
     this.importData = function() {

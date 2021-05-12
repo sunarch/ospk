@@ -6,6 +6,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForOptions() {
 
+    this.nextSection = function() {
+        gui.grades.show();
+    }
+
     this.show = function() {
 
         this.setLanguageStrings();
@@ -285,9 +289,7 @@ function GuiInteractionsForOptions() {
             cc.student.setSubjectActive("eth", false);
         }
 
-        gui.grades.show();
-        gui.exams.show();
-        gui.buttons.show();
+        this.nextSection();
     }
 
     this.setup = function() {
@@ -366,7 +368,7 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_ges_wis").disabled = true
 
     }
-    
+
     this.setLanguageStrings = function() {
 
         document.getElementById('options_title').innerHTML = i18n.get("options_title");

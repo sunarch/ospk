@@ -78,7 +78,7 @@ function OberstufenPunkteKalkulator() {
 
         this.student.setOption("art", this.fachIdConvert[parseInt(importArray[2])]);
         this.student.setOption("deLang", this.fachIdConvert[parseInt(importArray[3])]);
-        
+
         s_deNatWisNo = importArray[4];
         if (s_deNatWisNo == "78") {
             this.student.setOption("deNatWis", "phy-bio");
@@ -89,7 +89,7 @@ function OberstufenPunkteKalkulator() {
         if (s_deNatWisNo == "89") {
             this.student.setOption("deNatWis", "bio-ch");
         }
-       
+
         this.student.setOption("lang", this.fachIdConvert[parseInt(importArray[5])]);
         this.student.setOption("natWis", this.fachIdConvert[parseInt(importArray[6])]);
         this.student.setOption("gesWis", this.fachIdConvert[parseInt(importArray[7])]);
@@ -128,7 +128,7 @@ function OberstufenPunkteKalkulator() {
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("art")));
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deLang")));
 
-        
+
         s_deNatWis = "0";
         if (this.student.getOption("deNatWis") == "phy-bio") {
             s_deNatWis = "78";
@@ -140,7 +140,7 @@ function OberstufenPunkteKalkulator() {
             s_deNatWis = "89";
         }
         exportArray.push(s_deNatWis);
-        
+
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("lang")));
 
         var s_natwis = this.fachIdConvert.indexOf(this.student.getOption("natWis"));

@@ -6,8 +6,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForGrades() {
 
-    this.getDomId = function(s_subjectCode, i_semester) {
-        return "grades_" + s_subjectCode + "_sem_" + i_semester;
+    this.nextSection = function() {
+        gui.exams.show();
     }
 
     this.show = function() {
@@ -15,6 +15,12 @@ function GuiInteractionsForGrades() {
         this.setLanguageStrings();
         this.setup();
         document.getElementById('grades').style.display = "block";
+
+        this.nextSection();
+    }
+
+    this.getDomId = function(s_subjectCode, i_semester) {
+        return "grades_" + s_subjectCode + "_sem_" + i_semester;
     }
 
     this.updateGrade = function(s_subjectCode, i_semester) {
@@ -80,7 +86,7 @@ function GuiInteractionsForGrades() {
             }
         }
     }
-    
+
     this.setLanguageStrings = function() {
 
         document.getElementById('grades_title').innerHTML = i18n.get("grades1112_title");

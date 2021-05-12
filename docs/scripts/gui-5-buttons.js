@@ -5,7 +5,11 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function GuiInteractionsForButtons() {
-    
+
+    this.nextSection = function() {
+        gui.results.show();
+    }
+
     this.show = function() {
 
         this.setLanguageStrings();
@@ -16,7 +20,7 @@ function GuiInteractionsForButtons() {
 
         cc.calculate();
 
-        gui.results.show();
+        this.nextSection();
 
         document.getElementById("button_calculate").value = i18n.get("recalculate");
     }
@@ -32,9 +36,9 @@ function GuiInteractionsForButtons() {
         document.getElementById("buttons_link_export").type = "text/plain";
         document.getElementById("buttons_link_export").click();
     }
-    
+
     // no setup() method
-    
+
     this.setLanguageStrings = function() {
 
         document.getElementById('button_calculate').value = i18n.get("calculate");

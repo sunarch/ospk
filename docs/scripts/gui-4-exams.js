@@ -6,11 +6,17 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForExams() {
 
+    this.nextSection = function() {
+        gui.buttons.show();
+    }
+
     this.show = function() {
 
         this.setLanguageStrings();
         this.setup();
         document.getElementById('exams').style.display = "block";
+
+        this.nextSection();
     }
 
     this.updateSubj = function(i_exam) {
@@ -132,7 +138,7 @@ function GuiInteractionsForExams() {
         // select top ('choose') entry
         document.getElementById("ex_4_subj").options.selectedIndex = 0
     }
-    
+
     this.setLanguageStrings = function() {
 
         /* ABITURERGEBNISSE ----------------------------------------- */

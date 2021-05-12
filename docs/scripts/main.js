@@ -204,10 +204,10 @@ function OberstufenPunkteKalkulator() {
         gui.grades.setFields(a_subjects);
     }
 
-    this.student = new Student;
-    this.bereichA = new BereichA;
-    this.bereichB = new BereichB;
-    this.bereichC = new BereichC;
+    this.student = new Student();
+    this.bereichA = new BereichA();
+    this.bereichB = new BereichB();
+    this.bereichC = new BereichC();
 
     this.fach = [
         "Kursliste", // Fach(Kürzel, Typ)

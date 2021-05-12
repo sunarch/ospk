@@ -5,6 +5,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 function GuiInteractionsForButtons() {
+    
+    this.show = function() {
+
+        this.setup();
+        document.getElementById('buttons').style.display = "block";
+    }
 
     this.calculate = function() {
 

@@ -13,11 +13,7 @@ function GuiInteractionsForGrades() {
     this.show = function() {
 
         this.setup();
-        gui.exams.setup();
-        gui.buttons.setup();
         document.getElementById('grades').style.display = "block";
-        document.getElementById('exams').style.display = "block";
-        document.getElementById('buttons').style.display = "block";
     }
 
     this.updateGrade = function(s_subjectCode, i_semester) {

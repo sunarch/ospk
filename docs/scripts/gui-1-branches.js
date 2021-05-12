@@ -14,6 +14,8 @@ function GuiInteractionsForBranches() {
     this.importData = function() {
         gui.options.show();
         gui.grades.show();
+        gui.exams.show();
+        gui.buttons.show();
         
         s_input = window.prompt('Data String:');
         cc.importData(s_input);

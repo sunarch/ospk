@@ -299,6 +299,8 @@ function GuiInteractionsForOptions() {
         }
 
         gui.grades.show();
+        gui.exams.show();
+        gui.buttons.show();
     }
 
     this.setup = function() {

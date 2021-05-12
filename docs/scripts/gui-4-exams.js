@@ -6,6 +6,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForExams() {
 
+    this.show = function() {
+
+        this.setup();
+        document.getElementById('exams').style.display = "block";
+    }
+
     this.updateSubj = function(i_exam) {
         s_id = "ex_" + i_exam + "_subj"
         domInput = document.getElementById(s_id)

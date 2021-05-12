@@ -76,17 +76,27 @@ function OberstufenPunkteKalkulator() {
             importArray[6] = "7";
         }
 
-        for (n1 = 2; n1 < importArray.length; n1 = n1 + 1) {
-            tempNum = new Number(importArray[n1]);
-            importArray[n1] = tempNum.valueOf();
+        this.student.setOption("art", this.fachIdConvert[parseInt(importArray[2])]);
+        this.student.setOption("deLang", this.fachIdConvert[parseInt(importArray[3])]);
+        
+        s_deNatWisNo = importArray[4];
+        if (s_deNatWisNo == "78") {
+            this.student.setOption("deNatWis", "phy-bio");
         }
+        if (s_deNatWisNo == "79") {
+            this.student.setOption("deNatWis", "phy-ch");
+        }
+        if (s_deNatWisNo == "89") {
+            this.student.setOption("deNatWis", "bio-ch");
+        }
+       
+        this.student.setOption("lang", this.fachIdConvert[parseInt(importArray[5])]);
+        this.student.setOption("natWis", this.fachIdConvert[parseInt(importArray[6])]);
+        this.student.setOption("gesWis", this.fachIdConvert[parseInt(importArray[7])]);
 
-        this.student.setOption("art", this.fachIdConvert[importArray[2]]);
-        this.student.setOption("deLang", this.fachIdConvert[importArray[3]]);
-        this.student.setOption("deNatWis", this.fachIdConvert[importArray[4]]);
-        this.student.setOption("lang", this.fachIdConvert[importArray[5]]);
-        this.student.setOption("natWis", this.fachIdConvert[importArray[6]]);
-        this.student.setOption("gesWis", this.fachIdConvert[importArray[7]]);
+        for (n1 = 8; n1 < importArray.length; n1 = n1 + 1) {
+            importArray[n1] = parseInt(importArray[n1]);
+        }
 
         // Abiturfächer
         for (n1 = 1; n1 <= 4; n1 = n1 + 1) {
@@ -117,7 +127,20 @@ function OberstufenPunkteKalkulator() {
 
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("art")));
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deLang")));
-        exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("deNatWis")));
+
+        
+        s_deNatWis = "0";
+        if (this.student.getOption("deNatWis") == "phy-bio") {
+            s_deNatWis = "78";
+        }
+        if (this.student.getOption("deNatWis") == "phy-ch") {
+            s_deNatWis = "79";
+        }
+        if (this.student.getOption("deNatWis") == "bio-ch") {
+            s_deNatWis = "89";
+        }
+        exportArray.push(s_deNatWis);
+        
         exportArray.push(this.fachIdConvert.indexOf(this.student.getOption("lang")));
 
         var s_natwis = this.fachIdConvert.indexOf(this.student.getOption("natWis"));

@@ -55,26 +55,153 @@ function Student() {
 
     this.setOptionArt = function(s_value) {
         this._options['art'] = s_value;
+
+        // Bildende Kunst
+        if (s_value == "bk") {
+            // Musik
+            cc.fach[13].active = false;
+            this.setSubjectActive("mus", false);
+        }
+
+        // Musik
+        if (s_value == "mus") {
+            // Bildende Kunst
+            cc.fach[12].active = false;
+            this.setSubjectActive("bk", false);
+        }
     }
 
     this.setOptionDeLang = function(s_value) {
         this._options['deLang'] = s_value;
+
+        // UZ
+        if (s_value == "ung") {
+            // Französisch
+            cc.fach[4].active = false;
+            this.setSubjectActive("frz", false);
+        }
+
+        // Französisch
+        if (s_value == "frz") {
+            // UZ
+            cc.fach[2].active = false;
+            this.setSubjectActive("ung", false);
+        }
     }
 
     this.setOptionDeNatWis = function(s_value) {
         this._options['deNatWis'] = s_value;
+
+        // not included: Physik
+        if (s_value.indexOf("phy") == -1) {
+            cc.fach[7].active = false;
+            this.setSubjectActive("phy", false);
+        }
+
+        // not included: Biologie
+        if (s_value.indexOf("bio") == -1) {
+            cc.fach[8].active = false;
+            this.setSubjectActive("bio", false);
+        }
+
+        // not included: Chemie
+        if (s_value.indexOf("ch") == -1) {
+            cc.fach[9].active = false;
+            this.setSubjectActive("ch", false);
+        }
     }
 
     this.setOptionLang = function(s_value) {
         this._options['lang'] = s_value;
+
+        // Französisch
+        if (s_value == "frz") {
+            // Spanisch
+            cc.fach[5].active = false;
+            this.setSubjectActive("spa", false);
+        }
+
+        // Spanisch
+        if (s_value == "spa") {
+            // Französisch
+            cc.fach[4].active = false;
+            this.setSubjectActive("frz", false);
+        }
+
+        // none
+        if (s_value == "none") {
+            if (this.zweig == "hu") {
+                // Französisch
+                cc.fach[4].active = false;
+                this.setSubjectActive("frz", false);
+            }
+            // Spanisch
+            cc.fach[5].active = false;
+            this.setSubjectActive("spa", false);
+        }
     }
 
     this.setOptionNatWis = function(s_value) {
         this._options['natWis'] = s_value;
+
+        // Physik (Grundkurs oder Leistungskurs)
+        if (s_value == "phy") {
+            if (this.zweig == "de") {
+                cc.fach[7].active = true;
+                this.setSubjectActive("phy", true);
+            }
+        }
+
+        // Biologie
+        if (s_value == "bio") {
+            cc.fach[8].active = true;
+            this.setSubjectActive("bio", true);
+        }
+
+        // Chemie
+        if (s_value == "ch") {
+            cc.fach[9].active = true;
+            this.setSubjectActive("ch", true);
+        }
+
+        // none
+        if (s_value == "none") {
+            // Beim deutschen Zweig wird das bereits bei "deWahlNatWis" geregelt
+            if (this.zweig == "hu") {
+                cc.fach[7].active = false;
+                this.setSubjectActive("phy", false);
+            }
+        }
     }
 
     this.setOptionGesWis = function(s_value) {
         this._options['gesWis'] = s_value;
+
+        // Erdkunde
+        if (s_value == "ek") {
+            // Ethik (oder Religion)
+            cc.fach[17].active = false;
+            this.setSubjectActive("eth", false);
+        }
+
+        // Ethik (oder Religion)
+        if (s_value == "eth") {
+            // Erdkunde
+            cc.fach[16].active = false;
+            this.setSubjectActive("ek", false);
+        }
+
+        // none
+        if (s_value == "none") {
+
+            // Erdkunde
+            cc.fach[16].active = false;
+            this.setSubjectActive("ek", false);
+
+            // Ethik (oder Religion)
+            cc.fach[17].active = false;
+            this.setSubjectActive("eth", false);
+        }
     }
 
     this.subjects = {};

@@ -42,26 +42,14 @@ function GuiInteractionsForOptions() {
 
         cc.student.setOptionArt(s_value);
 
-        // Bildende Kunst
-        if (cc.student.getOption("art") == "bk") {
-            // Musik
-            cc.fach[13].active = false;
-            cc.student.setSubjectActive("mus", false);
-        }
-
-        // Musik
-        if (cc.student.getOption("art") == "mus") {
-            // Bildende Kunst
-            cc.fach[12].active = false;
-            cc.student.setSubjectActive("bk", false);
-        }
+        // next:
 
         if (cc.student.zweig == "de") {
             document.getElementById("opts_de_lang").disabled = false;
         }
-        else if (cc.student.zweig == "hu") {
-            document.getElementById("opts_lang").disabled = false;
 
+        if (cc.student.zweig == "hu") {
+            document.getElementById("opts_lang").disabled = false;
         }
     }
 
@@ -79,20 +67,7 @@ function GuiInteractionsForOptions() {
 
         cc.student.setOptionDeLang(s_value);
 
-        // UZ
-        if (cc.student.getOption("deLang") == "ung") {
-            // Französisch
-            cc.fach[4].active = false;
-            cc.student.setSubjectActive("frz", false);
-        }
-
-        // Französisch
-        if (cc.student.getOption("deLang") == "frz") {
-            // UZ
-            cc.fach[2].active = false;
-            cc.student.setSubjectActive("ung", false);
-        }
-
+        // next:
         document.getElementById("opts_de_nat_wis").disabled = false;
     }
 
@@ -109,24 +84,6 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_de_nat_wis").disabled = true;
 
         cc.student.setOptionDeNatWis(s_value);
-
-        // not included: Physik
-        if (cc.student.getOption("deNatWis").indexOf("phy") == -1) {
-            cc.fach[7].active = false;
-            cc.student.setSubjectActive("phy", false);
-        }
-
-        // not included: Biologie
-        if (cc.student.getOption("deNatWis").indexOf("bio") == -1) {
-            cc.fach[8].active = false;
-            cc.student.setSubjectActive("bio", false);
-        }
-
-        // not included: Chemie
-        if (cc.student.getOption("deNatWis").indexOf("ch") == -1) {
-            cc.fach[9].active = false;
-            cc.student.setSubjectActive("ch", false);
-        }
 
         // disable already chosen options in opts_nat_wis
 
@@ -145,6 +102,7 @@ function GuiInteractionsForOptions() {
             document.getElementById("opts_nat_wis_sel_ch").disabled = true;
         }
 
+        // next:
         document.getElementById("opts_lang").disabled = false;
     }
 
@@ -162,32 +120,7 @@ function GuiInteractionsForOptions() {
 
         cc.student.setOptionLang(s_value);
 
-        // Französisch
-        if (cc.student.getOption("lang") == "frz") {
-            // Spanisch
-            cc.fach[5].active = false;
-            cc.student.setSubjectActive("spa", false);
-        }
-
-        // Spanisch
-        if (cc.student.getOption("lang") == "spa") {
-            // Französisch
-            cc.fach[4].active = false;
-            cc.student.setSubjectActive("frz", false);
-        }
-
-        // none
-        if (cc.student.getOption("lang") == "none") {
-            if (cc.student.zweig == "hu") {
-                // Französisch
-                cc.fach[4].active = false;
-                cc.student.setSubjectActive("frz", false);
-            }
-            // Spanisch
-            cc.fach[5].active = false;
-            cc.student.setSubjectActive("spa", false);
-        }
-
+        // next:
         document.getElementById("opts_nat_wis").disabled = false;
     }
 
@@ -217,35 +150,7 @@ function GuiInteractionsForOptions() {
 
         cc.student.setOptionNatWis(s_value);
 
-        // Physik (Grundkurs oder Leistungskurs)
-        if (cc.student.getOption("natWis") == "phy") {
-            if (cc.student.zweig == "de") {
-                cc.fach[7].active = true;
-                cc.student.setSubjectActive("phy", true);
-            }
-        }
-
-        // Biologie
-        if (cc.student.getOption("natWis") == "bio") {
-            cc.fach[8].active = true;
-            cc.student.setSubjectActive("bio", true);
-        }
-
-        // Chemie
-        if (cc.student.getOption("natWis") == "ch") {
-            cc.fach[9].active = true;
-            cc.student.setSubjectActive("ch", true);
-        }
-
-        // none
-        if (cc.student.getOption("natWis") == "none") {
-            // Beim deutschen Zweig wird das bereits bei "deWahlNatWis" geregelt
-            if (cc.student.zweig == "hu") {
-                cc.fach[7].active = false;
-                cc.student.setSubjectActive("phy", false);
-            }
-        }
-
+        // next:
         document.getElementById("opts_ges_wis").disabled = false;
     }
 
@@ -263,32 +168,7 @@ function GuiInteractionsForOptions() {
 
         cc.student.setOptionGesWis(s_value);
 
-        // Erdkunde
-        if (cc.student.getOption("gesWis") == "ek") {
-            // Ethik (oder Religion)
-            cc.fach[17].active = false;
-            cc.student.setSubjectActive("eth", false);
-        }
-
-        // Ethik (oder Religion)
-        if (cc.student.getOption("gesWis") == "eth") {
-            // Erdkunde
-            cc.fach[16].active = false;
-            cc.student.setSubjectActive("ek", false);
-        }
-
-        // none
-        if (cc.student.getOption("gesWis") == "none") {
-
-            // Erdkunde
-            cc.fach[16].active = false;
-            cc.student.setSubjectActive("ek", false);
-
-            // Ethik (oder Religion)
-            cc.fach[17].active = false;
-            cc.student.setSubjectActive("eth", false);
-        }
-
+        // next:
         this.nextSection();
     }
 

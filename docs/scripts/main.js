@@ -107,7 +107,7 @@ function OberstufenPunkteKalkulator() {
         }
     }
 
-    this.exportData = function() {
+    this.generateExportData = function() {
 
         var exportArray = new Array();
         this.student.name = window.prompt(i18n.get("inputName"));

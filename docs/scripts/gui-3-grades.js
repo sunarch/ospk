@@ -12,6 +12,7 @@ function GuiInteractionsForGrades() {
 
     this.show = function() {
 
+        this.setLanguageStrings();
         this.setup();
         document.getElementById('grades').style.display = "block";
     }
@@ -70,10 +71,6 @@ function GuiInteractionsForGrades() {
 
     this.setup = function() {
 
-        document.getElementById('grades_title').innerHTML = i18n.get("grades1112_title");
-
-        document.getElementById('grades_header').innerHTML = i18n.get("grades1112_header");
-
         for(n1 = 1; n1 < cc.fach.length; n1 = n1 + 1) {
 
             document.getElementById("grades_" + cc.fach[n1].name).style.display = "none";
@@ -81,6 +78,16 @@ function GuiInteractionsForGrades() {
             if(cc.fach[n1].active == true) {
                 document.getElementById("grades_" + cc.fach[n1].name).style.display = "table-row";
             }
+        }
+    }
+    
+    this.setLanguageStrings = function() {
+
+        document.getElementById('grades_title').innerHTML = i18n.get("grades1112_title");
+
+        document.getElementById('grades_header').innerHTML = i18n.get("grades1112_header");
+
+        for(n1 = 1; n1 < cc.fach.length; n1 = n1 + 1) {
 
             document.getElementById("grades_" + cc.fach[n1].name + "_subj").innerHTML = cc.fach[n1].getFullName();
         }

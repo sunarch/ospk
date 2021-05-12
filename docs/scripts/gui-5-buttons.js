@@ -8,7 +8,7 @@ function GuiInteractionsForButtons() {
     
     this.show = function() {
 
-        this.setup();
+        this.setLanguageStrings();
         document.getElementById('buttons').style.display = "block";
     }
 
@@ -32,8 +32,10 @@ function GuiInteractionsForButtons() {
         document.getElementById("buttons_link_export").type = "text/plain";
         document.getElementById("buttons_link_export").click();
     }
-
-    this.setup = function() {
+    
+    // no setup() method
+    
+    this.setLanguageStrings = function() {
 
         document.getElementById('button_calculate').value = i18n.get("calculate");
 

@@ -6,6 +6,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 function GuiInteractionsForGrades() {
 
+    this.getDomId = function(s_fach, i_semester) {
+        return "grades_" + s_fach + "_sem_" + i_semester;
+    }
+
     this.show = function() {
 
         this.setup();
@@ -16,20 +20,20 @@ function GuiInteractionsForGrades() {
         document.getElementById('buttons').style.display = "block";
     }
 
-    this.updateGrade = function(s_fach, i_semester) {
+    this.updateGrade = function(s_subjectCode, i_semester) {
 
-        s_id = "grades_" + s_fach + "_sem_" + i_semester
-        dom_input = document.getElementById(s_id)
-        s_value = dom_input.value
+        s_domId = this.getDomId(s_subjectCode, i_semester);
+        domInput = document.getElementById(s_domId)
+        s_value = domInput.value
 
         if (!gui.validate_grade(s_value)) {
-            dom_input.value = "";
+            domInput.value = "";
             return;
         }
 
-        i_fach = cc.fachIdConvert.indexOf(s_fach)
+        i_subjectNumber = cc.fachIdConvert.indexOf(s_subjectCode)
         tempNum = new Number(s_value);
-        cc.fach[i_fach].note[i_semester] = tempNum.valueOf();
+        cc.fach[i_subjectNumber].note[i_semester] = tempNum.valueOf();
 
     }
 
@@ -42,9 +46,10 @@ function GuiInteractionsForGrades() {
         }
     }
 
-    this.setField = function(s_subj, i_sem, i_grade) {
-        s_dom_id = "grades_" + s_subj + "_sem_" + (i_sem);
-        document.getElementById(s_dom_id).value = i_grade;
+    this.setField = function(s_subjectCode, i_semester, i_grade) {
+
+        s_domId = this.getDomId(s_subjectCode, i_semester);
+        document.getElementById(s_domId).value = i_grade;
     }
 
     this.setup = function() {

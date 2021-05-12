@@ -105,10 +105,6 @@ function OberstufenPunkteKalkulator() {
             this.fach[n1].note[3] = importArray[15 + ((n1 - 1) * 4) + 3];
             this.fach[n1].note[4] = importArray[15 + ((n1 - 1) * 4) + 4];
         }
-
-        this.applyValuesToInputFields();
-
-        this.calculate();
     }
 
     this.exportData = function() {

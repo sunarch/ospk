@@ -16,19 +16,24 @@ function GuiInteractionsForBranches() {
     }
 
     this.importData = function() {
-        gui.options.show();
-        gui.grades.show();
-        gui.exams.show();
-        gui.buttons.show();
-        
+
         s_input = window.prompt('Data String:');
         cc.importData(s_input);
 
         document.getElementById("loaded_name").innerHTML = cc.student.name;
         document.getElementById("loaded").style.display = "block";
-        
+
         this._hideInactive()
-        
+
+        gui.options.show();
+        gui.grades.show();
+        gui.exams.show();
+        gui.buttons.show();
+
+        cc.applyValuesToInputFields();
+
+        cc.calculate();
+
         gui.results.show();
     }
 

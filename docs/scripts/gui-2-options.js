@@ -200,7 +200,7 @@ function GuiInteractionsForOptions() {
 
         // Französisch (hidden by default)
         if (cc.student.zweig == "hu") {
-            document.getElementById('opts_lang_sel_fra').style.display = "initial";
+            document.getElementById('opts_lang_sel_frz').style.display = "initial";
         }
 
         // select top (label) entry
@@ -292,7 +292,7 @@ function GuiInteractionsForOptions() {
         document.getElementById("opts_lang_sel_none").innerHTML = i18n.get("answer_notChosen");
 
         // Französisch (hidden by default)
-        document.getElementById("opts_lang_sel_fra").innerHTML = cc.fach[4].getFullName();
+        document.getElementById("opts_lang_sel_frz").innerHTML = cc.fach[4].getFullName();
 
         // Spanisch
         document.getElementById("opts_lang_sel_spa").innerHTML = cc.fach[5].getFullName();

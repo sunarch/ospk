@@ -13,8 +13,6 @@ function OberstufenPunkteKalkulator() {
 
     this.calculate = function() {
 
-        document.getElementById("button_calculate").value = i18n.get("recalculate");
-
         // Konvertierung der Notenwerte zu Nummern erfolgt bei der Dateneingabe
 
         this.bereichA.calculate();
@@ -26,9 +24,6 @@ function OberstufenPunkteKalkulator() {
         this.ergebnis_gesamt = this.bereichA.ergebnis + this.bereichB.ergebnis + this.bereichC.ergebnis;
 
         this.ergebnis_durchschnitt = this.calculateAverage(this.ergebnis_gesamt)
-
-        gui.results.show();
-
     }
 
     this.calculateAverage = function(n_ergebnis_gesamt) {
@@ -150,11 +145,11 @@ function OberstufenPunkteKalkulator() {
             exportArray.push(this.fach[n1].note[4]);
         }
 
-        var exportText = exportArray.join();
-        document.getElementById("buttons_link_export").download = "dsb_ospk_" + this.student.name + ".txt";
-        document.getElementById("buttons_link_export").href = "data:text/plain;base64," + window.btoa(exportText);
-        document.getElementById("buttons_link_export").type = "text/plain";
-        document.getElementById("buttons_link_export").click()
+        return {
+            name: this.student.name,
+            exportText: exportArray.join()
+        };
+
     }
 
     this.applyValuesToInputFields = function() {

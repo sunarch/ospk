@@ -40,7 +40,7 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_art").disabled = true;
 
-        cc.student.setOption("art", s_value);
+        cc.student.setOptionArt(s_value);
 
         // Bildende Kunst
         if (cc.student.getOption("art") == "bk") {
@@ -77,7 +77,7 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_de_lang").disabled = true;
 
-        cc.student.setOption("deLang", s_value);
+        cc.student.setOptionDeLang(s_value);
 
         // UZ
         if (cc.student.getOption("deLang") == "ung") {
@@ -108,7 +108,7 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_de_nat_wis").disabled = true;
 
-        cc.student.setOption("deNatWis", s_value);
+        cc.student.setOptionDeNatWis(s_value);
 
         // not included: Physik
         if (cc.student.getOption("deNatWis").indexOf("phy") == -1) {
@@ -160,7 +160,7 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_lang").disabled = true;
 
-        cc.student.setOption("lang", s_value);
+        cc.student.setOptionLang(s_value);
 
         // Französisch
         if (cc.student.getOption("lang") == "frz") {
@@ -215,7 +215,7 @@ function GuiInteractionsForOptions() {
             s_value = "phy";
         }
 
-        cc.student.setOption("natWis", s_value);
+        cc.student.setOptionNatWis(s_value);
 
         // Physik (Grundkurs oder Leistungskurs)
         if (cc.student.getOption("natWis") == "phy") {
@@ -261,7 +261,7 @@ function GuiInteractionsForOptions() {
 
         document.getElementById("opts_ges_wis").disabled = true;
 
-        cc.student.setOption("gesWis", s_value);
+        cc.student.setOptionGesWis(s_value);
 
         // Erdkunde
         if (cc.student.getOption("gesWis") == "ek") {

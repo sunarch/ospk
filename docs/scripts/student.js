@@ -53,8 +53,28 @@ function Student() {
         return this._options[s_key];
     }
 
-    this.setOption = function(s_key, s_value) {
-        this._options[s_key] = s_value;
+    this.setOptionArt = function(s_value) {
+        this._options['art'] = s_value;
+    }
+
+    this.setOptionDeLang = function(s_value) {
+        this._options['deLang'] = s_value;
+    }
+
+    this.setOptionDeNatWis = function(s_value) {
+        this._options['deNatWis'] = s_value;
+    }
+
+    this.setOptionLang = function(s_value) {
+        this._options['lang'] = s_value;
+    }
+
+    this.setOptionNatWis = function(s_value) {
+        this._options['natWis'] = s_value;
+    }
+
+    this.setOptionGesWis = function(s_value) {
+        this._options['gesWis'] = s_value;
     }
 
     this.subjects = {};

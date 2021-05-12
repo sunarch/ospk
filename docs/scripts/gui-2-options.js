@@ -8,20 +8,6 @@ function GuiInteractionsForOptions() {
 
     this.show = function() {
 
-        document.getElementById('branches_import').style.display = "none";
-
-        switch(cc.student.zweig) {
-
-            case "de":
-                document.getElementById('branches_hu').style.display = "none";
-                break;
-
-            default:
-            case "hu":
-                document.getElementById('branches_de').style.display = "none";
-                break;
-        }
-
         this.setup();
 
         document.getElementById("opts_art").disabled = false;
